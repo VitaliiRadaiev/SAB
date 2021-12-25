@@ -3,10 +3,10 @@
     if(coreValues) {
         let dataSlider = new Swiper(coreValues.querySelector('.swiper-container'), {
 
-            // autoplay: {
-            //     delay: 4000,
-            //     disableOnInteraction: false,
-            // },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
             speed: 800,
             navigation: {
                 nextEl: coreValues.querySelector('.slider-button.next'),
