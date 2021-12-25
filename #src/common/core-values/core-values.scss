@@ -1,0 +1,120 @@
+.core-values {
+    padding: 49px 0 45px;
+
+    @media (max-width: $md2+px) {
+        padding: 42px 0 29px;
+    }
+
+    @media (max-width: $md3+px) {
+        padding: 42px 0 26px;
+    }
+
+    &__body {
+    }
+
+    &__head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 29px;
+
+        @media (max-width: $md2+px) {
+            margin-bottom: 31px;
+        }
+
+        @media (max-width: $md4+px) {
+            margin-bottom: 0;
+        }
+
+        & .slider-buttons {
+            margin-bottom: 25px;
+            transform: translate(-9px, -6px);
+            flex: 0 0 auto;
+
+            @media (max-width: $md2+px) {
+                transform: translate(-2px, -4px);
+            }
+
+            @media (max-width: $md4+px) {
+                display: none;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 25px;
+
+        @media (max-width: $md2+px) {
+            margin-left: 6px;
+        }
+
+        @media (max-width: $md3+px) {
+            margin-left: 0;
+        }
+
+        @media (min-width: 576px) {
+            margin-right: 25px;
+        }
+    }
+
+    &__slider {
+        &.swiper-container {
+            overflow: visible;
+        }
+
+        & .swiper-slide {
+            width: auto;
+            height: auto;
+        }
+    }
+}
+
+.core-values-card {
+    width: 482px;
+    background: #ececec;
+    border-radius: 12px;
+    padding: 44px 23px 34px 23px;
+    height: 100%;
+    min-height: 317px;
+
+    @media (max-width: $md2+px) {
+        padding: 48px 23px 34px 25px;
+    }
+
+    @media (max-width: $md3+px) {
+        width: 250px;
+        min-height: 269px;
+        padding: 31px 20px 16px 20px;
+    }
+
+    &__num {
+        font-size: 60px;
+        line-height: 1em;
+        color: $mainColor;
+        font-weight: 400;
+
+        @media (max-width: $md3+px) {
+            font-size: 50px;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 26px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__text {
+        &.text-content {
+            & > *:last-child {margin-bottom: 0;}
+
+            @media (max-width: $md3+px) {
+                font-size: 16px;
+            }
+        }
+    }
+}

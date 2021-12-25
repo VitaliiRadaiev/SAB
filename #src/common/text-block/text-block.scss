@@ -1,0 +1,44 @@
+.text-block {
+    padding: 85px 0 72px;
+
+    @media (max-width: $md2+px) {
+        padding: 85px 0 55px;
+    }
+
+    @media (max-width: $md3+px) {
+        padding: 58px 0 30px;
+    }
+
+    &__body {
+        max-width: 1060px;
+        margin: 0 auto;
+
+        @media (max-width: $md2+px) {
+            max-width: 760px;
+        }
+
+        @media (max-width: $md3+px) {
+            &.container {
+                padding-left: 35px;
+                padding-right: 35px;
+            }
+
+            &.text-content {
+                font-size: 16px;
+            }
+        }
+
+        & h2 {
+            margin-bottom: 54px;
+
+            @media (max-width: $md2+px) {
+                margin-bottom: 38px;
+            }
+
+            @media (max-width: $md3+px) {
+                font-size: 42px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

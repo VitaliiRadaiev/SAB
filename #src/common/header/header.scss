@@ -1,0 +1,387 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 47;
+    background-color: rgba(#000, 0.3);
+    transition: all 0.4s ease;
+
+    &.is-scroll {
+        background-color: rgba($textColorDark, 0.8);
+    }
+
+    &.menu-is-open {
+        background-color: $textColorDark !important;
+        border-bottom: 1px solid rgba(#000, 0.3);
+    }
+
+    @media (max-width: $md2+px) {
+        & .container {
+            padding: 0 24px;
+        }
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        height: 69px;
+        position: relative;
+    }
+
+    &__logo {
+        width: 100%;
+        max-width: 80px;
+        margin-right: 25px;
+
+        & img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media (min-width: 1370px) {
+            margin-left: -61px;
+        }
+    }
+
+    &__menu {
+        @media (min-width: 1300px) {
+            padding-right: 82px;
+            //   margin-bottom: -4px;
+        }
+
+        @media (max-width: $md2+px) {
+            display: none !important;
+        }
+    }
+
+    &__burger {
+        @media (min-width: 992px) {
+            display: none;
+        }
+    }
+}
+
+.menu {
+    height: calc(100% + 16px);
+    margin-top: -8px;
+    margin-bottom: -8px;
+    &__list {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        & > li {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            &:not(:last-child) {
+                margin-right: 76px;
+
+                @media (max-width: $md1+px) {
+                    margin-right: 40px;
+                }
+            }
+
+            &:first-child {
+                & .menu__link {
+                    &::before {
+                        left: 3px;
+                    }
+                }
+            }
+
+            & .sub-menu {
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            &:hover {
+                & .menu__link::before {
+                    width: 24px;
+                }
+
+                & .sub-menu {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__link {
+        font-size: 15px;
+        line-height: 19px;
+        text-transform: uppercase;
+        color: #ffffff;
+        transition: all 0.3s ease;
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: "";
+            left: 0px;
+            bottom: -7px;
+            width: 0px;
+            height: 1px;
+            background-color: $textColorLight;
+            transition: all 0.3s ease;
+        }
+
+        &.current-menu-item {
+            &:before {
+                width: 24px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                &:before {
+                    width: 24px;
+                }
+            }
+        }
+    }
+}
+
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    min-height: 90px;
+    padding: 10px 0 8px;
+    width: 100%;
+    transition: all 0.3s ease;
+    flex-wrap: wrap;
+
+    &:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 50%;
+        height: 100%;
+        width: 100vw;
+        background-color: #fff;
+        z-index: 1;
+        transform: translateX(-50%);
+    }
+
+    & > li {
+        position: relative;
+        z-index: 2;
+        padding: 10px 8px;
+        max-width: 400px;
+        width: 100%;
+
+        &:not(:last-child) {
+            padding-right: min(20px, 5%);
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        color: $textColorDark;
+        width: 100%;
+        @media (min-width: 992px) {
+            &:hover {
+                & .sub-menu__text-wrap h5 {
+                    color: $mainColor;
+                }
+
+                & .sub-menu__icon {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+
+    &__icon {
+        flex: 0 0 auto;
+        width: 40px;
+        margin-right: 14px;
+        transition: all 0.3s ease;
+        & img {
+            width: 100%;
+            height: auto;
+            display: inline-block;
+        }
+    }
+
+    &__text-wrap {
+        width: calc(100% - 54px);
+        & h5 {
+            margin-bottom: 0;
+            transition: all 0.3s ease;
+        }
+
+        & p {
+            margin-bottom: 0;
+            color: $mainColor;
+            width: 100%;
+            white-space: nowrap;
+            font-size: 14px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin-bottom: -10px;
+        }
+    }
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 69px;
+    left: 100%;
+    width: 100%;
+    height: calc(100% - 69px);
+    z-index: 46;
+    color: $textColorLight;
+    background-color: $textColorDark;
+    overflow: auto;
+    padding: 23px 0 120px;
+    transition: transform .6s ease;
+
+
+    &.open {
+        transform: translateX(-100%);
+    }
+
+    & > .container {
+        @media (min-width: 576px) {
+            padding-left: 42px;
+            padding-right: 42px;
+        }
+    }
+
+    & .menu__list {
+        display: block;
+        height: auto;
+        & > li {
+            height: auto;
+            display: block;
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 44px;
+
+                @media (max-width: $md4+px) {
+                    margin-bottom: 34px;
+                }
+            }
+
+            &.menu-item-has-children {
+                & .menu__link  {
+                    position: relative;
+                    padding-right: 40px;
+                    &:after {
+                        position: absolute;
+                        content: '';
+                        top: 50%;
+                        right: 0px;
+                        transform: translateY(-50%);
+                        display: inline-block;
+                        width: 12.6px;
+                        height: 7px;
+                        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDEzIDciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMi42IDBMMCAwTDYuMyA3TDEyLjYgMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=");
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        transition: all .3s ease;
+                    }
+
+                    &.sub-menu-is-open {
+                        &:after {
+                            transform: translateY(-50%) scale(1, -1);
+                        }
+                    }
+                }
+            }
+
+            & .sub-menu {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    & .menu__link {
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 1em;
+        font-family: $titleFontFamily;
+        width: 100%;
+        display: block;
+
+        &:before {
+            display: none;
+        }
+
+        @media (max-width: $md4+px) {
+            font-size: 26px;
+        }
+    }
+
+    & .sub-menu {
+        display: none;
+        position: static;
+        padding-top: 29px;
+        padding-bottom: 0;
+        min-height: auto;
+        &:before {
+            display: none;
+        }
+
+        & > li {
+            max-width: none;
+            padding: 0;
+
+            &:not(:last-child) {
+                margin-bottom: 40px;
+
+                @media (max-width: $md4+px) {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+
+        & .sub-menu__link {
+            color: $textColorLight;
+        }
+
+        & .sub-menu__icon {
+            height: 48px;
+            width: 48px;
+            margin-right: 16px;
+
+            @media (max-width: $md4+px) {
+                height: 40px;
+                width: 40px;
+                margin-right: 14px;
+            }
+        }
+
+        & .sub-menu__text-wrap {
+            & h5 {
+                color: $textColorLight;
+                font-size: 26px;
+
+                @media (max-width: $md4+px) {
+                    font-size: 22px;
+                }
+            }
+
+            & p {
+                font-size: 16px;
+
+                @media (max-width: $md4+px) {
+                    font-size: 14px;
+                    margin-bottom: -3px;
+                }
+            }
+        }
+    }
+}
