@@ -16,11 +16,11 @@
 
 			<!-- PICTURE -->
 			<div class="hero-bg ibg">
-				<picture>
-					<source srcset="img/photo/promo-header-bg.jpg" media="(min-width: 992px)">
-					<source srcset="img/photo/promo-header-bg-tablet.jpg" media="(min-width: 576px)">
-					<img src="img/photo/promo-header-bg-mob.jpg" alt="img">
-				</picture>
+				@@include('_img.html',{
+					"desk": "img/photo/promo-header-bg.jpg",
+					"tablet": "img/photo/promo-header-bg-tablet.jpg",
+					"mob": "img/photo/promo-header-bg-mob.jpg"
+				})
 			</div>
 
 			<!-- VIDEO -->
@@ -290,6 +290,14 @@
 						</a>
 					</li>
 				</ul>
+			</div>
+		</section>
+
+		<section class="cta">
+			<div class="container cta__body">
+				<h2 class="cta__title">Get customized property and industry news sent right to your inbox</h2>
+				<h2 class="cta__title-mob">let’s connect</h2>
+				<a href="#" class="btn">Subscribe</a>
 			</div>
 		</section>
 	</main>

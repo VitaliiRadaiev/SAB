@@ -1,72 +1,11 @@
 .footer {
-    &__row-1 {
-        background: #f0f0f0;
-    }
+    position: relative;
+    padding-top: 66px;
+    padding-bottom: 36px;
 
-    &__row-2 {
-        position: relative;
-        padding-top: 66px;
-        padding-bottom: 36px;
-
-        @media (max-width: $md2+px) {
-            padding-top: 38px;
-            padding-bottom: 47px;
-        }
-    }
-
-    &__subscribe {
-        min-height: 127px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-
-        @media (min-width: 992px) {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        @media (max-width: $md2+px) {
-            text-align: center;
-            padding-top: 35px;
-            padding-bottom: 35px;
-
-            & .btn {
-                min-width: 205px;
-            }
-        }
-
-        @media (max-width: $md4+px) {
-            padding-top: 44px;
-            padding-bottom: 44px;
-        }
-    }
-
-    &__subscribe-title {
-        font-size: 41px;
-        line-height: 115%;
-        margin-bottom: 0px;
-        margin-right: 25px;
-
-        @media (max-width: $md2+px) {
-            margin-right: 0;
-            font-size: 38px;
-            max-width: 615px;
-            margin: 0 auto 17px;
-        }
-
-        @media (max-width: $md4+px) {
-            display: none;
-        }
-    }
-
-    &__subscribe-title-mob {
-        @media (min-width: 576px) {
-            display: none;
-        }
-
-        font-size: 46px;
-        line-height: 115%;
-        margin-bottom: 15px;
+    @media (max-width: $md2+px) {
+        padding-top: 38px;
+        padding-bottom: 47px;
     }
 
     &__bg {
@@ -121,7 +60,7 @@
 
         @media (max-width: $md4+px) {
             display: block;
-            text-align: center;   
+            text-align: center;
         }
     }
 
@@ -231,7 +170,7 @@
     & > li {
         flex: 0 0 auto;
         margin-bottom: 15px;
-        
+
         &:not(:last-child) {
             margin-right: 18px;
         }

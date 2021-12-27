@@ -372,6 +372,109 @@ function burgerBtnAnimationToggle(burger) {
         });
     }
 };
+	let servicesList = document.querySelector('.services__list');
+if(servicesList) {
+    let items = servicesList.querySelectorAll('.services__item');
+    if(items.length) {
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+
+                items.forEach(i => {
+                    if(i === item) return;
+                    i.classList.remove('active');
+                })
+            })
+        })
+    }
+};
+	let team = document.querySelector('.team');
+if (team) {
+    const slider = team.querySelector('.team__slider');
+    if (slider) {
+        let wrapper = slider.querySelector('.swiper-wrapper');
+
+        let options = {
+            speed: 800,
+            navigation: {
+                nextEl: team.querySelector('.slider-button.next'),
+                prevEl: team.querySelector('.slider-button.prev'),
+            },
+            watchSlidesVisibility: true,
+            watchOverflow: true,
+            breakpoints: {
+                320: {
+                    slidesPerView: 3,
+                    spaceBetween:30,
+                },
+
+                992: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                }
+            },
+        }
+
+        if(wrapper.children.length <= 4) {
+            team.classList.add('slider-is-empty');
+            options = { ...options, touchRatio: 0,};
+        }
+
+        let mySwiper;
+
+
+        function mobileSlider() {
+            if (document.documentElement.clientWidth > 991.98 && slider.dataset.mobile == 'false') {
+                mySwiper = new Swiper(slider, options);
+
+                slider.dataset.mobile = 'true';
+
+                //mySwiper.slideNext(0);
+            }
+
+            if (document.documentElement.clientWidth <= 992) {
+                slider.dataset.mobile = 'false';
+
+                if (slider.classList.contains('swiper-container-initialized')) {
+                    mySwiper.destroy();
+                }
+            }
+        }
+
+        mobileSlider();
+
+        window.addEventListener('resize', () => {
+            mobileSlider();
+        })
+    }
+
+
+}
+;
+	let capitalMarketsValuesSlider = document.querySelector('.capital-markets-values__slider');
+if(capitalMarketsValuesSlider) {
+    let dataSlider = new Swiper(capitalMarketsValuesSlider.querySelector('.swiper-container'), {
+        autoplay: {
+            delay: 1,
+            disableOnInteraction: false,
+        },
+        observer: true,
+        observeParents: true,
+        slidesPerView: 'auto',
+        spaceBetween: 13,
+        speed: 5000,
+        watchOverflow: true,
+        centeredSlides: true,
+        loop: true,
+        watchSlidesVisibility: true,
+        navigation: {
+            nextEl: capitalMarketsValuesSlider.querySelector('.capital-markets-values__arrow.next'),
+            prevEl: capitalMarketsValuesSlider.querySelector('.capital-markets-values__arrow.prev'),
+        },
+        freeMode: true,
+    });
+    
+};
 	
 	{
 	let vimeoVideos = document.querySelectorAll('[data-vimeo-id]');
@@ -395,7 +498,7 @@ function burgerBtnAnimationToggle(burger) {
 					}
 				}
 	
-				setCoverVideoIframe(iframe, video, {desk: {w: 16.56, h: 9.31}, mob: {w:5.55, h: 7}});
+				 setCoverVideoIframe(iframe, video, {desk: {w: 16.56, h: 9.31}, mob: {w:5.55, h: 7}});
 			} else {
 				video.insertAdjacentHTML('beforeend', `<iframe src="https://iframe.videodelivery.net/${id}?autoplay=true&muted=true&controls=false" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ></iframe>`);
 				let iframe = video.querySelector('iframe');
@@ -552,6 +655,15 @@ function burgerBtnAnimationToggle(burger) {
 		
 	})()
 
+
+	let transactionsCardTitles = document.querySelectorAll('.transactions-card__title');
+	if(transactionsCardTitles.length) {
+		setSameHeight(transactionsCardTitles);
+	}
+	let transactionsCardPlace = document.querySelectorAll('.transactions-card__place');
+	if(transactionsCardPlace.length) {
+		setSameHeight(transactionsCardPlace);
+	}
 });
 
 window.addEventListener('DOMContentLoaded', function () {

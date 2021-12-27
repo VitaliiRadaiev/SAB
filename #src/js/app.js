@@ -30,6 +30,9 @@ window.addEventListener('load', function () {
 	@@include('../common/burger/burger.js');
 	@@include('../common/header/header.js');
 	@@include('../common/core-values/core-values.js');
+	@@include('../common/services/services.js');
+	@@include('../common/team/team.js');
+	@@include('../common/capital-markets-value/capital-markets-value.js');
 	
 	@@include('../common/video/video.js');
 
@@ -67,6 +70,15 @@ window.addEventListener('load', function () {
 		
 	})()
 
+
+	let transactionsCardTitles = document.querySelectorAll('.transactions-card__title');
+	if(transactionsCardTitles.length) {
+		setSameHeight(transactionsCardTitles);
+	}
+	let transactionsCardPlace = document.querySelectorAll('.transactions-card__place');
+	if(transactionsCardPlace.length) {
+		setSameHeight(transactionsCardPlace);
+	}
 });
 
 window.addEventListener('DOMContentLoaded', function () {

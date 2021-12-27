@@ -1,13 +1,24 @@
 .text-block {
     padding: 85px 0 72px;
 
+    &:not(.grey-bg) {
+        padding: 62px 0 39px;
+    }
+
     @media (max-width: $md2+px) {
         padding: 85px 0 55px;
+        &:not(.grey-bg) {
+            padding: 62px 0 39px;
+        }
     }
 
     @media (max-width: $md3+px) {
         padding: 58px 0 30px;
+        &:not(.grey-bg) {
+            padding: 62px 0 39px;
+        }
     }
+
 
     &__body {
         max-width: 1060px;
@@ -29,7 +40,7 @@
         }
 
         & h2 {
-            margin-bottom: 54px;
+            margin-bottom: 40px;
 
             @media (max-width: $md2+px) {
                 margin-bottom: 38px;

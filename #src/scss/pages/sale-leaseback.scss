@@ -1,0 +1,255 @@
+.sale-leaseback-page {
+    @media (max-width: $md3+px) {
+        & .text-block.grey-bg {
+            padding: 47px 0 25px;
+
+            & .text-block__body  {
+                text-align: left;
+                padding-left: 24px;
+                padding-right: 36px;
+
+                & h2 {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+
+}
+
+.sale-leaseback-intro {
+    padding: 91px 0 88px;
+
+    @media (max-width: $md2+px) {
+        padding: 65px 0 53px;
+
+        & .container {
+            padding: 0 55px;
+        }
+    }
+
+    @media (max-width: $md3+px) {
+        padding: 47px 0 47px;
+
+        & .container {
+            padding: 0 24px;
+        }
+    }
+
+    &__body {
+        @media (min-width: 992px) {
+            display: flex;
+        }
+    }
+
+    &__col-1 {
+        @media (min-width: 992px) {
+            flex: 0 1 49%;
+            padding: 5px 15px 0 18px;
+        }
+    }
+
+    &__col-2 {
+        @media (min-width: 992px) {
+            flex: 0 1 51%;
+            padding: 0 20px 0 7px;
+        }
+    }
+
+    &__suptitle {
+        color: $mainColor;
+        margin-bottom: 9px;
+
+        @media (max-width: $md3+px) {
+            font-size: 26px;
+            line-height: 42px;
+            font-weight: normal;
+        }
+    }
+
+    &__title {
+        max-width: 485px;
+
+        @media (max-width: $md2+px) {
+            max-width: 711px;
+            margin-bottom: 31px;
+        }
+
+        @media (max-width: $md3+px) {
+            max-width: 711px;
+            margin-right: -3px;
+            margin-bottom: 25px;
+        }
+    }
+
+    &__text {
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: $md3+px) {
+            &.text-content {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.transactions {
+    padding: 73px 0 61px;
+
+    @media (max-width: $md2+px) {
+        padding: 40px 0 54px;
+    }
+
+    @media (max-width: $md3+px) {
+        padding: 20px 0 40px;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px -30px;
+
+        @media (max-width: $md4+px) {
+            margin-bottom: -22px;
+        }
+
+        & > li {
+            flex: 0 1 25%;
+            padding: 0 15px;
+            margin-bottom: 30px;
+
+            @media (max-width: $md2+px) {
+                flex: 0 1 50%;
+            }
+
+            @media (max-width: $md4+px) {
+                flex: 0 1 100%;
+                margin-bottom: 22px;
+            }
+        }
+    }
+}
+
+.transactions-card {
+    padding: 39px 17px 5px;
+    min-height: 414px;
+    border: 1px solid #e4e4e4;
+    background-image: linear-gradient(180deg, #f7f7f7 10%, #fff 90%);
+    text-align: center;
+    font-family: $titleFontFamily;
+    height: 100%;
+
+    @media (max-width: $md2+px) {
+        padding: 39px max(15px, 15.8%) 5px;
+    }
+
+    @media (max-width: $md3+px) {
+        padding: 39px 17px 5px;
+    }
+
+    @media (max-width: $md4+px) {
+        min-height: 316px;
+        background-image: none;
+        padding: 6px 7px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__logo {
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+
+        & img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            mix-blend-mode: darken;
+        }
+
+        @media (max-width: $md4+px) {
+            background: #f7f7f7;
+            height: 165px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__place {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 39px;
+        padding: 3px 8px;
+        color: $textColorLight;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        background-color: $textColorDark;
+        margin-bottom: 34px;
+
+        @media (max-width: $md4+px) {
+            display: none;
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 1em;
+        color: $textColorDark;
+        margin-bottom: 32px;
+
+        @media (max-width: $md4+px) {
+            order: 1;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 21px;
+            font-family: $mainFontFamily;
+            padding: 0 18px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__year {
+        @media (min-width: 576px) {
+            display: none;
+        }
+
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 28px;
+        font-family: $titleFontFamily;
+        margin-bottom: 11px;
+    }
+
+    &__value {
+        font-weight: bold;
+        font-size: 34px;
+        line-height: 1em;
+        letter-spacing: 0.05em;
+        margin-bottom: 28px;
+        color: $mainColor;
+
+        @media (max-width: $md4+px) {
+            font-weight: bold;
+            font-size: 21px;
+            letter-spacing: 0.12em;
+            color: #f3754a;
+            margin-bottom: 11px;
+        }
+    }
+
+    &__text {
+        font-size: 20px;
+        line-height: 24px;
+
+        @media (max-width: $md4+px) {
+            display: none;
+        }
+    }
+}

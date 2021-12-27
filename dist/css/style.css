@@ -41,6 +41,14 @@
 @font-face {
   font-family: "VisueltPro";
   font-display: swap;
+  src: url("../fonts/VisueltPro-Medium.woff") format("woff"), url("../fonts/VisueltPro-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VisueltPro";
+  font-display: swap;
   src: url("../fonts/VisueltPro-Regular.woff") format("woff"), url("../fonts/VisueltPro-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
@@ -1645,7 +1653,7 @@ h6 {
 p {
   font-size: 20px;
   line-height: 150%;
-  margin-bottom: 1.4em;
+  margin-bottom: 1.45em;
 }
 
 button,
@@ -1789,6 +1797,14 @@ button.btn--light,
   text-align: center;
 }
 
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
 ._page {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -1796,6 +1812,13 @@ button.btn--light,
   width: 100%;
   min-height: 100%;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .container {
@@ -2192,33 +2215,10 @@ button.btn--light,
   font-size: 16px;
 }
 
-.footer__row-1 {
-  background: #f0f0f0;
-}
-
-.footer__row-2 {
+.footer {
   position: relative;
   padding-top: 66px;
   padding-bottom: 36px;
-}
-
-.footer__subscribe {
-  min-height: 127px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.footer__subscribe-title {
-  font-size: 41px;
-  line-height: 115%;
-  margin-bottom: 0px;
-  margin-right: 25px;
-}
-
-.footer__subscribe-title-mob {
-  font-size: 46px;
-  line-height: 115%;
-  margin-bottom: 15px;
 }
 
 .footer__bg {
@@ -2365,13 +2365,17 @@ button.btn--light,
   padding: 85px 0 72px;
 }
 
+.text-block:not(.grey-bg) {
+  padding: 62px 0 39px;
+}
+
 .text-block__body {
   max-width: 1060px;
   margin: 0 auto;
 }
 
 .text-block__body h2 {
-  margin-bottom: 54px;
+  margin-bottom: 40px;
 }
 
 .core-values {
@@ -2438,6 +2442,423 @@ button.btn--light,
 
 .core-values-card__text.text-content > *:last-child {
   margin-bottom: 0;
+}
+
+.cta {
+  background: #f0f0f0;
+  margin-top: auto;
+}
+
+.cta__body {
+  min-height: 127px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.cta__title {
+  font-size: 41px;
+  line-height: 115%;
+  margin-bottom: 0px;
+  margin-right: 25px;
+}
+
+.cta__title-mob {
+  font-size: 46px;
+  line-height: 115%;
+  margin-bottom: 15px;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero .hero-bg {
+  background-color: #223C60;
+}
+
+.hero .hero-bg:before {
+  display: none;
+}
+
+.hero .hero-bg img {
+  mix-blend-mode: soft-light;
+  opacity: 0.5;
+}
+
+.hero__body {
+  min-height: 504px;
+  position: relative;
+  z-index: 2;
+  padding-top: 64px;
+  padding-bottom: 50px;
+  color: #fff;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero__title {
+  color: #fff;
+  margin-bottom: -2px;
+}
+
+.hero__text {
+  max-width: 795px;
+  margin: 0 auto;
+}
+
+.hero__text.text-content {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.services {
+  padding: 61px 0 61px;
+}
+
+.services__item {
+  position: relative;
+  min-height: 155px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.services__item:not(:first-child) {
+  border-top: 1px solid #c4c4c4;
+}
+
+.services__item.active {
+  min-height: 416px;
+}
+
+.services__item.active .services__item-bg {
+  opacity: 1;
+}
+
+.services__item.active .services__item-icon {
+  top: 74px;
+}
+
+.services__item.active .services__item-icon svg {
+  fill: #fff !important;
+}
+
+.services__item.active .services__item-icon svg circle {
+  stroke: #fff;
+}
+
+.services__item.active .services__item-body {
+  padding-top: 48px;
+  color: #fff;
+}
+
+.services__item.active .services__item-title {
+  color: #fff;
+  margin-bottom: 7px;
+}
+
+.services__item-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background-color: #223C60;
+}
+
+.services__item-bg img {
+  opacity: 0.4;
+  mix-blend-mode: screen;
+}
+
+.services__item-icon {
+  position: absolute;
+  z-index: 3;
+  top: 56px;
+  right: 44px;
+  width: 40px;
+  color: #223C60;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.services__item-icon svg {
+  width: 100%;
+  height: auto;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.services__item-icon svg > * {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.services__item-body {
+  position: relative;
+  z-index: 2;
+  padding: 34px 100px 30px 34px;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.services__item-title {
+  margin-bottom: 0;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  margin-bottom: 7px;
+}
+
+.services__item-text {
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.services__item-text > *:last-child {
+  margin-bottom: 0;
+}
+
+.team {
+  padding: 67px 0 89px;
+}
+
+.team__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.team__head .slider-buttons {
+  margin-bottom: 5px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.team__title {
+  margin-bottom: 5px;
+  margin-right: 25px;
+}
+
+.team__text {
+  padding-right: 100px;
+  max-width: 1073px;
+  margin-bottom: 33px;
+}
+
+.team__slider .swiper-slide {
+  height: auto;
+}
+
+.team-card {
+  display: block;
+  color: #51555B;
+}
+
+.team-card__photo {
+  height: 252px;
+  margin-bottom: 22px;
+}
+
+.team-card__photo img {
+  -o-object-position: top;
+     object-position: top;
+}
+
+.team-card__name {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 1em;
+  color: #223C60;
+  font-family: "BebasNeue", sans-serif;
+  margin-bottom: 11px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.team-card__position {
+  font-size: 16px;
+  line-height: 21px;
+  text-transform: uppercase;
+  margin-bottom: 33px;
+}
+
+.team-card__info {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.team-card__info > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.team-card__info > li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.team-card__info > li > span {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 16px;
+          flex: 0 0 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 14px;
+}
+
+.team-card__info > li > span img,
+.team-card__info > li > span svg {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.capital-markets-values {
+  padding: 45px 0 39px;
+}
+
+.capital-markets-values__title {
+  margin-bottom: 22px;
+}
+
+.capital-markets-values__slider {
+  position: relative;
+}
+
+.capital-markets-values__slider .swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+       -o-transition-timing-function: linear !important;
+          transition-timing-function: linear !important;
+}
+
+.capital-markets-values__slider .swiper-slide {
+  width: auto;
+}
+
+.capital-markets-values__item {
+  width: 180px;
+  border-top: 2px solid rgba(43, 72, 113, 0.2);
+  border-bottom: 2px solid rgba(43, 72, 113, 0.2);
+  padding: 13px 0 13px;
+  color: #446FA0;
+}
+
+.capital-markets-values__label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.capital-markets-values__value {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 1em;
+  font-family: "BebasNeue", sans-serif;
+}
+
+.capital-markets-values__arrow {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 100%;
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.capital-markets-values__arrow:before {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100 */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0)));
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=1 );
+  /* IE6-9 */
+}
+
+.capital-markets-values__arrow img {
+  width: 10px;
+  height: auto;
+}
+
+.capital-markets-values__arrow.prev {
+  left: 0;
+}
+
+.capital-markets-values__arrow.next {
+  right: 0;
+}
+
+.capital-markets-values__arrow.next:before {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.65)));
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00000000", endColorstr="#a6000000",GradientType=1 );
+  /* IE6-9 */
 }
 
 .promo-header {
@@ -2761,22 +3182,202 @@ button.btn--light,
   height: auto;
 }
 
+.sale-leaseback-intro {
+  padding: 91px 0 88px;
+}
+
+.sale-leaseback-intro__suptitle {
+  color: #446FA0;
+  margin-bottom: 9px;
+}
+
+.sale-leaseback-intro__title {
+  max-width: 485px;
+}
+
+.sale-leaseback-intro__text > *:last-child {
+  margin-bottom: 0;
+}
+
+.transactions {
+  padding: 73px 0 61px;
+}
+
+.transactions__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -15px -30px;
+}
+
+.transactions__list > li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+
+.transactions-card {
+  padding: 39px 17px 5px;
+  min-height: 414px;
+  border: 1px solid #e4e4e4;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #f7f7f7), color-stop(90%, #fff));
+  background-image: -o-linear-gradient(top, #f7f7f7 10%, #fff 90%);
+  background-image: linear-gradient(180deg, #f7f7f7 10%, #fff 90%);
+  text-align: center;
+  font-family: "BebasNeue", sans-serif;
+  height: 100%;
+}
+
+.transactions-card__logo {
+  height: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+.transactions-card__logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  mix-blend-mode: darken;
+}
+
+.transactions-card__place {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 39px;
+  padding: 3px 8px;
+  color: #fff;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  background-color: #223C60;
+  margin-bottom: 34px;
+}
+
+.transactions-card__title {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 1em;
+  color: #223C60;
+  margin-bottom: 32px;
+}
+
+.transactions-card__year {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 28px;
+  font-family: "BebasNeue", sans-serif;
+  margin-bottom: 11px;
+}
+
+.transactions-card__value {
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 1em;
+  letter-spacing: 0.05em;
+  margin-bottom: 28px;
+  color: #446FA0;
+}
+
+.transactions-card__text {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.capital-markets-info {
+  position: relative;
+  padding: 20px 0 34px;
+}
+
+.capital-markets-info__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #223C60;
+}
+
+.capital-markets-info__bg img {
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}
+
+.capital-markets-info__body {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.capital-markets-info__list.text-content h2,
+.capital-markets-info__list.text-content h3,
+.capital-markets-info__list.text-content h4,
+.capital-markets-info__list.text-content h5,
+.capital-markets-info__list.text-content h6 {
+  color: #fff;
+}
+
+.capital-markets-info__list.text-content h3 {
+  margin-bottom: 7px;
+}
+
+.capital-markets-info__list li {
+  padding: 32px 34px 34px;
+}
+
+.capital-markets-info__list li > *:last-child {
+  margin-bottom: 0;
+}
+
+.capital-markets-info__list li:not(:last-child) {
+  border-bottom: 1px solid #446FA0;
+}
+
 @media (min-width: 576px) {
   .mobile-menu > .container {
     padding-left: 42px;
     padding-right: 42px;
   }
 
-  .footer__subscribe-title-mob {
+  .core-values__title {
+    margin-right: 25px;
+  }
+
+  .cta__title-mob {
     display: none;
   }
 
-  .core-values__title {
-    margin-right: 25px;
+  .transactions-card__year {
+    display: none;
   }
 }
 
 @media (min-width: 768px) {
+  .capital-markets-values__slider {
+    padding: 0 50px;
+  }
+
   .achievements__suptitle {
     display: none;
   }
@@ -2846,18 +3447,6 @@ button.btn--light,
             transform: scale(1.05);
   }
 
-  .footer__subscribe {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-
   .footer__col:not(:last-child) {
     border-right: 1px solid rgba(255, 255, 255, 0.2);
   }
@@ -2882,8 +3471,68 @@ button.btn--light,
     color: #446FA0;
   }
 
+  .cta__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .services__item:hover:not(.active) .services__item-title {
+    color: #446FA0;
+  }
+
+  .team.slider-is-empty .team__title {
+    margin-right: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .team.slider-is-empty .slider-buttons {
+    display: none;
+  }
+
+  .team.slider-is-empty .team__text {
+    text-align: center;
+    max-width: none;
+    padding-right: 0;
+  }
+
+  .team-card:hover .team-card__name {
+    color: #446FA0;
+  }
+
+  .capital-markets-values__arrow:hover:before {
+    opacity: 0.2;
+  }
+
   .segments-card:hover .segments-card__layer-2 {
     opacity: 1;
+  }
+
+  .sale-leaseback-intro__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .sale-leaseback-intro__col-1 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 49%;
+            flex: 0 1 49%;
+    padding: 5px 15px 0 18px;
+  }
+
+  .sale-leaseback-intro__col-2 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 51%;
+            flex: 0 1 51%;
+    padding: 0 20px 0 7px;
   }
 }
 
@@ -2933,26 +3582,9 @@ button.btn--light,
     display: none !important;
   }
 
-  .footer__row-2 {
+  .footer {
     padding-top: 38px;
     padding-bottom: 47px;
-  }
-
-  .footer__subscribe {
-    text-align: center;
-    padding-top: 35px;
-    padding-bottom: 35px;
-  }
-
-  .footer__subscribe .btn {
-    min-width: 205px;
-  }
-
-  .footer__subscribe-title {
-    margin-right: 0;
-    font-size: 38px;
-    max-width: 615px;
-    margin: 0 auto 17px;
   }
 
   .footer__logo {
@@ -2975,6 +3607,10 @@ button.btn--light,
 
   .text-block {
     padding: 85px 0 55px;
+  }
+
+  .text-block:not(.grey-bg) {
+    padding: 62px 0 39px;
   }
 
   .text-block__body {
@@ -3005,6 +3641,107 @@ button.btn--light,
 
   .core-values-card {
     padding: 48px 23px 34px 25px;
+  }
+
+  .cta__body {
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  .cta__body .btn {
+    min-width: 205px;
+  }
+
+  .cta__title {
+    margin-right: 0;
+    font-size: 38px;
+    max-width: 615px;
+    margin: 0 auto 17px;
+  }
+
+  .hero__body {
+    min-height: 428px;
+    padding-top: 50px;
+    padding-bottom: 80px;
+  }
+
+  .hero__title {
+    font-size: 66px;
+    margin-bottom: 2px;
+  }
+
+  .hero__text {
+    max-width: 575px;
+  }
+
+  .services {
+    padding: 2px 0 2px;
+  }
+
+  .services > .container {
+    padding: 0;
+  }
+
+  .services__item.active {
+    min-height: 365px;
+  }
+
+  .services__item.active .services__item-title {
+    margin-bottom: 11px;
+  }
+
+  .services__item-icon {
+    right: 33px;
+  }
+
+  .services__item-body {
+    padding: 39px 100px 30px 34px;
+  }
+
+  .services__item-title {
+    margin-bottom: 12px;
+  }
+
+  .team {
+    padding: 54px 60px 57px;
+  }
+
+  .team__head .slider-buttons {
+    display: none;
+  }
+
+  .team__title {
+    margin-right: 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 7px;
+  }
+
+  .team__title {
+    margin-bottom: 10px;
+  }
+
+  .team__text {
+    padding-right: 0;
+    max-width: none;
+    text-align: center;
+  }
+
+  .team__slider .swiper-wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-bottom: -59px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .team__slider .swiper-slide {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 calc(50% - 32.5px);
+            flex: 0 1 calc(50% - 32.5px);
+    margin-bottom: 59px;
   }
 
   .promo-header__title {
@@ -3073,6 +3810,38 @@ button.btn--light,
         -ms-flex: 0 1 50%;
             flex: 0 1 50%;
   }
+
+  .sale-leaseback-intro {
+    padding: 65px 0 53px;
+  }
+
+  .sale-leaseback-intro .container {
+    padding: 0 55px;
+  }
+
+  .sale-leaseback-intro__title {
+    max-width: 711px;
+    margin-bottom: 31px;
+  }
+
+  .transactions {
+    padding: 40px 0 54px;
+  }
+
+  .transactions__list > li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+  }
+
+  .transactions-card {
+    padding: 39px max(15px, 15.8%) 5px;
+  }
+
+  .capital-markets-info__list li {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -3090,6 +3859,10 @@ button.btn--light,
 
   .text-block {
     padding: 58px 0 30px;
+  }
+
+  .text-block:not(.grey-bg) {
+    padding: 62px 0 39px;
   }
 
   .text-block__body.container {
@@ -3131,6 +3904,57 @@ button.btn--light,
 
   .core-values-card__text.text-content {
     font-size: 16px;
+  }
+
+  .hero__body {
+    min-height: 504px;
+    padding-bottom: 65px;
+  }
+
+  .hero__title {
+    font-size: 50px;
+    margin-bottom: 5px;
+  }
+
+  .hero__text {
+    padding: 0 10px;
+  }
+
+  .team {
+    padding: 40px 0px 40px;
+  }
+
+  .team__text {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 30px;
+  }
+
+  .team__text.text-content {
+    font-size: 16px;
+  }
+
+  .team__slider .swiper-wrapper {
+    margin-bottom: -38px;
+  }
+
+  .team__slider .swiper-slide {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 calc(50% - 20px);
+            flex: 0 1 calc(50% - 20px);
+    margin-bottom: 38px;
+  }
+
+  .team-card__photo {
+    margin-bottom: 20px;
+  }
+
+  .capital-markets-values__item {
+    width: 157px;
+  }
+
+  .capital-markets-values__arrow {
+    display: none;
   }
 
   .promo-header__body {
@@ -3231,6 +4055,56 @@ button.btn--light,
   .segments-card__layer-2 {
     min-height: 300px;
   }
+
+  .sale-leaseback-page .text-block.grey-bg {
+    padding: 47px 0 25px;
+  }
+
+  .sale-leaseback-page .text-block.grey-bg .text-block__body {
+    text-align: left;
+    padding-left: 24px;
+    padding-right: 36px;
+  }
+
+  .sale-leaseback-page .text-block.grey-bg .text-block__body h2 {
+    margin-bottom: 8px;
+  }
+
+  .sale-leaseback-intro {
+    padding: 47px 0 47px;
+  }
+
+  .sale-leaseback-intro .container {
+    padding: 0 24px;
+  }
+
+  .sale-leaseback-intro__suptitle {
+    font-size: 26px;
+    line-height: 42px;
+    font-weight: normal;
+  }
+
+  .sale-leaseback-intro__title {
+    max-width: 711px;
+    margin-right: -3px;
+    margin-bottom: 25px;
+  }
+
+  .sale-leaseback-intro__text.text-content {
+    font-size: 16px;
+  }
+
+  .transactions {
+    padding: 20px 0 40px;
+  }
+
+  .transactions-card {
+    padding: 39px 17px 5px;
+  }
+
+  .capital-markets-info__list.text-content {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -3266,15 +4140,6 @@ button.btn--light,
     margin-bottom: -3px;
   }
 
-  .footer__subscribe {
-    padding-top: 44px;
-    padding-bottom: 44px;
-  }
-
-  .footer__subscribe-title {
-    display: none;
-  }
-
   .footer__logo {
     margin-left: auto;
     margin-right: auto;
@@ -3303,12 +4168,140 @@ button.btn--light,
     display: none;
   }
 
+  .cta__body {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  .cta__title {
+    display: none;
+  }
+
+  .services__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .services__item.active {
+    min-height: 416px;
+  }
+
+  .services__item.active .services__item-icon {
+    margin-top: 10px;
+  }
+
+  .services__item.active .services__item-body {
+    padding-top: 30px;
+  }
+
+  .services__item.active .services__item-title {
+    margin-bottom: -2px;
+  }
+
+  .services__item-icon {
+    position: static;
+    margin-top: 13px;
+  }
+
+  .services__item-body {
+    padding: 33px 45px 30px 23px;
+  }
+
+  .services__item-title {
+    margin-bottom: 4px;
+  }
+
+  .services__item-text.text-content {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .team__slider .swiper-wrapper {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .team__slider .swiper-slide {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 277px;
+            flex: 0 1 277px;
+    width: 277px;
+    max-width: 100%;
+  }
+
   .achievements__video {
     display: none;
   }
 
   .segments__list {
     margin: 0 -24px;
+  }
+
+  .transactions__list {
+    margin-bottom: -22px;
+  }
+
+  .transactions__list > li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    margin-bottom: 22px;
+  }
+
+  .transactions-card {
+    min-height: 316px;
+    background-image: none;
+    padding: 6px 7px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .transactions-card__logo {
+    background: #f7f7f7;
+    height: 165px;
+    margin-bottom: 10px;
+  }
+
+  .transactions-card__place {
+    display: none;
+  }
+
+  .transactions-card__title {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    font-family: "VisueltPro", sans-serif;
+    padding: 0 18px;
+    margin-bottom: 0;
+  }
+
+  .transactions-card__value {
+    font-weight: bold;
+    font-size: 21px;
+    letter-spacing: 0.12em;
+    color: #f3754a;
+    margin-bottom: 11px;
+  }
+
+  .transactions-card__text {
+    display: none;
   }
 }
 

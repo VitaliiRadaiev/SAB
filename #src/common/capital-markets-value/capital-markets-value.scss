@@ -1,0 +1,125 @@
+.capital-markets-values {
+    padding: 45px 0 39px;
+
+    &__title {
+        margin-bottom: 22px;
+    }
+
+    &__slider {
+        position: relative;
+        
+        @media (min-width: 768px) {
+            padding: 0 50px;
+        }
+
+        & .swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
+
+        & .swiper-slide {
+            width: auto;
+        }
+    }
+
+    &__item {
+        width: 180px;
+        border-top: 2px solid rgba(#2b4871, 0.2);
+        border-bottom: 2px solid rgba(#2b4871, 0.2);
+        padding: 13px 0 13px;
+        color: $mainColor;
+
+        @media (max-width: $md3+px) {
+            width: 157px;
+        }
+    }
+
+    &__label {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        text-transform: uppercase;
+    }
+
+    &__value {
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 1em;
+        font-family: $titleFontFamily;
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 100%;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        @media (min-width: 992px) {
+            &:hover {
+                &:before {
+                    opacity: 0.2;
+                }
+            }
+        }
+
+        &:before {
+            transition: all 0.3s ease;
+            opacity: 0;
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100 */
+            background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(
+                left,
+                rgba(0, 0, 0, 0.65) 0%,
+                rgba(0, 0, 0, 0) 100%
+            ); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.65) 0%,
+                rgba(0, 0, 0, 0) 100%
+            ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+        }
+
+        & img {
+            width: 10px;
+            height: auto;
+        }
+
+        &.prev {
+            left: 0;
+        }
+        &.next {
+            right: 0;
+
+            &:before {
+                /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+                background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(
+                    left,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0.65) 100%
+                ); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0.65) 100%
+                ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 */
+            }
+        }
+        
+        @media (max-width: $md3+px) {
+            display: none;
+        }
+    }
+}

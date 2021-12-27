@@ -1,0 +1,59 @@
+.cta {
+    background: #f0f0f0;
+    margin-top: auto;
+
+    &__body {
+        min-height: 127px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        @media (min-width: 992px) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media (max-width: $md2+px) {
+            text-align: center;
+            padding-top: 35px;
+            padding-bottom: 35px;
+
+            & .btn {
+                min-width: 205px;
+            }
+        }
+
+        @media (max-width: $md4+px) {
+            padding-top: 44px;
+            padding-bottom: 44px;
+        }
+    }
+
+    &__title {
+        font-size: 41px;
+        line-height: 115%;
+        margin-bottom: 0px;
+        margin-right: 25px;
+
+        @media (max-width: $md2+px) {
+            margin-right: 0;
+            font-size: 38px;
+            max-width: 615px;
+            margin: 0 auto 17px;
+        }
+
+        @media (max-width: $md4+px) {
+            display: none;
+        }
+    }
+
+    &__title-mob {
+        @media (min-width: 576px) {
+            display: none;
+        }
+
+        font-size: 46px;
+        line-height: 115%;
+        margin-bottom: 15px;
+    }
+}
