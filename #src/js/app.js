@@ -36,39 +36,7 @@ window.addEventListener('load', function () {
 	
 	@@include('../common/video/video.js');
 
-	(function numberCounterAnim() {
-		
-			let counterItems = document.querySelectorAll('[data-number-counter-anim]');
-			if (counterItems) {
-				
-				counterItems.forEach(item => {
-					let animation = anime({
-						targets: item,
-						textContent: [0, item.innerText],
-						round: 1,
-						easing: 'linear',
-						autoplay: false,
-						duration: 1000
-					});
-					const observer = new IntersectionObserver(
-						entries => {
-							entries.forEach(entry => {
-								if (entry.intersectionRatio >= 0.7) {
-									animation.play();
-									observer.disconnect();
-								}
-							});
-						},
-						{
-							threshold: 0.7
-						}
-					);
-		
-					observer.observe(item);
-				})
-			}
-		
-	})()
+
 
 
 	let transactionsCardTitles = document.querySelectorAll('.transactions-card__title');
@@ -91,6 +59,8 @@ window.addEventListener('DOMContentLoaded', function () {
 	}
 
 	@@include('files/dynamic_adapt.js');
+	@@include('../common/animation/animation.js');
+
 
 	function testWebP(callback) {
 

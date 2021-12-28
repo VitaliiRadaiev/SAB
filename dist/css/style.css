@@ -1609,6 +1609,34 @@ h6 {
   margin-bottom: 0.5em;
   color: #223C60;
   text-transform: uppercase;
+  overflow: hidden;
+}
+
+h1 > strong,
+h2 > strong,
+h3 > strong,
+h4 > strong,
+h5 > strong,
+h6 > strong {
+  display: block;
+  overflow: hidden;
+}
+
+.word {
+  display: inline-block;
+}
+
+.white-space {
+  display: inline-block;
+  width: 0.18em;
+}
+
+[data-title-anim] {
+  overflow: hidden;
+}
+
+[data-title-anim] > strong {
+  overflow: hidden;
 }
 
 input[type=text],

@@ -147,6 +147,29 @@ h6 {
 	margin-bottom: 0.5em;
 	color: $textColorDark;
 	text-transform: uppercase;
+	overflow: hidden;
+
+	& > strong {
+		display: block;
+		overflow: hidden;
+	}
+}
+
+.word {
+	display: inline-block;
+}
+
+.white-space {
+	display: inline-block;
+	width: 0.18em;
+}
+
+[data-title-anim] {
+	overflow: hidden;
+
+	& > strong {
+		overflow: hidden;
+	}
 }
 
 input[type="text"],
