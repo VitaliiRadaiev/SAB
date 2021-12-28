@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "New Project"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    @@include('common/header/_header.html',{})
+    <!-- == // TOP LINE ================== -->
+
+
+    <main class="_page investment-sales-page">
+        <section class="hero _padding-top">
+            <!-- PICTURE -->
+            <div class="hero-bg ibg">
+                @@include('_img.html',{
+                "desk": "img/photo/hero-bg-4.jpg",
+                "tablet": "img/photo/hero-bg-3-tablet.jpg",
+                "mob": "img/photo/hero-bg-4-mob.jpg"
+                })
+            </div>
+
+            <!-- VIDEO -->
+            <!-- <div class="hero-bg ibg">
+				<video poster="img/photo/promo-header-bg.jpg" data-media-mobile="img/test-video-mob.mp4" autoplay muted loop
+					playsinline controlslist="nodownload" crossorigin="anonymous">
+					<source src="img/test-video-desk.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+				</video> 
+			</div> -->
+
+            <!-- VIMEO VIDEO -->
+            <!-- <div class="hero-bg ibg" data-vimeo-poster="img/photo/promo-header-bg.jpg" data-vimeo-id="589884423" data-vimeo-mobile-id="589884750"></div> -->
+
+            <div class="hero__body container">
+                <h1 class="hero__title" data-title-anim>Investment Sales</h1>
+                <div class="hero__text text-content" data-text-anim="">
+                    Driving value by competently pricing assets and negotiating for competitive execution
+                </div>
+            </div>
+        </section>
+
+        <section class="text-block">
+            <div class="text-block__body container text-content text-center" data-text-anim="">
+                <h2 data-title-anim="">Overview</h2>
+                <p>
+                    At SAB Capital, we are experts in structuring bespoke sale-leaseback solutions for companies of all sizes, both investment and sub-investment grade, public and private, and across multiple industries. 
+                </p>
+                <p>
+                    We provide sound investing advice and tailored client solutions focused on sale-leaseback financing, debt and equity placements, and asset acquisitions.
+                </p>
+                <p>
+                    Through our services, we help clients finance new acquisitions, fund growth initiatives, and reinvest capital in their core business activities.
+                </p>
+            </div>
+        </section>
+
+        <section class="box">
+            <div class="box__bg ibg">
+                @@include('_img.html',{
+                    "desk": "img/photo/box-bg-1.jpg",
+                    "tablet": "img/photo/box-bg-1-tablet.jpg",
+                    "mob": "img/photo/box-bg-1-mob.jpg"
+                })
+            </div>
+            <div class="box__body container">
+                <div class="box__text-wrap">
+                    <div class="box__head">
+                        <h2 class="box__title" data-title-anim="">Our Process</h2>
+                    </div>
+                    <ul class="box__list">
+                        <li>
+                            <div class="box__list-num" data-fade-in-anim="">01</div>
+                            <div class="box__list-text-wrap text-content" data-text-anim>
+                                <h4 data-title-anim="">Pre-Launch</h4>
+                                <p>Develop first class offering memoradum with professional mapping and aerial photography to position asset and highlight best attributes. </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box__list-num" data-fade-in-anim="">02</div>
+                            <div class="box__list-text-wrap text-content" data-text-anim>
+                                <h4 data-title-anim>
+                                    Launch
+                                </h4>
+                                <p>
+                                    Bring to market and provide measurable results in a 180 day process-thorough and in-depth marketing reports tracking buyer activity.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box__list-num" data-fade-in-anim="">03</div>
+                            <div class="box__list-text-wrap text-content" data-text-anim>
+                                <h4 data-title-anim>
+                                    Campaign
+                                </h4>
+                                <p>
+                                    Five round marketing process - targeted call campaign, hard mail campaign, email blasts, advertisements, broker engagement, etc.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box__list-num" data-fade-in-anim="">04</div>
+                            <div class="box__list-text-wrap text-content" data-text-anim>
+                                <h4 data-title-anim>
+                                    1031 Capital
+                                </h4>
+                                <p>
+                                    Corralling of 1031 capital - work together with our multi family agents to exclusively manage their clients 1031 exchanges.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box__list-num" data-fade-in-anim="">05</div>
+                            <div class="box__list-text-wrap text-content" data-text-anim>
+                                <h4 data-title-anim>
+                                    Execution
+                                </h4>
+                                <p>
+                                    Transaction management - enforce timelines and encourage communication between all parties of the transaction.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box__list-num" data-fade-in-anim="">06</div>
+                            <div class="box__list-text-wrap text-content" data-text-anim>
+                                <h4 data-title-anim>
+                                    Execution
+                                </h4>
+                                <p>
+                                    Transaction management - enforce timelines and encourage communication between all parties of the transaction.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container cta__body">
+                <h2 class="cta__title" data-title-anim="">SIGN UP TO RECEIVE OUR INVERTORY EMAILS</h2>
+                <h2 class="cta__title-mob" data-title-anim="">let’s connect</h2>
+                <a href="#" class="btn" data-fade-in-anim="">Subscribe</a>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

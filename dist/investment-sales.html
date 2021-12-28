@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>New Project</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		body.is-load ._preload-body {
+			height: 0;
+			overflow: hidden;
+		}
+
+		body.is-load ._preload-body:before {
+			display: none;
+		}
+		
+		._preload-body {
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			transition: all .6s ease .2s;
+		}
+
+		._preload-body:before {
+			position: absolute;
+			content: '';
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			border: 4px solid #6e6e6e;
+			border-right: 4px solid #fff;
+			transform: translate(-50%, -50%);
+			animation: preloadBody 2s linear infinite;
+		}
+
+		@keyframes preloadBody {
+			from {
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+	
+<script src="js/vendors.js"></script>
+<script src="js/app.js"></script>
+<!-- <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+defer
+></script> -->
+</head>
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    <header class="header">
+    <div class="container">
+        <div class="header__body">
+            <div class="header__logo logo">
+                <a href="#">
+                    <img src="img/logo/logo.svg" alt="logo">
+                </a>
+            </div>
+            <nav class="header__menu menu">
+                <ul class="menu__list">
+                    <li class="menu-item-has-children">
+                        <a href="#" class="menu__link">
+                             About
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="sub-menu__link anchor" href="#network">
+                                    <div class="sub-menu__icon">
+                                        <img src="img/icons/sub-menu-icon-1.svg" alt="">
+                                    </div>
+                                    <div class="sub-menu__text-wrap">
+                                        <h5>Who We Are</h5>
+                                        <p>Professionals Dedicated To Your Experience</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sub-menu__link" href="#">
+                                    <div class="sub-menu__icon">
+                                        <img src="img/icons/sub-menu-icon-2.svg" alt="">
+                                    </div>
+                                    <div class="sub-menu__text-wrap">
+                                        <h5>Meet the Team</h5>
+                                        <p>Get To Know Our Talented Team Members</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sub-menu__link" href="#">
+                                    <div class="sub-menu__icon">
+                                        <img src="img/icons/sub-menu-icon-3.svg" alt="">
+                                    </div>
+                                    <div class="sub-menu__text-wrap">
+                                        <h5>OUR NEWS</h5>
+                                        <p>Sharing The Latest News And Views</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu__link">services</a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="sub-menu__link" href="#">
+                                    <div class="sub-menu__icon">
+                                        <img src="img/icons/sub-menu-icon-4.svg" alt="">
+                                    </div>
+                                    <div class="sub-menu__text-wrap">
+                                        <h5>Investment Sales</h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sub-menu__link" href="#">
+                                    <div class="sub-menu__icon">
+                                        <img src="img/icons/sub-menu-icon-5.svg" alt="">
+                                    </div>
+                                    <div class="sub-menu__text-wrap">
+                                        <h5>1031 Exchange</h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sub-menu__link" href="#">
+                                    <div class="sub-menu__icon">
+                                        <img src="img/icons/sub-menu-icon-6.svg" alt="">
+                                    </div>
+                                    <div class="sub-menu__text-wrap">
+                                        <h5>Sale-Leaseback Advisors</h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sub-menu__link" href="#">
+                                    <div class="sub-menu__icon">
+                                        <img src="img/icons/sub-menu-icon-7.svg" alt="">
+                                    </div>
+                                    <div class="sub-menu__text-wrap">
+                                        <h5>Capital Markets</h5>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu__link">listings</a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu__link">team</a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu__link">careers</a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu__link">contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__burger">
+                <div class="burger-wrap">
+                    <div class="burger" data-activEl="menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<nav class="mobile-menu">
+    <div class="container">
+        <ul class="menu__list">
+            <li class="menu-item-has-children">
+                <a href="#" class="menu__link">
+                     About
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a class="sub-menu__link anchor" href="#network">
+                            <div class="sub-menu__icon">
+                                <img src="img/icons/sub-menu-icon-1.svg" alt="">
+                            </div>
+                            <div class="sub-menu__text-wrap">
+                                <h5>Who We Are</h5>
+                                <p>Professionals Dedicated To Your Experience</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sub-menu__link" href="#">
+                            <div class="sub-menu__icon">
+                                <img src="img/icons/sub-menu-icon-2.svg" alt="">
+                            </div>
+                            <div class="sub-menu__text-wrap">
+                                <h5>Meet the Team</h5>
+                                <p>Get To Know Our Talented Team Members</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sub-menu__link" href="#">
+                            <div class="sub-menu__icon">
+                                <img src="img/icons/sub-menu-icon-3.svg" alt="">
+                            </div>
+                            <div class="sub-menu__text-wrap">
+                                <h5>OUR NEWS</h5>
+                                <p>Sharing The Latest News And Views</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item-has-children">
+                <a href="#" class="menu__link">services</a>
+                <ul class="sub-menu">
+                    <li>
+                        <a class="sub-menu__link" href="#">
+                            <div class="sub-menu__icon">
+                                <img src="img/icons/sub-menu-icon-4.svg" alt="">
+                            </div>
+                            <div class="sub-menu__text-wrap">
+                                <h5>Investment Sales</h5>
+                                <p>Driving Value</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sub-menu__link" href="#">
+                            <div class="sub-menu__icon">
+                                <img src="img/icons/sub-menu-icon-5.svg" alt="">
+                            </div>
+                            <div class="sub-menu__text-wrap">
+                                <h5>1031 Exchange</h5>
+                                <p>Serving Buyers</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sub-menu__link" href="#">
+                            <div class="sub-menu__icon">
+                                <img src="img/icons/sub-menu-icon-6.svg" alt="">
+                            </div>
+                            <div class="sub-menu__text-wrap">
+                                <h5>Sale-Leaseback Advisors</h5>
+                                <p>Facilitating Transactions</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sub-menu__link" href="#">
+                            <div class="sub-menu__icon">
+                                <img src="img/icons/sub-menu-icon-7.svg" alt="">
+                            </div>
+                            <div class="sub-menu__text-wrap">
+                                <h5>Capital Markets</h5>
+                                <p>Offering Competitive Rates</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu__link">listings</a>
+            </li>
+            <li>
+                <a href="#" class="menu__link">team</a>
+            </li>
+            <li>
+                <a href="#" class="menu__link">careers</a>
+            </li>
+            <li>
+                <a href="#" class="menu__link">contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <!-- == // TOP LINE ================== -->
+
+
+    <main class="_page investment-sales-page">
+        <section class="hero _padding-top">
+            <!-- PICTURE -->
+            <div class="hero-bg ibg">
+                <!-- @@includ e('_img.html',{
+    "desk": "",
+    "tablet": "",
+    "mob": ""
+}) -->
+<picture>
+    <source srcset="img/photo/hero-bg-4.jpg" media="(min-width: 992px)">
+    <source srcset="img/photo/hero-bg-3-tablet.jpg" media="(min-width: 576px)">
+    <img   src="img/photo/hero-bg-4-mob.jpg" alt="img">
+</picture>
+            </div>
+
+            <!-- VIDEO -->
+            <!-- <div class="hero-bg ibg">
+				<video poster="img/photo/promo-header-bg.jpg" data-media-mobile="img/test-video-mob.mp4" autoplay muted loop
+					playsinline controlslist="nodownload" crossorigin="anonymous">
+					<source src="img/test-video-desk.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+				</video> 
+			</div> -->
+
+            <!-- VIMEO VIDEO -->
+            <!-- <div class="hero-bg ibg" data-vimeo-poster="img/photo/promo-header-bg.jpg" data-vimeo-id="589884423" data-vimeo-mobile-id="589884750"></div> -->
+
+            <div class="hero__body container">
+                <h1 class="hero__title" data-title-anim>Investment Sales</h1>
+                <div class="hero__text text-content" data-text-anim="">
+                    Driving value by competently pricing assets and negotiating for competitive execution
+                </div>
+            </div>
+        </section>
+
+        <section class="text-block">
+            <div class="text-block__body container text-content text-center" data-text-anim="">
+                <h2 data-title-anim="">Overview</h2>
+                <p>
+                    At SAB Capital, we are experts in structuring bespoke sale-leaseback solutions for companies of all sizes, both investment and sub-investment grade, public and private, and across multiple industries. 
+                </p>
+                <p>
+                    We provide sound investing advice and tailored client solutions focused on sale-leaseback financing, debt and equity placements, and asset acquisitions.
+                </p>
+                <p>
+                    Through our services, we help clients finance new acquisitions, fund growth initiatives, and reinvest capital in their core business activities.
+                </p>
+            </div>
+        </section>
+
+        <section class="box">
+            <div class="box__bg ibg">
+                <!-- @@includ e('_img.html',{
+    "desk": "",
+    "tablet": "",
+    "mob": ""
+}) -->
+<picture>
+    <source srcset="img/photo/box-bg-1.jpg" media="(min-width: 992px)">
+    <source srcset="img/photo/box-bg-1-tablet.jpg" media="(min-width: 576px)">
+    <img   src="img/photo/box-bg-1-mob.jpg" alt="img">
+</picture>
+            </div>
+            <div class="box__body container">
+                <div class="box__text-wrap">
+                    <div class="box__head">
+                        <h2 class="box__title" data-title-anim="">Our Process</h2>
+                    </div>
+                    <ul class="box__list">
+                        <li>
+                            <div class="box__list-num" data-fade-in-anim="">01</div>
+                            <div class="box__list-text-wrap text-content" data-text-anim>
+                                <h4 data-title-anim="">Pre-Launch</h4>
+                                <p>Develop first class offering memoradum with professional mapping and aerial photography to position asset and highlight best attributes. </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box__list-num" data-fade-in-anim="">02</div>
+                            <div class="box__list-text-wrap text-content" data-text-anim>
+                                <h4 data-title-anim>
+                                    Launch
+                                </h4>
+                                <p>
+                                    Bring to market and provide measurable results in a 180 day process-thorough and in-depth marketing reports tracking buyer activity.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box__list-num" data-fade-in-anim="">03</div>
+                            <div class="box__list-text-wrap text-content" data-text-anim>
+                                <h4 data-title-anim>
+                                    Campaign
+                                </h4>
+                                <p>
+                                    Five round marketing process - targeted call campaign, hard mail campaign, email blasts, advertisements, broker engagement, etc.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box__list-num" data-fade-in-anim="">04</div>
+                            <div class="box__list-text-wrap text-content" data-text-anim>
+                                <h4 data-title-anim>
+                                    1031 Capital
+                                </h4>
+                                <p>
+                                    Corralling of 1031 capital - work together with our multi family agents to exclusively manage their clients 1031 exchanges.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box__list-num" data-fade-in-anim="">05</div>
+                            <div class="box__list-text-wrap text-content" data-text-anim>
+                                <h4 data-title-anim>
+                                    Execution
+                                </h4>
+                                <p>
+                                    Transaction management - enforce timelines and encourage communication between all parties of the transaction.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box__list-num" data-fade-in-anim="">06</div>
+                            <div class="box__list-text-wrap text-content" data-text-anim>
+                                <h4 data-title-anim>
+                                    Execution
+                                </h4>
+                                <p>
+                                    Transaction management - enforce timelines and encourage communication between all parties of the transaction.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container cta__body">
+                <h2 class="cta__title" data-title-anim="">SIGN UP TO RECEIVE OUR INVERTORY EMAILS</h2>
+                <h2 class="cta__title-mob" data-title-anim="">let’s connect</h2>
+                <a href="#" class="btn" data-fade-in-anim="">Subscribe</a>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- == FOOTER ================== -->
+    <footer class="footer">
+    <div class="footer__bg ibg">
+        <!-- @@includ e('_img.html',{
+    "desk": "",
+    "tablet": "",
+    "mob": ""
+}) -->
+<picture>
+    <source srcset="img/photo/footer-bg.jpg" media="(min-width: 992px)">
+    <source srcset="img/photo/footer-bg-tablet.jpg" media="(min-width: 576px)">
+    <img   src="img/photo/footer-bg-mob.jpg" alt="img">
+</picture>
+    </div>
+    <div class="container">
+        <div class="footer__logo">
+            <a href="#">
+                <img src="img/logo/logo.svg" alt="">
+            </a>
+        </div>
+        <div class="footer__body">
+            <div class="footer__col footer__col--1">
+                <ul class="social">
+                    <li>
+                        <a href="#">
+                            <img src="img/icons/linkedin.svg" alt="" class="img-svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/icons/instagram.svg" alt="" class="img-svg">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col--2">
+                <div class="footer__col-title">Phone</div>
+                <div class="footer__text text-content">
+                    <p>
+                        <a href="#">646.809.8856</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer__col footer__col--3">
+                <div class="footer__col-title">Address</div>
+                <div class="footer__text text-content">
+                    <p>
+                        21 West 38th Street, Floor 16, <br> New York, NY 10018
+                    </p>
+                </div>
+            </div>
+            <div class="footer__col footer__col--4">
+                <div class="footer__col-title">Privacy Policy</div>
+                <div class="footer__copy">
+                    ©2021 SAB
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- == // FOOTER ================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jQueryScripts.min.js"></script>
+</body>
+
+</html>

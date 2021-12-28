@@ -1,7 +1,7 @@
 (function numberCounterAnim() {
     let counterItems = document.querySelectorAll('[data-number-counter-anim]');
     if (counterItems) {
-        
+
         counterItems.forEach(item => {
             let animation = anime({
                 targets: item,
@@ -24,7 +24,7 @@
                     threshold: 0.7
                 }
             );
-            
+
             window.addEventListener('load', () => {
                 observer.observe(item);
             })
@@ -39,7 +39,7 @@ function wrapWords(el) {
 (function titleAnim() {
     let counterItems = document.querySelectorAll('[data-title-anim]');
     if (counterItems) {
-        
+
 
         counterItems.forEach(item => {
             if (item.children.length) {
@@ -72,7 +72,7 @@ function wrapWords(el) {
                     threshold: 0.7
                 }
             );
-            
+
             window.addEventListener('load', () => {
                 observer.observe(item);
             })
@@ -83,11 +83,19 @@ function wrapWords(el) {
 (function textAnim() {
     let counterItems = document.querySelectorAll('[data-text-anim]');
     if (counterItems) {
-        
+
 
         counterItems.forEach(item => {
             if (item.children.length) {
                 Array.from(item.children).forEach(line => {
+                    if (
+                        line.localName === 'h1' ||
+                        line.localName === 'h2' ||
+                        line.localName === 'h3' ||
+                        line.localName === 'h4' ||
+                        line.localName === 'h5' ||
+                        line.localName === 'h6'
+                    ) return;
                     wrapWords(line)
                 })
             } else {
@@ -101,9 +109,9 @@ function wrapWords(el) {
                 easing: 'easeInOutQuad',
                 autoplay: false,
                 duration: 1000,
-                delay: function(el, i, l) {
+                delay: function (el, i, l) {
                     return i * 10;
-                  },
+                },
             });
             const observer = new IntersectionObserver(
                 entries => {
@@ -118,7 +126,7 @@ function wrapWords(el) {
                     threshold: 0.7
                 }
             );
-            
+
             window.addEventListener('load', () => {
                 observer.observe(item);
             })
@@ -129,7 +137,7 @@ function wrapWords(el) {
 (function fadeIn() {
     let counterItems = document.querySelectorAll('[data-fade-in-anim]');
     if (counterItems) {
-        
+
 
         counterItems.forEach(item => {
 
@@ -154,7 +162,7 @@ function wrapWords(el) {
                     threshold: 0.7
                 }
             );
-            
+
             window.addEventListener('load', () => {
                 observer.observe(item);
             })
@@ -164,7 +172,7 @@ function wrapWords(el) {
 (function imageAnim() {
     let counterItems = document.querySelectorAll('[data-image-anim]');
     if (counterItems) {
-        
+
 
         counterItems.forEach(item => {
 
@@ -189,7 +197,7 @@ function wrapWords(el) {
                     threshold: 0.7
                 }
             );
-            
+
             window.addEventListener('load', () => {
                 observer.observe(item);
             })

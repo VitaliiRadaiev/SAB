@@ -527,6 +527,7 @@ button.btn-default {
 @import "../common/services/services";
 @import "../common/team/team";
 @import "../common/capital-markets-value/capital-markets-value";
+@import "../common/box/box";
 // ==== BLOCKS =====================================================
 
 // ==== PAGES =====================================================
@@ -535,5 +536,7 @@ button.btn-default {
 @import "pages/services";
 @import "pages/sale-leaseback";
 @import "pages/capital-markets";
+@import "pages/investment-sales";
+@import "pages/exchange";
 
 // ==== AND PAGES =====================================================
