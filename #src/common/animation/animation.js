@@ -1,3 +1,19 @@
+function scrollTrigger(el, value, callback) {
+	let triggerPoint = document.documentElement.clientHeight / 100 * (100 - value);
+    const trigger = () => {
+        if(el.getBoundingClientRect().top <= triggerPoint && !el.classList.contains('is-show')) {
+            if(typeof callback === 'function') {
+                callback();
+                el.classList.add('is-show')
+            }
+        }
+    }
+
+    trigger();
+
+    window.addEventListener('scroll', trigger);
+}
+
 (function numberCounterAnim() {
     let counterItems = document.querySelectorAll('[data-number-counter-anim]');
     if (counterItems) {
@@ -11,22 +27,9 @@
                 autoplay: false,
                 duration: 1000
             });
-            const observer = new IntersectionObserver(
-                entries => {
-                    entries.forEach(entry => {
-                        if (entry.intersectionRatio >= 0.7) {
-                            animation.play();
-                            observer.disconnect();
-                        }
-                    });
-                },
-                {
-                    threshold: 0.7
-                }
-            );
 
             window.addEventListener('load', () => {
-                observer.observe(item);
+                scrollTrigger(item, 15, () => {animation.play()})
             })
         })
     }
@@ -44,10 +47,10 @@ function wrapWords(el) {
         counterItems.forEach(item => {
             if (item.children.length) {
                 Array.from(item.children).forEach(line => {
-                    wrapWords(line)
+                    line.innerHTML = `<span class="word">${line.innerText}</span>`;
                 })
             } else {
-                wrapWords(item)
+                item.innerHTML = `<span class="word">${item.innerText}</span>`;
             }
 
 
@@ -59,22 +62,11 @@ function wrapWords(el) {
                 duration: 600,
                 delay: 300,
             });
-            const observer = new IntersectionObserver(
-                entries => {
-                    entries.forEach(entry => {
-                        if (entry.intersectionRatio >= 0.7) {
-                            animation.play();
-                            observer.disconnect();
-                        }
-                    });
-                },
-                {
-                    threshold: 0.7
-                }
-            );
 
             window.addEventListener('load', () => {
-                observer.observe(item);
+                scrollTrigger(item, 15, () => {
+                    setTimeout(() => { animation.play(); }, item.dataset.delay ? item.dataset.delay : 0);
+                })
             })
         })
     }
@@ -84,18 +76,11 @@ function wrapWords(el) {
     let counterItems = document.querySelectorAll('[data-text-anim]');
     if (counterItems) {
 
-
         counterItems.forEach(item => {
             if (item.children.length) {
                 Array.from(item.children).forEach(line => {
-                    if (
-                        line.localName === 'h1' ||
-                        line.localName === 'h2' ||
-                        line.localName === 'h3' ||
-                        line.localName === 'h4' ||
-                        line.localName === 'h5' ||
-                        line.localName === 'h6'
-                    ) return;
+                    if (line.localName !== 'p') return;
+
                     wrapWords(line)
                 })
             } else {
@@ -113,22 +98,11 @@ function wrapWords(el) {
                     return i * 10;
                 },
             });
-            const observer = new IntersectionObserver(
-                entries => {
-                    entries.forEach(entry => {
-                        if (entry.intersectionRatio >= 0.7) {
-                            animation.play();
-                            observer.disconnect();
-                        }
-                    });
-                },
-                {
-                    threshold: 0.7
-                }
-            );
 
             window.addEventListener('load', () => {
-                observer.observe(item);
+                scrollTrigger(item, 15, () => {
+                    setTimeout(() => { animation.play(); }, item.dataset.delay ? item.dataset.delay : 0);
+                })
             })
         })
     }
@@ -149,26 +123,29 @@ function wrapWords(el) {
                 duration: 1000,
                 delay: 300,
             });
-            const observer = new IntersectionObserver(
-                entries => {
-                    entries.forEach(entry => {
-                        if (entry.intersectionRatio >= 0.7) {
-                            animation.play();
-                            observer.disconnect();
-                        }
-                    });
-                },
-                {
-                    threshold: 0.7
-                }
-            );
 
             window.addEventListener('load', () => {
-                observer.observe(item);
+                scrollTrigger(item, 15, () => {
+                    setTimeout(() => { animation.play(); }, item.dataset.delay ? item.dataset.delay : 0);
+                })
+            })
+        })
+    }
+
+    let counterItems2 = document.querySelectorAll('.fadeIn');
+    if (counterItems2) {
+
+
+        counterItems2.forEach(item => {
+            window.addEventListener('load', () => {
+                scrollTrigger(item, 15, () => {
+                    setTimeout(() => { item.classList.add('_active') }, item.dataset.delay ? item.dataset.delay : 0);
+                })
             })
         })
     }
 })();
+
 (function imageAnim() {
     let counterItems = document.querySelectorAll('[data-image-anim]');
     if (counterItems) {
@@ -184,22 +161,11 @@ function wrapWords(el) {
                 duration: 1000,
                 delay: 300,
             });
-            const observer = new IntersectionObserver(
-                entries => {
-                    entries.forEach(entry => {
-                        if (entry.intersectionRatio >= 0.7) {
-                            animation.play();
-                            observer.disconnect();
-                        }
-                    });
-                },
-                {
-                    threshold: 0.7
-                }
-            );
 
             window.addEventListener('load', () => {
-                observer.observe(item);
+                scrollTrigger(item, 15, () => {
+                    setTimeout(() => { animation.play(); }, item.dataset.delay ? item.dataset.delay : 0);
+                })
             })
         })
     }

@@ -172,6 +172,15 @@ h6 {
 	}
 }
 
+.fadeIn {
+	transition: all 1.2s ease 0.3s;
+	opacity: 0;
+
+	&._active {
+		opacity: 1;
+	}
+}
+
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -201,8 +210,6 @@ h2 {
 	@media (max-width: $md2+px) {
 		font-size: 42px;
 	}
-
-
 }
 h3 {
 	font-size: 32px;
@@ -235,7 +242,8 @@ p {
 	margin-bottom: 1.45em;
 }
 
-button, .btn {
+button,
+.btn {
 	display: inline-flex;
 	cursor: pointer;
 	color: $textColorLight;
@@ -251,7 +259,6 @@ button, .btn {
 	font-family: $titleFontFamily;
 	padding: 10px 21px 8px;
 	font-weight: 700;
-
 
 	@media (min-width: 992px) {
 		&:hover {
@@ -273,7 +280,6 @@ button, .btn {
 			}
 		}
 	}
-
 }
 
 .btn-sm {
@@ -291,7 +297,6 @@ button, .btn {
 	font-size: 26px;
 	font-family: $titleFontFamily;
 	padding: 10px 21px 8px;
-
 
 	@media (min-width: 992px) {
 		&:hover {
@@ -348,39 +353,38 @@ button, .btn {
 		flex: 0 0 auto;
 		margin-left: 9px;
 		display: inline-block;
-		transition: all .3s ease;
+		transition: all 0.3s ease;
 	}
 }
 
 .slider-buttons {
-    display: flex;
-    width: 92px;
-    justify-content: space-between;
+	display: flex;
+	width: 92px;
+	justify-content: space-between;
 }
 .slider-button {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    color: #838B98;
-    transition: all .3s ease;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	color: #838b98;
+	transition: all 0.3s ease;
 
-    @media (min-width: 992px) {
-        &:hover {
-            color: $textColor;
-        }
-    }
-    & img, & svg {
-        width: 100%;
-        height: auto;
-    }
+	@media (min-width: 992px) {
+		&:hover {
+			color: $textColor;
+		}
+	}
+	& img,
+	& svg {
+		width: 100%;
+		height: auto;
+	}
 
-    &.swiper-button-disabled {
-        cursor: auto;
-        opacity: 0.5;
-    }
-
+	&.swiper-button-disabled {
+		cursor: auto;
+		opacity: 0.5;
+	}
 }
-
 
 .text-center {
 	text-align: center;
@@ -427,7 +431,7 @@ button, .btn {
 }
 
 .grey-bg {
-	background: rgba(#F5F7F8, 0.7);
+	background: rgba(#f5f7f8, 0.7);
 }
 // === title ========================================================================
 .title-1 {
@@ -464,7 +468,43 @@ button.btn-default {
 
 // === and btn ========================================================================
 
+.search-wrap {
+	position: relative;
+
+	& .search-icon {
+		position: absolute;
+		display: inline-block;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 20px;
+	}
+
+	& input {
+		padding-left: 49px;
+	}
+}
+
 .input {
+	display: flex;
+	align-items: center;
+	height: 60px;
+	background-color: #fff;
+	width: 100%;
+	border: 1px solid #dcdcdc;
+	border-radius: 6px;
+	padding: 14px 16px;
+	font-size: 16px;
+	line-height: 21px;
+	transition: all 0.3s ease;
+	color: $textColor;
+
+	&:focus {
+		border: 1px solid #9b9b9b;
+	}
+
+	@media (max-width: $md3+px) {
+		height: 51px;
+	}
 }
 
 .textarea {
@@ -493,12 +533,12 @@ button.btn-default {
 
 	& p {
 		font-size: 1em;
-		line-height: inherit
+		line-height: inherit;
 	}
 
 	& a {
 		color: inherit;
-		transition: all .3s ease;
+		transition: all 0.3s ease;
 
 		&:hover {
 			color: $mainColor;
@@ -512,6 +552,31 @@ button.btn-default {
 	}
 
 	& figure {
+	}
+
+	& q {
+		display: block;
+		margin-bottom: 1.42em;
+
+		&:before,
+		&:after {
+			display: none;
+		}
+
+		& h3 {
+			margin-bottom: 12px;
+		}
+
+		& rb {
+			font-weight: bold;
+			font-size: 22px;
+			line-height: 22px;
+			color: #838b98;
+			text-transform: uppercase;
+			font-style: normal;
+			margin-bottom: 0;
+			font-family: $titleFontFamily;
+		}
 	}
 }
 // === and TEXT CONTETN BLOCK ========================================================================
@@ -528,6 +593,7 @@ button.btn-default {
 @import "../common/team/team";
 @import "../common/capital-markets-value/capital-markets-value";
 @import "../common/box/box";
+@import "../common/team-detail/team-detail";
 // ==== BLOCKS =====================================================
 
 // ==== PAGES =====================================================
@@ -538,5 +604,8 @@ button.btn-default {
 @import "pages/capital-markets";
 @import "pages/investment-sales";
 @import "pages/exchange";
+@import "pages/team";
+@import "pages/team-single";
+@import "pages/careers";
 
 // ==== AND PAGES =====================================================

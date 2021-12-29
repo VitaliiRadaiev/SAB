@@ -225,3 +225,4 @@ function trimString(el, stringLength = 0) {
 	if(str.length <= stringLength) return;
 	el.innerText = [...str].slice(0, stringLength).join('') + '...';
 }
+

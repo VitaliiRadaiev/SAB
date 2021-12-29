@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>New Project</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		body.is-load ._preload-body {
+			height: 0;
+			overflow: hidden;
+		}
+
+		body.is-load ._preload-body:before {
+			display: none;
+		}
+		
+		._preload-body {
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			transition: all .6s ease .2s;
+		}
+
+		._preload-body:before {
+			position: absolute;
+			content: '';
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			border: 4px solid #6e6e6e;
+			border-right: 4px solid #fff;
+			transform: translate(-50%, -50%);
+			animation: preloadBody 2s linear infinite;
+		}
+
+		@keyframes preloadBody {
+			from {
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+	
+<script src="js/vendors.js"></script>
+<script src="js/app.js"></script>
+<!-- <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+defer
+></script> -->
+</head>
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    <header class="header">
+    <div class="container">
+        <div class="header__body">
+            <div class="header__logo logo">
+                <a href="#">
+                    <img src="img/logo/logo.svg" alt="logo">
+                </a>
+            </div>
+            <nav class="header__menu menu">
+                <ul class="menu__list">
+                    <li class="menu-item-has-children">
+                        <a href="#" class="menu__link">
+                             About
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="sub-menu__link anchor" href="#network">
+                                    <div class="sub-menu__icon">
+                                        <img src="img/icons/sub-menu-icon-1.svg" alt="">
+                                    </div>
+                                    <div class="sub-menu__text-wrap">
+                                        <h5>Who We Are</h5>
+                                        <p>Professionals Dedicated To Your Experience</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sub-menu__link" href="#">
+                                    <div class="sub-menu__icon">
+                                        <img src="img/icons/sub-menu-icon-2.svg" alt="">
+                                    </div>
+                                    <div class="sub-menu__text-wrap">
+                                        <h5>Meet the Team</h5>
+                                        <p>Get To Know Our Talented Team Members</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sub-menu__link" href="#">
+                                    <div class="sub-menu__icon">
+                                        <img src="img/icons/sub-menu-icon-3.svg" alt="">
+                                    </div>
+                                    <div class="sub-menu__text-wrap">
+                                        <h5>OUR NEWS</h5>
+                                        <p>Sharing The Latest News And Views</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu__link">services</a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="sub-menu__link" href="#">
+                                    <div class="sub-menu__icon">
+                                        <img src="img/icons/sub-menu-icon-4.svg" alt="">
+                                    </div>
+                                    <div class="sub-menu__text-wrap">
+                                        <h5>Investment Sales</h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sub-menu__link" href="#">
+                                    <div class="sub-menu__icon">
+                                        <img src="img/icons/sub-menu-icon-5.svg" alt="">
+                                    </div>
+                                    <div class="sub-menu__text-wrap">
+                                        <h5>1031 Exchange</h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sub-menu__link" href="#">
+                                    <div class="sub-menu__icon">
+                                        <img src="img/icons/sub-menu-icon-6.svg" alt="">
+                                    </div>
+                                    <div class="sub-menu__text-wrap">
+                                        <h5>Sale-Leaseback Advisors</h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sub-menu__link" href="#">
+                                    <div class="sub-menu__icon">
+                                        <img src="img/icons/sub-menu-icon-7.svg" alt="">
+                                    </div>
+                                    <div class="sub-menu__text-wrap">
+                                        <h5>Capital Markets</h5>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu__link">listings</a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu__link">team</a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu__link">careers</a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu__link">contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__burger">
+                <div class="burger-wrap">
+                    <div class="burger" data-activEl="menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<nav class="mobile-menu">
+    <div class="container">
+        <ul class="menu__list">
+            <li class="menu-item-has-children">
+                <a href="#" class="menu__link">
+                     About
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a class="sub-menu__link anchor" href="#network">
+                            <div class="sub-menu__icon">
+                                <img src="img/icons/sub-menu-icon-1.svg" alt="">
+                            </div>
+                            <div class="sub-menu__text-wrap">
+                                <h5>Who We Are</h5>
+                                <p>Professionals Dedicated To Your Experience</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sub-menu__link" href="#">
+                            <div class="sub-menu__icon">
+                                <img src="img/icons/sub-menu-icon-2.svg" alt="">
+                            </div>
+                            <div class="sub-menu__text-wrap">
+                                <h5>Meet the Team</h5>
+                                <p>Get To Know Our Talented Team Members</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sub-menu__link" href="#">
+                            <div class="sub-menu__icon">
+                                <img src="img/icons/sub-menu-icon-3.svg" alt="">
+                            </div>
+                            <div class="sub-menu__text-wrap">
+                                <h5>OUR NEWS</h5>
+                                <p>Sharing The Latest News And Views</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item-has-children">
+                <a href="#" class="menu__link">services</a>
+                <ul class="sub-menu">
+                    <li>
+                        <a class="sub-menu__link" href="#">
+                            <div class="sub-menu__icon">
+                                <img src="img/icons/sub-menu-icon-4.svg" alt="">
+                            </div>
+                            <div class="sub-menu__text-wrap">
+                                <h5>Investment Sales</h5>
+                                <p>Driving Value</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sub-menu__link" href="#">
+                            <div class="sub-menu__icon">
+                                <img src="img/icons/sub-menu-icon-5.svg" alt="">
+                            </div>
+                            <div class="sub-menu__text-wrap">
+                                <h5>1031 Exchange</h5>
+                                <p>Serving Buyers</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sub-menu__link" href="#">
+                            <div class="sub-menu__icon">
+                                <img src="img/icons/sub-menu-icon-6.svg" alt="">
+                            </div>
+                            <div class="sub-menu__text-wrap">
+                                <h5>Sale-Leaseback Advisors</h5>
+                                <p>Facilitating Transactions</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sub-menu__link" href="#">
+                            <div class="sub-menu__icon">
+                                <img src="img/icons/sub-menu-icon-7.svg" alt="">
+                            </div>
+                            <div class="sub-menu__text-wrap">
+                                <h5>Capital Markets</h5>
+                                <p>Offering Competitive Rates</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu__link">listings</a>
+            </li>
+            <li>
+                <a href="#" class="menu__link">team</a>
+            </li>
+            <li>
+                <a href="#" class="menu__link">careers</a>
+            </li>
+            <li>
+                <a href="#" class="menu__link">contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <!-- == // TOP LINE ================== -->
+
+
+    <main class="_page team-page">
+        <section class="hero _padding-top">
+            <!-- PICTURE -->
+            <div class="hero-bg ibg">
+                <!-- @@includ e('_img.html',{
+    "desk": "",
+    "tablet": "",
+    "mob": ""
+}) -->
+<picture>
+    <source srcset="img/photo/hero-bg-6.jpg" media="(min-width: 992px)">
+    <source srcset="img/photo/hero-bg-6-tablet.jpg" media="(min-width: 576px)">
+    <img   src="img/photo/hero-bg-6-mob.jpg" alt="img">
+</picture>
+            </div>
+
+            <!-- VIDEO -->
+            <!-- <div class="hero-bg ibg">
+				<video poster="img/photo/promo-header-bg.jpg" data-media-mobile="img/test-video-mob.mp4" autoplay muted loop
+					playsinline controlslist="nodownload" crossorigin="anonymous">
+					<source src="img/test-video-desk.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+				</video> 
+			</div> -->
+
+            <!-- VIMEO VIDEO -->
+            <!-- <div class="hero-bg ibg" data-vimeo-poster="img/photo/promo-header-bg.jpg" data-vimeo-id="589884423" data-vimeo-mobile-id="589884750"></div> -->
+
+            <div class="hero__body container">
+                <h1 class="hero__title" data-title-anim>Our Team</h1>
+                <div class="hero__text text-content" data-text-anim="" data-delay="700">
+                    Meet our visionaries whose combined experience, insight, innovation, and dedication to our core principles provide unparalleled value to our clients.
+                </div>
+            </div>
+        </section>
+
+        <section class="team team--decor">
+            <div class="container">
+                <form action="" class="team__filter team-filter">
+                    <div class="team-filter__item-1">
+                        <div class="search-wrap">
+                            <input class="input" type="text" placeholder="Search for a professional by name">
+                        </div>
+                    </div>
+                    <div class="team-filter__item-2">
+                        <div class="select-wrap">
+                            <select name="" class="_select">
+                                <option value="1" selected>View All</option>
+                                <option value="2">Investment Sales</option>
+                                <option value="3">Operations </option>
+                                <option value="4">Private Equity</option>
+                                <option value="5">1031</option>
+                                <option value="6">Investment Sales</option>
+                                <option value="7">Operations </option>
+                                <option value="8">Private Equity</option>
+                                <option value="9">1031</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="team-filter__item-3">
+                        <button type="submit">Search</button>
+                    </div>
+                </form>
+                <ul class="team__list">
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-1.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Jack Arevalo
+                            </div>
+                            <div class="team-card__position">
+                                CAPITAL MARKETS ANALYST
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-2.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Stephen Asihene
+                            </div>
+                            <div class="team-card__position">
+                                INVESTMENT SALES ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-3.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Justin Audette
+                            </div>
+                            <div class="team-card__position">
+                                FINANCIAL ANALYST
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-4.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Alex BEHAR
+                            </div>
+                            <div class="team-card__position">
+                                CAPITAL MARKETS ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-5.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                David Bezalel
+                            </div>
+                            <div class="team-card__position">
+                                SALE LEASEBACK ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-6.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Dan Corcoran
+                            </div>
+                            <div class="team-card__position">
+                                MANAGING PARTNER
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-7.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Greg DiGioia
+                            </div>
+                            <div class="team-card__position">
+                                INVESTMENT SALES ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-8.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Harshul Ganjawala
+                            </div>
+                            <div class="team-card__position">
+                                CAPITAL MARKETS ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-9.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Dave Gollenberg 
+                            </div>
+                            <div class="team-card__position">
+                                INVESTMENT SALES ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-10.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Michael Grunberg
+                            </div>
+                            <div class="team-card__position">
+                                SENIOR INVESTMENT SALES ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-11.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Doug Hervey
+                            </div>
+                            <div class="team-card__position">
+                                MARKETING COORDINATOR
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-12.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Bryan Huber
+                            </div>
+                            <div class="team-card__position">
+                                SALE LEASEBACK DIRECTOR
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-13.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Miguel Jauregui
+                            </div>
+                            <div class="team-card__position">
+                                CAPITAL MARKETS DIRECTOR
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-14.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Martin Jensen
+                            </div>
+                            <div class="team-card__position">
+                                INVESTMENT SALES ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-15.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Jordan Koeppel
+                            </div>
+                            <div class="team-card__position">
+                                SENIOR INVESTMENT SALES ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-16.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Jacob Luft
+                            </div>
+                            <div class="team-card__position">
+                                1031 INVESTMENT SALES ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-17.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Jenna Lustbader
+                            </div>
+                            <div class="team-card__position">
+                                INVESTMENT SALES ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-18.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Paola Manchanda
+                            </div>
+                            <div class="team-card__position">
+                                MARKETING MANAGER
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-19.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Ryan Morris
+                            </div>
+                            <div class="team-card__position">
+                                SALE LEASEBACK DIRECTOR
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-20.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Dominic Padula
+                            </div>
+                            <div class="team-card__position">
+                                SENIOR INVESTMENT SALES ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-21.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Mark Pomella
+                            </div>
+                            <div class="team-card__position">
+                                SENIOR INVESTMENT SALES ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-22.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Alex Rakoff
+                            </div>
+                            <div class="team-card__position">
+                                INVESTMENT SALES ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-23.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Preet Sabharwal 
+                            </div>
+                            <div class="team-card__position">
+                                MANAGING PARTNER
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-24.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Michael Scali
+                            </div>
+                            <div class="team-card__position">
+                                SAB 1031 DIRECTOR
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-25.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Michael Soleimani
+                            </div>
+                            <div class="team-card__position">
+                                MANAGING PARTNER
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-26.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Laura Syed 
+                            </div>
+                            <div class="team-card__position">
+                                OPERATIONS DIRECTOR
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-27.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Nahyme Valencia-Fernandez
+                            </div>
+                            <div class="team-card__position">
+                                CAPITAL MARKETS ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-28.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Zach Weiss
+                            </div>
+                            <div class="team-card__position">
+                                MANAGING PARTNER
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="team-card fadeIn">
+                            <div class="team-card__photo ibg">
+                                <img src="img/photo/team-list-photo-29.jpg" alt="">
+                            </div>
+                            <div class="team-card__name">
+                                Jordan Yarosh
+                            </div>
+                            <div class="team-card__position">
+                                CAPITAL MARKETS ASSOCIATE
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="bottom-btn-wrap text-center">
+                    <a href="#" class="btn btn--light">Careers</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container cta__body">
+                <h2 class="cta__title" data-title-anim="">Let's Start a Discussion</h2>
+                <h2 class="cta__title-mob" data-title-anim="">let’s connect</h2>
+                <a href="#" class="btn" data-fade-in-anim="">Subscribe</a>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- == FOOTER ================== -->
+    <footer class="footer">
+    <div class="footer__bg ibg">
+        <!-- @@includ e('_img.html',{
+    "desk": "",
+    "tablet": "",
+    "mob": ""
+}) -->
+<picture>
+    <source srcset="img/photo/footer-bg.jpg" media="(min-width: 992px)">
+    <source srcset="img/photo/footer-bg-tablet.jpg" media="(min-width: 576px)">
+    <img   src="img/photo/footer-bg-mob.jpg" alt="img">
+</picture>
+    </div>
+    <div class="container">
+        <div class="footer__logo">
+            <a href="#">
+                <img src="img/logo/logo.svg" alt="">
+            </a>
+        </div>
+        <div class="footer__body">
+            <div class="footer__col footer__col--1">
+                <ul class="social">
+                    <li>
+                        <a href="#">
+                            <img src="img/icons/linkedin.svg" alt="" class="img-svg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="img/icons/instagram.svg" alt="" class="img-svg">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col--2">
+                <div class="footer__col-title">Phone</div>
+                <div class="footer__text text-content">
+                    <p>
+                        <a href="#">646.809.8856</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer__col footer__col--3">
+                <div class="footer__col-title">Address</div>
+                <div class="footer__text text-content">
+                    <p>
+                        21 West 38th Street, Floor 16, <br> New York, NY 10018
+                    </p>
+                </div>
+            </div>
+            <div class="footer__col footer__col--4">
+                <div class="footer__col-title">Privacy Policy</div>
+                <div class="footer__copy">
+                    ©2021 SAB
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- == // FOOTER ================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jQueryScripts.min.js"></script>
+</body>
+
+</html>

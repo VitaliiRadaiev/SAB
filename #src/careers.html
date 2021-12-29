@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "New Project"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    @@include('common/header/_header.html',{})
+    <!-- == // TOP LINE ================== -->
+
+
+    <main class="_page careers-page">
+        <section class="hero _padding-top">
+            <!-- PICTURE -->
+            <div class="hero-bg ibg">
+                @@include('_img.html',{
+                "desk": "img/photo/hero-bg-7.jpg",
+                "tablet": "img/photo/hero-bg-7-tablet.jpg",
+                "mob": "img/photo/hero-bg-7-mob.jpg"
+                })
+            </div>
+
+            <!-- VIDEO -->
+            <!-- <div class="hero-bg ibg">
+				<video poster="img/photo/promo-header-bg.jpg" data-media-mobile="img/test-video-mob.mp4" autoplay muted loop
+					playsinline controlslist="nodownload" crossorigin="anonymous">
+					<source src="img/test-video-desk.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+				</video> 
+			</div> -->
+
+            <!-- VIMEO VIDEO -->
+            <!-- <div class="hero-bg ibg" data-vimeo-poster="img/photo/promo-header-bg.jpg" data-vimeo-id="589884423" data-vimeo-mobile-id="589884750"></div> -->
+
+            <div class="hero__body container">
+                <h1 class="hero__title" data-title-anim>Careers</h1>
+                <div class="hero__text text-content" data-text-anim="" data-delay="700">
+                    We empower you to take your career where you want it to go.
+                </div>
+            </div>
+        </section>
+
+        <section class="careers">
+            <div class="careers__body container">
+                <ul class="careers__list">
+                    <li>
+                        <h2 class="careers__list-title" data-title-anim="">Senior Transaction Coordinator</h2>
+                        <a href="#" class="btn-sm btn-sm--light" data-fade-in-anim="">view</a>
+                    </li>
+                    <li>
+                        <h2 class="careers__list-title" data-title-anim="">Real Estate Agent / Sales Associate</h2>
+                        <a href="#" class="btn-sm btn-sm--light" data-fade-in-anim="">view</a>
+                    </li>
+                    <li>
+                        <h2 class="careers__list-title" data-title-anim="">Senior Staff Accountant</h2>
+                        <a href="#" class="btn-sm btn-sm--light" data-fade-in-anim="">view</a>
+                    </li>
+                    <li>
+                        <h2 class="careers__list-title" data-title-anim="">Senior FP&A Analyst</h2>
+                        <a href="#" class="btn-sm btn-sm--light" data-fade-in-anim="">view</a>
+                    </li>
+                    <li>
+                        <h2 class="careers__list-title" data-title-anim="">Real Estate Agent / Sales Associate</h2>
+                        <a href="#" class="btn-sm btn-sm--light" data-fade-in-anim="">view</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container cta__body">
+                <h2 class="cta__title" data-title-anim="">LET’S CONNECT</h2>
+                <h2 class="cta__title-mob" data-title-anim="">let’s connect</h2>
+                <a href="#" class="btn" data-fade-in-anim="">Subscribe</a>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

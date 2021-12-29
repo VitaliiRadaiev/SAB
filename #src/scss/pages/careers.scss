@@ -1,0 +1,59 @@
+.careers {
+    padding: 77px 0 112px;
+
+    @media (max-width: $md2+px) {
+        padding: 25px 0 60px;
+    }
+
+    @media (max-width: $md4+px) {
+        padding: 10px 0 0px;
+    }
+
+    &__body {
+        @media (min-width: 992px) {
+            &.container {
+                padding-left: 55px;
+                padding-right: 55px;
+            }
+        }
+    }
+
+    &__list {
+        & > li {
+            border-bottom: 1px solid $mainColor;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 37px 13px 24px 13px;
+
+            @media (max-width: $md2+px) {
+                padding: 36px 0px 29px;
+            }
+
+            @media (max-width: $md4+px) {
+                flex-direction: column;
+                margin: 0 -23px;
+                padding: 31px 23px 32px;
+            }
+
+            & .btn-sm {
+                flex: 0 0 auto;
+            }
+        }
+    }
+
+    &__list-title {
+        margin-right: 25px;
+        margin-bottom: 0;
+
+        @media (max-width: $md3+px) {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: $md4+px) {
+            text-align: center;
+            margin-right: 0;
+        }
+    }
+}
