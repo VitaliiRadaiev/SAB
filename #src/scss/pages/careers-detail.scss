@@ -1,0 +1,155 @@
+.careers-detail {
+    padding: 81px 0 83px;
+
+    @media (max-width: $md2+px) {
+        padding:  50px 0 60px;
+    }
+
+    @media (max-width: $md3+px) {
+        padding: 40px 0 40px;
+    }
+
+    &__body {
+        display: flex;
+
+        @media (max-width: $md2+px) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__col-1 {
+        @media (min-width: 992px) {
+            flex: 0 0 276px;
+            margin-right: 33px;    
+        }
+
+        @media (max-width: $md2+px) {
+            padding-top: 50px;
+        }
+        @media (max-width: $md3+px) {
+            padding-top: 40px;
+        }
+    }
+
+    &__col-2 {
+        @media (min-width: 992px) {
+            flex: 1 1 auto;
+        }
+
+        @media (max-width: $md2+px) {
+            padding-bottom: 50px;
+            position: relative;
+
+            &:before {
+                position: absolute;
+                content: '';
+                left: 50%;
+                bottom: 0;
+                height: 1px;
+                width: 100vw;
+                background-color: $mainColor;
+                transform: translateX(-50%);
+            }
+        }
+        @media (max-width: $md3+px) {
+            padding-bottom: 40px;
+        }
+    }
+}
+
+.aside-nav {
+    @media (min-width: 992px) {
+        transform: translateX(10px);
+    }
+
+    &__title {
+        margin-bottom: 30px;
+    }
+
+    &__row {
+        margin-bottom: 28px;
+    }
+
+    &__row-title {
+        margin-bottom: 2px;
+    }
+
+    &__list {
+        font-size: 16px;
+        line-height: 120%;
+
+        & a {
+            color: #364756;
+            display: block;
+            width: 100%;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            padding: 8px 14px 7px;
+            margin-left: -14px;
+            &.active {
+                background: #f1f1f1;
+            }
+
+            @media (min-width: 992px) {
+                &:hover:not(.active) {
+                    color: $mainColor;
+                }
+            }
+        }
+    }
+}
+
+.careers-article {
+    &__head {
+
+        @media (min-width: 992px) {
+            display: flex;
+            align-items: flex-start;    
+        }
+
+        & .btn-sm {
+            margin-bottom: 28px;
+        }
+    }
+
+    &__head-col-1 {
+        flex: 1 1 auto;
+        
+        @media (min-width: 992px) {
+            margin-right: 25px;
+        }
+    }
+
+    &__head-col-2 {
+        flex: 0 0 auto;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+
+        @media (max-width: $md3+px) {
+            margin-right: -2px;
+        }
+    }
+
+    &__info {
+        font-size: 18px;
+        line-height: 23px;
+        margin-bottom: 18px;
+        color: #8C8C8C;
+    }
+
+    &__text {
+        max-width: 854px;
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: $md3+px) {
+            &.text-content {
+                font-size: 16px;
+            }
+        }
+    }
+}

@@ -297,7 +297,7 @@ button,
 	font-size: 26px;
 	font-family: $titleFontFamily;
 	padding: 10px 21px 8px;
-
+	font-weight: 700;
 	@media (min-width: 992px) {
 		&:hover {
 			background-color: $textColorDark;
@@ -607,5 +607,6 @@ button.btn-default {
 @import "pages/team";
 @import "pages/team-single";
 @import "pages/careers";
+@import "pages/careers-detail";
 
 // ==== AND PAGES =====================================================
