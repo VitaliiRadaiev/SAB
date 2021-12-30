@@ -23,6 +23,10 @@
             border-top: 1px solid #c4c4c4;
         }
 
+        & a {
+            color: $textColor;
+        }
+
         @media (min-width: 992px) {
             &:hover:not(.active) {
                 & .services__item-title {
@@ -56,16 +60,32 @@
             & .services__item-icon {
                 top: 74px;
                 & svg {
-                    fill: $textColorLight !important;
+                    transition: all .3s ease;
 
                     & circle {
                         stroke: $textColorLight;
+                    }
+
+                    & path {
+                        fill: $textColorLight;
                     }
           
                 }
 
                 @media (max-width: $md4+px) {
                     margin-top: 10px;
+                }
+
+                @media (min-width: 992px) {
+                    &:hover {
+                        & svg {
+                            fill: $textColorLight !important;
+
+                            & path {
+                                fill: $textColorDark;
+                            }
+                        }
+                    }
                 }
             }
 

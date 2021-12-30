@@ -552,11 +552,12 @@ function selects_update_all() {
 let inputs = document.querySelectorAll('input');
 inputs_init(inputs);
 
+
 function inputs_init(inputs) {
 	if (inputs.length > 0) {
 		for (let index = 0; index < inputs.length; index++) {
 			const input = inputs[index];
-
+			
 			if (input.classList.contains('_mask')) {
 				//'+7(999) 999 9999'
 				//'+38(999) 999 9999'
@@ -564,6 +565,18 @@ function inputs_init(inputs) {
 				let maskValue = input.dataset.mask;
 				input.classList.add('_mask');
 				Inputmask('+1(999) 999 9999', {
+					//"placeholder": '',
+					clearIncomplete: true,
+					clearMaskOnLostFocus: true,
+					onincomplete: function () {
+						//input_clear_mask(input, input_g_value);
+					}
+				}).mask(input);
+			}
+			if (input.classList.contains('_digital')) {
+				console.log('test');
+
+				Inputmask('9{*}', {
 					//"placeholder": '',
 					clearIncomplete: true,
 					clearMaskOnLostFocus: true,
@@ -913,13 +926,21 @@ if(servicesList) {
     let items = servicesList.querySelectorAll('.services__item');
     if(items.length) {
         items.forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('active');
+            item.addEventListener('mouseenter', () => {
+                item.classList.add('active');
 
-                items.forEach(i => {
-                    if(i === item) return;
-                    i.classList.remove('active');
-                })
+                // items.forEach(i => {
+                //     if(i === item) return;
+                //     i.classList.remove('active');
+                // })
+            })
+            item.addEventListener('mouseleave', () => {
+                item.classList.remove('active');
+
+                // items.forEach(i => {
+                //     if(i === item) return;
+                //     i.classList.remove('active');
+                // })
             })
         })
     }

@@ -3,13 +3,21 @@ if(servicesList) {
     let items = servicesList.querySelectorAll('.services__item');
     if(items.length) {
         items.forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('active');
+            item.addEventListener('mouseenter', () => {
+                item.classList.add('active');
 
-                items.forEach(i => {
-                    if(i === item) return;
-                    i.classList.remove('active');
-                })
+                // items.forEach(i => {
+                //     if(i === item) return;
+                //     i.classList.remove('active');
+                // })
+            })
+            item.addEventListener('mouseleave', () => {
+                item.classList.remove('active');
+
+                // items.forEach(i => {
+                //     if(i === item) return;
+                //     i.classList.remove('active');
+                // })
             })
         })
     }

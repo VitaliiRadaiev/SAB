@@ -1984,6 +1984,32 @@ button.btn--light,
   border: 1px solid #9b9b9b;
 }
 
+.textarea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 150px;
+  background-color: #fff;
+  width: 100%;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  padding: 14px 16px;
+  font-size: 16px;
+  line-height: 21px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #51555B;
+  resize: none;
+}
+
+.textarea:focus {
+  border: 1px solid #9b9b9b;
+}
+
 .text-content {
   font-size: 20px;
   line-height: 150%;
@@ -2701,6 +2727,10 @@ button.btn--light,
   border-top: 1px solid #c4c4c4;
 }
 
+.services__item a {
+  color: #51555B;
+}
+
 .services__item.active {
   min-height: 416px;
 }
@@ -2714,11 +2744,17 @@ button.btn--light,
 }
 
 .services__item.active .services__item-icon svg {
-  fill: #fff !important;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .services__item.active .services__item-icon svg circle {
   stroke: #fff;
+}
+
+.services__item.active .services__item-icon svg path {
+  fill: #fff;
 }
 
 .services__item.active .services__item-body {
@@ -3956,6 +3992,75 @@ button.btn--light,
   margin-bottom: 0;
 }
 
+.contact {
+  padding: 58px 0 137px;
+}
+
+.contact-list__icon {
+  text-align: center;
+}
+
+.contact-list__icon img {
+  display: inline-block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.contact-list__text-wrap {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.contact-list__title {
+  margin-bottom: 4px;
+}
+
+.contact-list__text {
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.contact-list__text p {
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.contact-list__text a {
+  color: #51555B;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.contact-form__ietems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact-form__item {
+  margin-bottom: 16px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+}
+
+.contact-form__item button {
+  width: 100%;
+}
+
+.map {
+  height: 430px;
+}
+
 @media (min-width: 576px) {
   .mobile-menu > .container {
     padding-left: 42px;
@@ -4035,6 +4140,12 @@ button.btn--light,
   .achievements__list-text {
     white-space: nowrap;
     text-transform: uppercase;
+  }
+
+  .contact-form__item.half {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 calc(50% - 12px);
+            flex: 0 1 calc(50% - 12px);
   }
 }
 
@@ -4135,6 +4246,14 @@ button.btn--light,
 
   .services__item:hover:not(.active) .services__item-title {
     color: #446FA0;
+  }
+
+  .services__item.active .services__item-icon:hover svg {
+    fill: #fff !important;
+  }
+
+  .services__item.active .services__item-icon:hover svg path {
+    fill: #223C60;
   }
 
   .team.slider-is-empty .team__title {
@@ -4273,12 +4392,72 @@ button.btn--light,
   .careers-article__head-col-1 {
     margin-right: 25px;
   }
+
+  .contact__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .contact__col-1 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 350px;
+            flex: 0 0 350px;
+    margin-right: 35px;
+    padding-top: 20px;
+  }
+
+  .contact__col-2 {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    max-width: 620px;
+  }
+
+  .contact-list > li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .contact-list > li:not(:last-child) {
+    margin-bottom: 109px;
+  }
+
+  .contact-list__icon {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 44px;
+            flex: 0 0 44px;
+    margin-right: 28px;
+  }
+
+  .contact-list__text a:hover {
+    color: #446FA0;
+  }
 }
 
 @media (min-width: 1268px) {
   .segments__body.container {
     padding-left: 53px;
     padding-right: 53px;
+  }
+
+  .contact__col-1 {
+    -webkit-transform: translateX(22px);
+        -ms-transform: translateX(22px);
+            transform: translateX(22px);
+  }
+
+  .contact__col-2 {
+    -webkit-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+            transform: translateX(-20px);
   }
 }
 
@@ -4720,6 +4899,37 @@ button.btn--light,
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
   }
+
+  .contact {
+    padding: 68px 0 40px;
+  }
+
+  .contact-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 65px;
+  }
+
+  .contact-list > li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 33.3333%;
+            flex: 0 1 33.3333%;
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .contact-list__icon {
+    margin-bottom: 33px;
+  }
+
+  .contact-form__item {
+    margin-bottom: 21px;
+  }
+
+  .map {
+    height: 450px;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -5158,6 +5368,40 @@ button.btn--light,
 
   .careers-article__text.text-content {
     font-size: 16px;
+  }
+
+  .contact {
+    padding: 36px 0 35px;
+  }
+
+  .contact-list {
+    display: block;
+    margin-bottom: 51px;
+  }
+
+  .contact-list > li:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  .contact-list__icon {
+    margin-bottom: 16px;
+  }
+
+  .contact-list__title {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+
+  .contact-form__item {
+    margin-bottom: 15px;
+  }
+
+  .contact-form__item .input {
+    height: 60px;
+  }
+
+  .contact-form__item .textarea {
+    height: 160px;
   }
 }
 

@@ -508,6 +508,23 @@ button.btn-default {
 }
 
 .textarea {
+	display: flex;
+	align-items: center;
+	height: 150px;
+	background-color: #fff;
+	width: 100%;
+	border: 1px solid #dcdcdc;
+	border-radius: 6px;
+	padding: 14px 16px;
+	font-size: 16px;
+	line-height: 21px;
+	transition: all 0.3s ease;
+	color: $textColor;
+	resize: none;
+
+	&:focus {
+		border: 1px solid #9b9b9b;
+	}
 }
 
 .link {
@@ -608,5 +625,6 @@ button.btn-default {
 @import "pages/team-single";
 @import "pages/careers";
 @import "pages/careers-detail";
+@import "pages/contact";
 
 // ==== AND PAGES =====================================================

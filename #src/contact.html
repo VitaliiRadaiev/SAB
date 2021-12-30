@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "New Project"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    @@include('common/header/_header.html',{})
+    <!-- == // TOP LINE ================== -->
+
+
+    <main class="_page contact-page">
+        <section class="hero _padding-top">
+            <!-- PICTURE -->
+            <div class="hero-bg ibg">
+                @@include('_img.html',{
+                "desk": "img/photo/hero-bg-9.jpg",
+                "tablet": "img/photo/hero-bg-9-tablet.jpg",
+                "mob": "img/photo/hero-bg-9-mob.jpg"
+                })
+            </div>
+
+            <!-- VIDEO -->
+            <!-- <div class="hero-bg ibg">
+				<video poster="img/photo/promo-header-bg.jpg" data-media-mobile="img/test-video-mob.mp4" autoplay muted loop
+					playsinline controlslist="nodownload" crossorigin="anonymous">
+					<source src="img/test-video-desk.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+				</video> 
+			</div> -->
+
+            <!-- VIMEO VIDEO -->
+            <!-- <div class="hero-bg ibg" data-vimeo-poster="img/photo/promo-header-bg.jpg" data-vimeo-id="589884423" data-vimeo-mobile-id="589884750"></div> -->
+
+            <div class="hero__body container">
+                <h1 class="hero__title" data-title-anim>GET IN TOUCH</h1>
+                <div class="hero__text text-content" data-text-anim="" data-delay="700">
+                    For more information about SAB, or to speak to one of our agents, please fill out the form below.
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="contact__body container">
+                <div class="contact__col-1">
+                    <ul class="contact-list">
+                        <li>
+                            <div class="contact-list__icon">
+                                <img src="img/icons/contact-icon-1.svg" alt="">
+                            </div>
+                            <div class="contact-list__text-wrap">
+                                <h4 class="contact-list__title">Phone</h4>
+                                <div class="contact-list__text">
+                                    <a href="tel:6468098856">646.809.8856</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-list__icon">
+                                <img src="img/icons/contact-icon-2.svg" alt="">
+                            </div>
+                            <div class="contact-list__text-wrap">
+                                <h4 class="contact-list__title">Address</h4>
+                                <div class="contact-list__text">
+                                    <p>
+                                        21 West 38th Street, Floor 16
+                                    </p>
+                                    <p>
+                                        New York, NY 10018
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-list__icon">
+                                <img src="img/icons/contact-icon-3.svg" alt="">
+                            </div>
+                            <div class="contact-list__text-wrap">
+                                <h4 class="contact-list__title">Email</h4>
+                                <div class="contact-list__text">
+                                    <a href="mailto:Info@sabcap.com">Info@sabcap.com</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact__col-2">
+                    <form action="#" class="contact-form">
+                        <div class="contact-form__ietems">
+                            <div class="contact-form__item half">
+                                <input class="input " type="text" placeholder="Full Name">
+                            </div>
+                            <div class="contact-form__item half">
+                                <input class="input " type="text" placeholder="Last Name">
+                            </div>
+                            <div class="contact-form__item half">
+                                <input class="input " type="email" placeholder="Email">
+                            </div>
+                            <div class="contact-form__item half">
+                                <input class="input _digital" type="text " placeholder="Phone">
+                            </div>
+                            <div class="contact-form__item ">
+                                <div class="select-wrap">
+                                    <select name="" class="_select">
+                                        <option value="" selected>Subject</option>
+                                        <option value="1">I Want To See New Listings</option>
+                                        <option value="2">I Am In a 1031 Exchange</option>
+                                        <option value="3"> I Am Seeking Financing Assistance</option>
+                                        <option value="4">I Am Thinking About Selling</option>
+                                        <option value="5">I Want a Property & Pricing Evaluation</option>
+                                        <option value="6">I Am Interested in Pursuing a Career @ SAB</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="contact-form__item ">
+                                <textarea class="textarea" placeholder="Message"></textarea>
+                            </div>
+                            <div class="contact-form__item ">
+                                <button>submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="map grey-bg" id="map"></section>
+
+        <section class="cta">
+            <div class="container cta__body">
+                <h2 class="cta__title" data-title-anim="">SIGN UP TO RECEIVE OUR INVERTORY EMAILS</h2>
+                <h2 class="cta__title-mob" data-title-anim="">let’s connect</h2>
+                <a href="#" class="btn" data-fade-in-anim="">Subscribe</a>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+    @@include('_js-bottom.html',{})
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+        defer></script>
+    
+    <script>
+        function initMap() {
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 40.68950, lng: -74.044683 },
+                zoom: 16,
+                //styles: 
+            });
+
+            var marker = new google.maps.Marker({
+                position: { lat: 40.68950, lng: -74.044683 },
+                map: map,
+                title: '',
+                label: '',
+                // icon: 'img/contact/googlMarker.svg',
+            });
+        }
+
+    </script>
+</body>
+
+</html>
