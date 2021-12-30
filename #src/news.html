@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "New Project"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    @@include('common/header/_header.html',{})
+    <!-- == // TOP LINE ================== -->
+
+
+    <main class="_page news-page">
+        <section class="hero _padding-top">
+            <!-- PICTURE -->
+            <div class="hero-bg ibg">
+                @@include('_img.html',{
+                "desk": "img/photo/hero-bg-10.jpg",
+                "tablet": "img/photo/hero-bg-10-tablet.jpg",
+                "mob": "img/photo/hero-bg-7-mob.jpg"
+                })
+            </div>
+
+            <!-- VIDEO -->
+            <!-- <div class="hero-bg ibg">
+				<video poster="img/photo/promo-header-bg.jpg" data-media-mobile="img/test-video-mob.mp4" autoplay muted loop
+					playsinline controlslist="nodownload" crossorigin="anonymous">
+					<source src="img/test-video-desk.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+				</video> 
+			</div> -->
+
+            <!-- VIMEO VIDEO -->
+            <!-- <div class="hero-bg ibg" data-vimeo-poster="img/photo/promo-header-bg.jpg" data-vimeo-id="589884423" data-vimeo-mobile-id="589884750"></div> -->
+
+            <div class="hero__body container">
+                <h1 class="hero__title" data-title-anim>Our News</h1>
+                <div class="hero__text text-content" data-text-anim="" data-delay="700">
+                    Sharing the latest news and views around the Commercial Real Estae industry and SAB Capital’s
+                    involvement.
+                </div>
+            </div>
+        </section>
+
+        <section class="news">
+            <div class="news__body container">
+                <div class="news__head" data-fade-in-anim="">
+                    <div class="news__head-items">
+                        <div data-tab="0" class="news__head-item active">sab’s news</div>
+                        <div data-tab="1" class="news__head-item">finance</div>
+                        <div data-tab="2" class="news__head-item">capital market</div>
+                        <div data-tab="3" class="news__head-item">1031 exchange</div>
+                    </div>
+                </div>
+                <div class="news__head-mob" data-fade-in-anim="">
+                    <div class="select-wrap">
+                        <select name="" class="_select">
+                            <option value="0" selected>sab’s newsy</option>
+                            <option value="1">finance</option>
+                            <option value="2">capital market</option>
+                            <option value="3">1031 exchange</option>
+                        </select>
+                    </div>
+                </div>
+                <ul data-tab="0" class="news__list active">
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-1.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">APRIL 16, 2019</div>
+                            <h4 class="post-card__title">
+                                SAB Represents Seller in Sale of Fedex Ground in Massachusetts ($14.5M Transaction)
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-2.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">JANUARY 3, 2019</div>
+                            <h4 class="post-card__title">
+                                SAB GROUP SELLS $3.6M BP GAS STATION IN JERSEY CITY, NJ Lowest Recorded...
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-3.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">NOVEMBER 7, 2018</div>
+                            <h4 class="post-card__title">
+                                SAB Group Arranges $6.27M Sale of Hobby Lobby
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-4.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">OCTOBER 18, 2018</div>
+                            <h4 class="post-card__title">
+                                SAB Group Brokers Sale of $6.49M Hannaford Anchored Shopping Center
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-5.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">JULY 12, 2018</div>
+                            <h4 class="post-card__title">
+                                Marcus & Millichap Sells a Service Station in Wayne, NJ
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-6.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">MARCH 30, 2018</div>
+                            <h4 class="post-card__title">
+                                First Ever Chick Fil A in Rochester, NY Sold!
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                </ul>
+                <ul data-tab="1" class="news__list ">
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-1.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">APRIL 16, 2019</div>
+                            <h4 class="post-card__title">
+                                SAB Represents Seller in Sale of Fedex Ground in Massachusetts ($14.5M Transaction)
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-2.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">JANUARY 3, 2019</div>
+                            <h4 class="post-card__title">
+                                SAB GROUP SELLS $3.6M BP GAS STATION IN JERSEY CITY, NJ Lowest Recorded...
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-3.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">NOVEMBER 7, 2018</div>
+                            <h4 class="post-card__title">
+                                SAB Group Arranges $6.27M Sale of Hobby Lobby
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-4.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">OCTOBER 18, 2018</div>
+                            <h4 class="post-card__title">
+                                SAB Group Brokers Sale of $6.49M Hannaford Anchored Shopping Center
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-5.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">JULY 12, 2018</div>
+                            <h4 class="post-card__title">
+                                Marcus & Millichap Sells a Service Station in Wayne, NJ
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-6.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">MARCH 30, 2018</div>
+                            <h4 class="post-card__title">
+                                First Ever Chick Fil A in Rochester, NY Sold!
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-6.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">MARCH 30, 2018</div>
+                            <h4 class="post-card__title">
+                                First Ever Chick Fil A in Rochester, NY Sold!
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                </ul>
+                <ul data-tab="2" class="news__list ">
+            
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-2.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">JANUARY 3, 2019</div>
+                            <h4 class="post-card__title">
+                                SAB GROUP SELLS $3.6M BP GAS STATION IN JERSEY CITY, NJ Lowest Recorded...
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-3.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">NOVEMBER 7, 2018</div>
+                            <h4 class="post-card__title">
+                                SAB Group Arranges $6.27M Sale of Hobby Lobby
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-4.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">OCTOBER 18, 2018</div>
+                            <h4 class="post-card__title">
+                                SAB Group Brokers Sale of $6.49M Hannaford Anchored Shopping Center
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-5.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">JULY 12, 2018</div>
+                            <h4 class="post-card__title">
+                                Marcus & Millichap Sells a Service Station in Wayne, NJ
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-6.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">MARCH 30, 2018</div>
+                            <h4 class="post-card__title">
+                                First Ever Chick Fil A in Rochester, NY Sold!
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                </ul>
+                <ul data-tab="3" class="news__list ">
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-1.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">APRIL 16, 2019</div>
+                            <h4 class="post-card__title">
+                                SAB Represents Seller in Sale of Fedex Ground in Massachusetts ($14.5M Transaction)
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-2.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">JANUARY 3, 2019</div>
+                            <h4 class="post-card__title">
+                                SAB GROUP SELLS $3.6M BP GAS STATION IN JERSEY CITY, NJ Lowest Recorded...
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-3.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">NOVEMBER 7, 2018</div>
+                            <h4 class="post-card__title">
+                                SAB Group Arranges $6.27M Sale of Hobby Lobby
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="post-card">
+                            <div class="post-card__img ibg">
+                                <img src="img/photo/post-card-img-4.jpg" alt="">
+                            </div>
+                            <div class="post-card__date">OCTOBER 18, 2018</div>
+                            <h4 class="post-card__title">
+                                SAB Group Brokers Sale of $6.49M Hannaford Anchored Shopping Center
+                            </h4>
+                            <div class="post-card__read-more">Read more</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container cta__body">
+                <h2 class="cta__title" data-title-anim="">Be the First to Know</h2>
+                <h2 class="cta__title-mob" data-title-anim="">let’s connect</h2>
+                <a href="#" class="btn" data-fade-in-anim="">Subscribe</a>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

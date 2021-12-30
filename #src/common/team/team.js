@@ -82,7 +82,6 @@ if (team) {
               }
         
               let arrayEl = splitArray(cards, 4);
-              console.log(arrayEl);
               arrayEl.forEach(innerArr => {
                 innerArr[0] && innerArr[0].setAttribute('data-delay', '100');
                 innerArr[1] && innerArr[1].setAttribute('data-delay', '200');

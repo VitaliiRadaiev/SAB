@@ -157,6 +157,10 @@
             & .textarea {
                 height: 160px;
             }
+
+            & .select__title {
+                height: 60px;
+            }
         }
 
         @media (min-width: 768px) {

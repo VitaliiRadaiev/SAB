@@ -35,6 +35,7 @@ window.addEventListener('load', function () {
 	@@include('../common/team/team.js');
 	@@include('../common/capital-markets-value/capital-markets-value.js');
 	@@include('../common/team-detail/team-detail.js');
+	@@include('../common/news/news.js');
 
 	@@include('../common/video/video.js');
 
