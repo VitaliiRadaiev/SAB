@@ -33,7 +33,7 @@
 
 // ==== PLAGINS ===========================================================================================
 @import "plagins/swiper-bundle";
-//@import "plagins/drift-basic";
+@import "plagins/nouislider.min";
 // ==== // PLAGINS ===========================================================================================
 
 // ==== FORM STYLE DEFAULT ===========================================================================================
@@ -370,7 +370,7 @@ button,
 	transition: all 0.3s ease;
 
 	@media (min-width: 992px) {
-		&:hover {
+		&:hover:not(.swiper-button-disabled) {
 			color: $textColor;
 		}
 	}
@@ -600,6 +600,7 @@ button.btn-default {
 
 // ==== BLOCKS =====================================================
 @import "../common/header/header";
+@import "../common/promo-header/promo-header";
 @import "../common/footer/footer";
 @import "../common/checkbox/checkbox";
 @import "../common/text-block/text-block";
@@ -612,6 +613,7 @@ button.btn-default {
 @import "../common/box/box";
 @import "../common/team-detail/team-detail";
 @import "../common/news/news";
+@import "../common/range/range";
 // ==== BLOCKS =====================================================
 
 // ==== PAGES =====================================================
@@ -628,5 +630,6 @@ button.btn-default {
 @import "pages/careers-detail";
 @import "pages/contact";
 @import "pages/news";
+@import "pages/listings";
 
 // ==== AND PAGES =====================================================

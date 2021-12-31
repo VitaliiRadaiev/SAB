@@ -22,16 +22,12 @@ if (news) {
     let contentAll = news.querySelectorAll('.news__list');
 
     if (triggers.length && contentAll.length) {
-        const startAnimation = () => {
-            contentAll.forEach(box => {
-                if(box.classList.contains('active')) {
-                    let c = 0;
-                    Array.from(box.children).forEach(li => {
-                        setTimeout(() => {
-                            li.firstElementChild.classList.add('show');
-                        }, c+=100)
-                    })
-                }
+        const startAnimation = (box) => {
+            let c = 0;
+            Array.from(box.children).forEach(li => {
+                setTimeout(() => {
+                    li.firstElementChild.classList.add('show');
+                }, c += 100)
             })
         }
 
@@ -41,14 +37,13 @@ if (news) {
             })
         }
 
-        scrollTrigger(news, 15, startAnimation);
+        scrollTrigger(news, 15, () => { startAnimation(news.querySelector('.news__list.active'))});
 
         triggers.forEach(item => {
             let tabId = item.dataset.tab;
 
             item.addEventListener('click', () => {
                 item.classList.add('active');
-
                 triggers.forEach(i => {
                     if (i === item) return;
 
@@ -58,7 +53,7 @@ if (news) {
                 contentAll.forEach(box => {
                     if (box.dataset.tab === tabId) {
                         box.classList.add('active');
-                        startAnimation();
+                        startAnimation(box);
                     } else {
                         box.classList.remove('active');
                         removeClasses(box);
@@ -75,7 +70,7 @@ if (news) {
                 contentAll.forEach(box => {
                     if (box.dataset.tab === tabId) {
                         box.classList.add('active');
-                        startAnimation();
+                        startAnimation(box);
                     } else {
                         box.classList.remove('active');
                         removeClasses(box);
@@ -85,36 +80,4 @@ if (news) {
         }
     }
 
-    // contentAll.forEach(box => {
-    //     let cards = box.querySelectorAll('.post-card');
-    //     if (cards.length) {
-    //         const splitArray = (arr, length) => {
-    //             let arr2 = []
-    //             let step = Math.floor(arr.length / length);
-    //             let count = 0;
-    //             for (let i = 0; i <= step; i++) {
-    //                 arr2.push([arr[count], arr[count + 1], arr[count + 2]]);
-    //                 count += length;
-    //             }
-
-    //             return arr2
-    //         }
-
-    //         let arrayEl = splitArray(cards, 3);
-    //         arrayEl.forEach(innerArr => {
-    //             innerArr[0] && innerArr[0].setAttribute('data-delay', '100');
-    //             innerArr[1] && innerArr[1].setAttribute('data-delay', '200');
-    //             innerArr[2] && innerArr[2].setAttribute('data-delay', '300');
-    //         })
-
-    //         cards.forEach(card => {
-    //             let delay = card.dataset.delay;
-    //             scrollTrigger(card, 15, () => {
-    //                 setTimeout(() => {
-    //                     card.classList.add('show')
-    //                 }, delay)
-    //             });
-    //         })
-    //     }
-    // })
 }

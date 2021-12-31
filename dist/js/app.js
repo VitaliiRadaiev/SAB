@@ -868,6 +868,29 @@ function burgerBtnAnimationToggle(burger) {
     }
 }
 ;
+	let heroSlider = document.querySelector('.hero-slider');
+if(heroSlider) {
+    let dataSlider = new Swiper(heroSlider.querySelector('.swiper-container'), {
+        effect: 'fade',
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        slidesPerView: 1,
+        spaceBetween: 0,
+        speed: 800,
+        watchOverflow: true,
+        touchRatio: 0,
+        pagination: {
+        	el: heroSlider.querySelector('.swiper-pagination'),
+        	clickable: true,
+        },
+        navigation: {
+            nextEl: heroSlider.querySelector('.slider-button.next'),
+            prevEl: heroSlider.querySelector('.slider-button.prev'),
+        },
+    });
+};
 	{
     let coreValues = document.querySelector('.core-values');
     if(coreValues) {
@@ -1103,16 +1126,12 @@ if (news) {
     let contentAll = news.querySelectorAll('.news__list');
 
     if (triggers.length && contentAll.length) {
-        const startAnimation = () => {
-            contentAll.forEach(box => {
-                if(box.classList.contains('active')) {
-                    let c = 0;
-                    Array.from(box.children).forEach(li => {
-                        setTimeout(() => {
-                            li.firstElementChild.classList.add('show');
-                        }, c+=100)
-                    })
-                }
+        const startAnimation = (box) => {
+            let c = 0;
+            Array.from(box.children).forEach(li => {
+                setTimeout(() => {
+                    li.firstElementChild.classList.add('show');
+                }, c += 100)
             })
         }
 
@@ -1122,14 +1141,13 @@ if (news) {
             })
         }
 
-        scrollTrigger(news, 15, startAnimation);
+        scrollTrigger(news, 15, () => { startAnimation(news.querySelector('.news__list.active'))});
 
         triggers.forEach(item => {
             let tabId = item.dataset.tab;
 
             item.addEventListener('click', () => {
                 item.classList.add('active');
-
                 triggers.forEach(i => {
                     if (i === item) return;
 
@@ -1139,7 +1157,7 @@ if (news) {
                 contentAll.forEach(box => {
                     if (box.dataset.tab === tabId) {
                         box.classList.add('active');
-                        startAnimation();
+                        startAnimation(box);
                     } else {
                         box.classList.remove('active');
                         removeClasses(box);
@@ -1156,7 +1174,7 @@ if (news) {
                 contentAll.forEach(box => {
                     if (box.dataset.tab === tabId) {
                         box.classList.add('active');
-                        startAnimation();
+                        startAnimation(box);
                     } else {
                         box.classList.remove('active');
                         removeClasses(box);
@@ -1166,39 +1184,114 @@ if (news) {
         }
     }
 
-    // contentAll.forEach(box => {
-    //     let cards = box.querySelectorAll('.post-card');
-    //     if (cards.length) {
-    //         const splitArray = (arr, length) => {
-    //             let arr2 = []
-    //             let step = Math.floor(arr.length / length);
-    //             let count = 0;
-    //             for (let i = 0; i <= step; i++) {
-    //                 arr2.push([arr[count], arr[count + 1], arr[count + 2]]);
-    //                 count += length;
-    //             }
-
-    //             return arr2
-    //         }
-
-    //         let arrayEl = splitArray(cards, 3);
-    //         arrayEl.forEach(innerArr => {
-    //             innerArr[0] && innerArr[0].setAttribute('data-delay', '100');
-    //             innerArr[1] && innerArr[1].setAttribute('data-delay', '200');
-    //             innerArr[2] && innerArr[2].setAttribute('data-delay', '300');
-    //         })
-
-    //         cards.forEach(card => {
-    //             let delay = card.dataset.delay;
-    //             scrollTrigger(card, 15, () => {
-    //                 setTimeout(() => {
-    //                     card.classList.add('show')
-    //                 }, delay)
-    //             });
-    //         })
-    //     }
-    // })
 };
+	{
+    let priceSlider = document.querySelector('.price-filter__slider');
+    if (priceSlider) {
+        let inputNumFrom = document.querySelector('.price-filter__input-start');
+        let inputNumTo = document.querySelector('.price-filter__input-end');
+        let value = document.querySelector('.values-price-filter');
+
+        let min = value.dataset.min;
+        let max = value.dataset.max;
+        let numStart = value.dataset.start;
+        let numEnd = value.dataset.end;
+
+        noUiSlider.create(priceSlider, {
+            start: [+numStart, +numEnd],
+            connect: true,
+            tooltips: [wNumb({ decimals: 0, thousand: ',' }), wNumb({ decimals: 0, thousand: ',' })],
+            range: {
+                'min': [+min],
+                '1%': [100, 100],
+                'max': [+max],
+            }
+        });
+
+        priceSlider.noUiSlider.on('update', function (values, handle) {
+            var value = values[handle];
+
+            if (handle) {
+                inputNumTo.value = Math.round(value);
+            } else {
+                inputNumFrom.value = Math.round(value);
+            }
+        });
+
+        priceSlider.noUiSlider.on('change', () => {
+            let event = new Event("change", {bubbles: true}); 
+            inputNumFrom.dispatchEvent(event);
+            inputNumTo.dispatchEvent(event);
+        })
+
+        inputNumTo.addEventListener('change', () => {
+            setPriceValues()
+        })
+
+        inputNumFrom.addEventListener('change',() => {
+            setPriceValues()
+        })
+
+        function setPriceValues() {
+            let priceStartValue;
+            let priceEndValue;
+            if (inputNumFrom.value != '') {
+                priceStartValue = inputNumFrom.value;
+            }
+
+            if (inputNumTo.value != '') {
+                priceEndValue = inputNumTo.value;
+            }
+
+            priceSlider.noUiSlider.set([priceStartValue, priceEndValue])
+        }
+
+    }
+
+    let rangeAll = document.querySelectorAll('.range');
+    if(rangeAll.length) {
+        rangeAll.forEach(range => {
+            let min = range.dataset.min;
+            let max = range.dataset.max;
+            let numStart = range.dataset.start;
+            let numEnd = range.dataset.end;
+            let step = range.dataset.step;
+            let slider = range.querySelector('.range__slider');
+            let inputStart = range.querySelector('.range__start');
+            let inputEnd = range.querySelector('.range__end');
+            let fielpStart = range.querySelector('.range__values-start');
+            let fielpEnd = range.querySelector('.range__values-end');
+
+            noUiSlider.create(slider, {
+                start: [+numStart, +numEnd],
+                connect: true,
+                //tooltips: [wNumb({ decimals: 0, thousand: ',' }), wNumb({ decimals: 0, thousand: ',' })],
+                range: {
+                    'min': [+min],
+                    //'1%': [100, 100],
+                    'max': [+max],
+                },
+                step: +step,
+            });
+
+            let numFormat = wNumb({ decimals: 0, thousand: ',' });
+
+            slider.noUiSlider.on('update', function (values, handle) {
+                var value = values[handle];
+    
+                if (handle) {
+                    inputEnd.value = Math.round(value);
+                    fielpEnd.innerText = numFormat.to(Math.round(value));
+                } else {
+                    inputStart.value = Math.round(value);
+                    fielpStart.innerText = numFormat.to(Math.round(value));
+                }
+            });
+        })
+    }
+
+}
+;
 
 	{
 	let vimeoVideos = document.querySelectorAll('[data-vimeo-id]');

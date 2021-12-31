@@ -30,12 +30,14 @@ window.addEventListener('load', function () {
 	@@include('forms.js');
 	@@include('../common/burger/burger.js');
 	@@include('../common/header/header.js');
+	@@include('../common/promo-header/promo-header.js');
 	@@include('../common/core-values/core-values.js');
 	@@include('../common/services/services.js');
 	@@include('../common/team/team.js');
 	@@include('../common/capital-markets-value/capital-markets-value.js');
 	@@include('../common/team-detail/team-detail.js');
 	@@include('../common/news/news.js');
+	@@include('../common/range/range.js');
 
 	@@include('../common/video/video.js');
 
