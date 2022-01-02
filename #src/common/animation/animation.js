@@ -79,9 +79,17 @@ function wrapWords(el) {
         counterItems.forEach(item => {
             if (item.children.length) {
                 Array.from(item.children).forEach(line => {
-                    if (line.localName !== 'p') return;
-
-                    wrapWords(line)
+                    if(line.localName === 'ul' || line.localName === 'ol') {
+                        if(line.children.length) {
+                            Array.from(line.children).forEach(li => {
+                                wrapWords(li)
+                            })
+                        }
+                    } else if (line.localName === 'p') {
+                        wrapWords(line)
+                    } else {
+                        return;
+                    }
                 })
             } else {
                 wrapWords(item)

@@ -38,6 +38,7 @@ window.addEventListener('load', function () {
 	@@include('../common/team-detail/team-detail.js');
 	@@include('../common/news/news.js');
 	@@include('../common/range/range.js');
+	@@include('../common/other-listings/other-listings.js');
 
 	@@include('../common/video/video.js');
 

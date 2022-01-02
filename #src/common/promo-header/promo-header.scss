@@ -72,6 +72,29 @@
             margin-bottom: 19px;
         }
     }
+
+    &__location {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        line-height: 21px;
+        margin-bottom: 37px;
+        & > span {
+            flex: 0 0 auto;
+            display: inline-block;
+            width: 30px;
+            margin-right: 10px;
+
+            & img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        & > p {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .hero-slider {
@@ -166,7 +189,7 @@
     }
 
     &__controll-box-col-1 {
-        flex: 0 1 50%;
+        flex: 0 1 100%;
 
         @media (max-width: $md3+px) {
             display: none;
@@ -182,7 +205,7 @@
     }
 
     &__controll-box-col-3 {
-        flex: 0 1 50%;
+        flex: 0 1 100%;
         display: flex;
         justify-content: flex-end;
 
