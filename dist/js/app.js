@@ -890,6 +890,15 @@ if(heroSlider) {
             prevEl: heroSlider.querySelector('.slider-button.prev'),
         },
     });
+
+    let body = heroSlider.querySelector('.promo-header__body');
+    const setHeight = () => {
+        body.style.minHeight = document.documentElement.clientHeight - 69 + 'px';
+    }
+
+    setHeight();
+
+    window.addEventListener('resize', setHeight);
 };
 	{
     let coreValues = document.querySelector('.core-values');

@@ -146,6 +146,17 @@
         text-transform: uppercase;
         font-family: $titleFontFamily;
         margin-bottom: 3px;
+
+        & a {
+            color: #fff;
+            transition: all .3s ease;
+
+            @media (min-width: 992px) {
+                &:hover {
+                    color: $mainColor;
+                }
+            }
+        }
     }
 
     &__text {

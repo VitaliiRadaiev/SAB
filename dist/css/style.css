@@ -3114,6 +3114,13 @@ table td {
   margin-bottom: 3px;
 }
 
+.footer__col-title a {
+  color: #fff;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 .footer__text.text-content {
   font-size: 18px;
   line-height: 23px;
@@ -5410,6 +5417,10 @@ table td {
 
   .footer__col--4 {
     max-width: 206px;
+  }
+
+  .footer__col-title a:hover {
+    color: #446FA0;
   }
 
   .social > li a:hover {
