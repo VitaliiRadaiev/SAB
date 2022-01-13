@@ -4951,6 +4951,40 @@ table td {
 
 .listing__filter {
   margin-bottom: 64px;
+  position: relative;
+}
+
+.listing__filter-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 5;
+  display: none;
+}
+
+.listing__filter-loader::before {
+  position: absolute;
+  content: "";
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 4px solid #6e6e6e;
+  border-right: 4px solid #fff;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: preloadBody 2s linear infinite;
+          animation: preloadBody 2s linear infinite;
+}
+
+.listing__filter-loader.show {
+  display: block;
 }
 
 .listing__list {
@@ -5243,7 +5277,7 @@ table td {
     padding: 0 50px;
   }
 
-  .box__text-wrap:before {
+  .box__text-wrap.is-scroll:before {
     position: absolute;
     content: "";
     bottom: -30px;
@@ -5571,6 +5605,10 @@ table td {
         -ms-flex: 0 1 51%;
             flex: 0 1 51%;
     padding: 0 20px 0 7px;
+  }
+
+  .single-team .team .team__title {
+    text-align: left;
   }
 
   .careers__body.container {
@@ -6704,17 +6742,20 @@ table td {
     min-height: 300px;
   }
 
-  .sale-leaseback-page .text-block.grey-bg {
+  .sale-leaseback-page .text-block.grey-bg,
+  .page-id-200 .text-block.grey-bg {
     padding: 47px 0 25px;
   }
 
-  .sale-leaseback-page .text-block.grey-bg .text-block__body {
+  .sale-leaseback-page .text-block.grey-bg .text-block__body,
+  .page-id-200 .text-block.grey-bg .text-block__body {
     text-align: left;
     padding-left: 24px;
     padding-right: 36px;
   }
 
-  .sale-leaseback-page .text-block.grey-bg .text-block__body h2 {
+  .sale-leaseback-page .text-block.grey-bg .text-block__body h2,
+  .page-id-200 .text-block.grey-bg .text-block__body h2 {
     margin-bottom: 8px;
   }
 

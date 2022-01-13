@@ -4,20 +4,15 @@ if(servicesList) {
     if(items.length) {
         items.forEach(item => {
             item.addEventListener('mouseenter', () => {
-                item.classList.add('active');
-
-                // items.forEach(i => {
-                //     if(i === item) return;
-                //     i.classList.remove('active');
-                // })
+                if(document.documentElement.clientWidth >= 992) {
+                    item.classList.add('active');
+                }
             })
             item.addEventListener('mouseleave', () => {
-                item.classList.remove('active');
-
-                // items.forEach(i => {
-                //     if(i === item) return;
-                //     i.classList.remove('active');
-                // })
+                if(document.documentElement.clientWidth >= 992) {
+                    item.classList.remove('active');
+                }
+                
             })
         })
     }

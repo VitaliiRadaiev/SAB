@@ -959,20 +959,15 @@ if(servicesList) {
     if(items.length) {
         items.forEach(item => {
             item.addEventListener('mouseenter', () => {
-                item.classList.add('active');
-
-                // items.forEach(i => {
-                //     if(i === item) return;
-                //     i.classList.remove('active');
-                // })
+                if(document.documentElement.clientWidth >= 992) {
+                    item.classList.add('active');
+                }
             })
             item.addEventListener('mouseleave', () => {
-                item.classList.remove('active');
-
-                // items.forEach(i => {
-                //     if(i === item) return;
-                //     i.classList.remove('active');
-                // })
+                if(document.documentElement.clientWidth >= 992) {
+                    item.classList.remove('active');
+                }
+                
             })
         })
     }
@@ -1195,70 +1190,72 @@ if (news) {
 
 };
 	{
-    let priceSlider = document.querySelector('.price-filter__slider');
-    if (priceSlider) {
-        let inputNumFrom = document.querySelector('.price-filter__input-start');
-        let inputNumTo = document.querySelector('.price-filter__input-end');
-        let value = document.querySelector('.values-price-filter');
+    // let priceSlider = document.querySelector('.price-filter__slider');
+    // if (priceSlider) {
+    //     let inputNumFrom = document.querySelector('.price-filter__input-start');
+    //     let inputNumTo = document.querySelector('.price-filter__input-end');
+    //     let value = document.querySelector('.values-price-filter');
 
-        let min = value.dataset.min;
-        let max = value.dataset.max;
-        let numStart = value.dataset.start;
-        let numEnd = value.dataset.end;
+    //     let min = value.dataset.min;
+    //     let max = value.dataset.max;
+    //     let numStart = value.dataset.start;
+    //     let numEnd = value.dataset.end;
 
-        noUiSlider.create(priceSlider, {
-            start: [+numStart, +numEnd],
-            connect: true,
-            tooltips: [wNumb({ decimals: 0, thousand: ',' }), wNumb({ decimals: 0, thousand: ',' })],
-            range: {
-                'min': [+min],
-                '1%': [100, 100],
-                'max': [+max],
-            }
-        });
+    //     noUiSlider.create(priceSlider, {
+    //         start: [+numStart, +numEnd],
+    //         connect: true,
+    //         tooltips: [wNumb({ decimals: 0, thousand: ',' }), wNumb({ decimals: 0, thousand: ',' })],
+    //         range: {
+    //             'min': [+min],
+    //             '1%': [100, 100],
+    //             'max': [+max],
+    //         }
+    //     });
 
-        priceSlider.noUiSlider.on('update', function (values, handle) {
-            var value = values[handle];
+    //     priceSlider.noUiSlider.on('update', function (values, handle) {
+    //         var value = values[handle];
 
-            if (handle) {
-                inputNumTo.value = Math.round(value);
-            } else {
-                inputNumFrom.value = Math.round(value);
-            }
-        });
+    //         if (handle) {
+    //             inputNumTo.value = Math.round(value);
+    //         } else {
+    //             inputNumFrom.value = Math.round(value);
+    //         }
+    //     });
 
-        priceSlider.noUiSlider.on('change', () => {
-            let event = new Event("change", {bubbles: true}); 
-            inputNumFrom.dispatchEvent(event);
-            inputNumTo.dispatchEvent(event);
-        })
+    //     priceSlider.noUiSlider.on('change', () => {
+    //         let event = new Event("change", {bubbles: true}); 
+    //         inputNumFrom.dispatchEvent(event);
+    //         inputNumTo.dispatchEvent(event);
+    //     })
 
-        inputNumTo.addEventListener('change', () => {
-            setPriceValues()
-        })
+    //     inputNumTo.addEventListener('change', (e) => {
+    //         console.log(e.target);
+    //         setPriceValues()
+    //     })
 
-        inputNumFrom.addEventListener('change',() => {
-            setPriceValues()
-        })
+    //     inputNumFrom.addEventListener('change',(e) => {
+    //         console.log(e.target);
+    //         setPriceValues()
+    //     })
 
-        function setPriceValues() {
-            let priceStartValue;
-            let priceEndValue;
-            if (inputNumFrom.value != '') {
-                priceStartValue = inputNumFrom.value;
-            }
+    //     function setPriceValues() {
+    //         let priceStartValue;
+    //         let priceEndValue;
+    //         if (inputNumFrom.value != '') {
+    //             priceStartValue = inputNumFrom.value;
+    //         }
 
-            if (inputNumTo.value != '') {
-                priceEndValue = inputNumTo.value;
-            }
+    //         if (inputNumTo.value != '') {
+    //             priceEndValue = inputNumTo.value;
+    //         }
 
-            priceSlider.noUiSlider.set([priceStartValue, priceEndValue])
-        }
+    //         priceSlider.noUiSlider.set([priceStartValue, priceEndValue])
+    //     }
 
-    }
+    // }
 
     let rangeAll = document.querySelectorAll('.range');
-    if(rangeAll.length) {
+    if (rangeAll.length) {
         rangeAll.forEach(range => {
             let min = range.dataset.min;
             let max = range.dataset.max;
@@ -1274,10 +1271,8 @@ if (news) {
             noUiSlider.create(slider, {
                 start: [+numStart, +numEnd],
                 connect: true,
-                //tooltips: [wNumb({ decimals: 0, thousand: ',' }), wNumb({ decimals: 0, thousand: ',' })],
                 range: {
                     'min': [+min],
-                    //'1%': [100, 100],
                     'max': [+max],
                 },
                 step: +step,
@@ -1286,8 +1281,8 @@ if (news) {
             let numFormat = wNumb({ decimals: 0, thousand: ',' });
 
             slider.noUiSlider.on('update', function (values, handle) {
-                var value = values[handle];
-    
+                let value = values[handle];
+
                 if (handle) {
                     inputEnd.value = Math.round(value);
                     fielpEnd.innerText = numFormat.to(Math.round(value));
@@ -1296,11 +1291,44 @@ if (news) {
                     fielpStart.innerText = numFormat.to(Math.round(value));
                 }
             });
+
+            slider.noUiSlider.on('change', (values, handle) => {
+                let value = values[handle];
+
+                if (handle) {
+                    let event = new Event("change", { bubbles: true });
+                    inputEnd.dispatchEvent(event);
+                } else {
+                    let event = new Event("change", { bubbles: true });
+                    inputStart.dispatchEvent(event);
+                }
+              
+            })
         })
     }
 
 }
-;
+
+
+// let formFilter = document.querySelector('#filter');
+// if (formFilter) {
+//     formFilter.addEventListener('submit', () => {
+//         console.log('is submit');
+//     })
+
+
+//     let checkboxInputs = formFilter.querySelectorAll('input[type="checkbox"]');
+//     if (checkboxInputs.length) {
+//         checkboxInputs.forEach(input => {
+//             input.addEventListener('change', (e) => {
+//                 console.log(e.target);
+//                 let event = new Event("submit", { bubbles: true });
+//                 input.dispatchEvent(event);
+//             })
+//         })
+//     }
+
+// };
 	let otherListings = document.querySelector('.other-listings');
 if(otherListings) {
     const slider = otherListings.querySelector('.other-listings__slider');
@@ -1367,6 +1395,38 @@ if(otherListings) {
             mobileSlider();
         })
     }
+};
+	let formFilter = document.querySelector('#filter');
+if (formFilter) {
+    let checkboxInputs = formFilter.querySelectorAll('input[type="checkbox"]');
+    if (checkboxInputs.length) {
+        checkboxInputs.forEach(input => {
+            input.addEventListener('change', (e) => {
+                let event = new Event("submit", { bubbles: true }); 
+                formFilter.dispatchEvent(event);
+            })
+        })
+    }
+
+    let rangeInputs = formFilter.querySelectorAll('input[type="hidden"]');
+    if (rangeInputs.length) {
+        rangeInputs.forEach(input => {
+            input.addEventListener('change', (e) => {
+                let event = new Event("submit", { bubbles: true }); 
+                formFilter.dispatchEvent(event);
+            })
+        })
+    }
+};
+	let boxAll = document.querySelectorAll('.box');
+if(boxAll.length) {
+    boxAll.forEach(box => {
+        let list = box.querySelector('.box__list');
+        let textWrap = box.querySelector('.box__text-wrap');
+        if(list.scrollHeight > 580) {
+            textWrap.classList.add('is-scroll');
+        }
+    })
 };
 
 	{

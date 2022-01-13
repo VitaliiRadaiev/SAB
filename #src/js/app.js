@@ -39,6 +39,8 @@ window.addEventListener('load', function () {
 	@@include('../common/news/news.js');
 	@@include('../common/range/range.js');
 	@@include('../common/other-listings/other-listings.js');
+	@@include('../common/filter/filter.js');
+	@@include('../common/box/box.js');
 
 	@@include('../common/video/video.js');
 

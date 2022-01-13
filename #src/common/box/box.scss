@@ -85,17 +85,20 @@
         }
 
         @media (min-width: 768px) {
-            &:before {
-                position: absolute;
-                content: "";
-                bottom: -30px;
-                left: 0;
-                width: calc(100% - 17px);
-                height: 282px;
-                z-index: 3;
-                background: linear-gradient(-5deg, #223c60 32.32%, rgba(53, 76, 108, 0.01) 89.97%);
-                pointer-events: none;
+            &.is-scroll {
+                &:before {
+                    position: absolute;
+                    content: "";
+                    bottom: -30px;
+                    left: 0;
+                    width: calc(100% - 17px);
+                    height: 282px;
+                    z-index: 3;
+                    background: linear-gradient(-5deg, #223c60 32.32%, rgba(53, 76, 108, 0.01) 89.97%);
+                    pointer-events: none;
+                }
             }
+
         }
     }
 

@@ -1,0 +1,9 @@
+.single-team {
+    & .team  {
+        & .team__title {
+            @media (min-width: 992px) {
+                text-align: left;
+            }
+        }   
+    }
+}
