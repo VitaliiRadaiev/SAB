@@ -41,6 +41,7 @@ window.addEventListener('load', function () {
 	@@include('../common/other-listings/other-listings.js');
 	@@include('../common/filter/filter.js');
 	@@include('../common/box/box.js');
+	@@include('../common/popup/popup.js');
 
 	@@include('../common/video/video.js');
 
