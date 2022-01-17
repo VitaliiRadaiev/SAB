@@ -2718,6 +2718,9 @@ table td {
   transition: all 0.3s ease;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .sub-menu:before {
@@ -2739,7 +2742,6 @@ table td {
   z-index: 2;
   padding: 10px 8px;
   max-width: 400px;
-  width: 100%;
 }
 
 .sub-menu > li:not(:last-child) {

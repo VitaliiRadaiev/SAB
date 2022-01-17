@@ -158,6 +158,7 @@
     width: 100%;
     transition: all 0.3s ease;
     flex-wrap: wrap;
+    justify-content: space-between;
 
     &:before {
         position: absolute;
@@ -176,7 +177,6 @@
         z-index: 2;
         padding: 10px 8px;
         max-width: 400px;
-        width: 100%;
 
         &:not(:last-child) {
             padding-right: min(20px, 5%);

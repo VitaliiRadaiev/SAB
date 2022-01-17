@@ -805,29 +805,29 @@ function burgerBtnAnimationToggle(burger) {
             })
         }
 
-        let subMenuAll = header.querySelectorAll('.sub-menu');
-        if (subMenuAll.length) {
-            subMenuAll.forEach(subMenu => {
-                if (subMenu.children.length == 2) {
-                    Array.from(subMenu.children).forEach(el => {
-                        el.style.flexBasis = '50%';
-                        el.style.width = '50%';
-                    })
-                }
-                if (subMenu.children.length == 3) {
-                    Array.from(subMenu.children).forEach(el => {
-                        el.style.flexBasis = '33.33333%';
-                        el.style.width = '33.33333%';
-                    })
-                }
-                if (subMenu.children.length >= 4) {
-                    Array.from(subMenu.children).forEach(el => {
-                        el.style.flexBasis = '25%';
-                        el.style.width = '25%';
-                    })
-                }
-            })
-        }
+        // let subMenuAll = header.querySelectorAll('.sub-menu');
+        // if (subMenuAll.length) {
+        //     subMenuAll.forEach(subMenu => {
+        //         if (subMenu.children.length == 2) {
+        //             Array.from(subMenu.children).forEach(el => {
+        //                 el.style.flexBasis = '50%';
+        //                 el.style.width = '50%';
+        //             })
+        //         }
+        //         if (subMenu.children.length == 3) {
+        //             Array.from(subMenu.children).forEach(el => {
+        //                 el.style.flexBasis = '33.33333%';
+        //                 el.style.width = '33.33333%';
+        //             })
+        //         }
+        //         if (subMenu.children.length >= 4) {
+        //             Array.from(subMenu.children).forEach(el => {
+        //                 el.style.flexBasis = '25%';
+        //                 el.style.width = '25%';
+        //             })
+        //         }
+        //     })
+        // }
     }
 
     if (mobileMenu) {
