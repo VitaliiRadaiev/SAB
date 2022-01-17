@@ -325,6 +325,10 @@
     &__title {
         margin-bottom: 4px;
         transition: all 0.3s ease;
+
+        & .letters {
+            background-color: rgba(rgb(208, 255, 0), 0.5);
+        }
     }
 
     &__place {

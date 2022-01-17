@@ -1,6 +1,7 @@
 let heroSliderListngs = document.querySelector('.hero-slider-listing');
+let listing = document.querySelector('#listing');
+let listingSearch = document.querySelector('#listingSearch');
 if (heroSliderListngs) {
-    let listing = document.querySelector('#listing');
     let sliderWrapper = heroSliderListngs.querySelector('.swiper-container .swiper-wrapper');
     let addressSliderWrapper = heroSliderListngs.querySelector('.hero-slider__controll-box-col-3 .swiper-container .swiper-wrapper');
     let notFoundImgUrl = heroSliderListngs.dataset.noPostFoundImg;
@@ -107,7 +108,13 @@ if (heroSliderListngs) {
                 <h1 class="promo-header__title" >
                     ${data.title}
                 </h1>
-                <a href="${data.url}" class="btn-arrow">View Listings</a>
+                <a href="${data.url}" class="btn-arrow">
+                    View Listings
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="11.25" stroke="white" stroke-width="1.5"></circle>
+                    <path d="M8.83984 6.9697L9.8095 6L15.7799 11.9704L9.8095 17.9408L8.83984 16.9711L13.1548 12.6561L14.0004 11.9704L13.1548 11.2847L8.83984 6.9697Z" fill="white"></path>
+                    </svg>
+                </a>
             </div>
         </div>`
     }
@@ -169,7 +176,8 @@ if (heroSliderListngs) {
     })();
 
     let observer = new MutationObserver(mutationRecords => {
-        console.log(mutationRecords);
+        console.log('observer');
+        listingHandler();
     });
 
     observer.observe(listing, {
@@ -192,4 +200,48 @@ if (heroSliderListngs) {
 
     window.addEventListener('resize', setHeight);
 
+}
+
+
+if(listingSearch && listing) {
+    let allTitlesText = [];
+
+    const applyFilter = (items, value) => {
+        let regExp = new RegExp(value, 'ig');
+
+        items.forEach((item, index) => {
+            let title = item.querySelector('.card__title');
+            
+            if(regExp.test(title.innerText)) {
+                item.style.display = 'block';
+                title.innerHTML = allTitlesText[index].replace(regExp, '<span class="letters">$&</span>');
+            } else {
+                item.style.display = 'none';
+                title.innerHTML = allTitlesText[index];
+            }
+        })
+    }
+
+    const getTitlesText = (items) => {
+        items.forEach(item => {
+            let title = item.querySelector('.card__title');
+            allTitlesText.push(title.innerText);
+        })
+    }
+
+    getTitlesText(Array.from(listing.children));
+
+    let observer = new MutationObserver(mutationRecords => {
+        console.log('observer 2');
+        getTitlesText(Array.from(listing.children));
+    });
+
+    observer.observe(listing, {
+        childList: true,
+    });
+
+
+    listingSearch.addEventListener('input', (e) => {
+        applyFilter(Array.from(listing.children), e.target.value);
+    })
 }
