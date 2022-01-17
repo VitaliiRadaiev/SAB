@@ -20,7 +20,6 @@
         background-color: $textColorDark;
 
         & img {
-            opacity: 0.5;
             mix-blend-mode: multiply;
 
             @media (max-width: $md3+px) {

@@ -1,3 +1,20 @@
+.listings-page {
+    & .hero-slider {
+        @media (min-width: 768px) {
+            & .promo-header__body {
+                min-height: 473px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            & .promo-header__body {
+                min-height: 573px;
+            }
+        }
+    }
+}
+
+
 .listing {
     padding-bottom: 74px;
 
@@ -287,9 +304,12 @@
     padding: 12px;
     color: $textColor;
     min-height: 420px;
+    transition: all .3s ease;
+    cursor: pointer;
 
     @media (min-width: 992px) {
         &:hover {
+            box-shadow: 0 0 20px rgba(#000, 0.2);
             & .card__title {
                 color: $mainColor;
             }

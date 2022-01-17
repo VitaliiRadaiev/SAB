@@ -21,9 +21,15 @@ if(heroSlider) {
         },
     });
 
-    let body = heroSlider.querySelector('.promo-header__body');
+    let bodyAll = heroSlider.querySelectorAll('.promo-header__body');
     const setHeight = () => {
-        body.style.minHeight = document.documentElement.clientHeight - 69 + 'px';
+        if(bodyAll.length) {
+            bodyAll.forEach(body => {
+                if(document.documentElement.clientWidth < 768) {
+                    body.style.minHeight = document.documentElement.clientHeight - 69 + 'px';
+                }
+            })
+        }
     }
 
     setHeight();

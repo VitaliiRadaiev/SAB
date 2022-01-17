@@ -12,6 +12,12 @@
         }
     }
 
+    &.hero-slider-listing {
+        & .promo-header__body {
+            min-height: 505px;
+        }
+    }
+
     &__bg {
         position: absolute;
         top: 0;
@@ -126,6 +132,12 @@
         }
     }
 
+    &__slider {
+        & .swiper-slide  {
+            padding-top: 69px;
+        }
+    }
+
     &__controll-box {
         position: absolute;
         z-index: 3;
@@ -157,6 +169,10 @@
                     background-color: $textColorLight;
                 }
             }
+
+            &.swiper-pagination-lock {
+                display: none;
+            }
         }
 
         & .slider-button {
@@ -174,6 +190,7 @@
         display: flex;
         align-items: center;
         min-height: 99px;
+        min-width: 0;
 
         @media (max-width: 991.98px) and (min-width: 768px) {
             &.container {
@@ -208,7 +225,7 @@
         flex: 0 1 100%;
         display: flex;
         justify-content: flex-end;
-
+        min-width: 0;
         @media (max-width: $md3+px) {
             display: flex;
             min-height: 46px;
@@ -218,16 +235,33 @@
             margin-left: -40px;
             margin-right: -40px;
 
+            & .swiper-container {
+                width: 100%;
+            }
+
             & .local {
                 width: 100%;
                 justify-content: center;
+            }
+        }
+
+        & .swiper-container {
+            width: 146px;
+            margin-right: 0;
+            margin-left: 0;
+
+            & .swiper-slide {
+                opacity: 0 !important;
+
+                &.swiper-slide-active {
+                    opacity: 1 !important;
+                }
             }
         }
     }
 }
 
 .local {
-    width: 146px;
     color: $textColorLight;
     display: flex;
     align-items: center;

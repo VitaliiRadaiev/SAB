@@ -12,51 +12,103 @@
 
 
     <main class="_page listings-page">
-        <section class="promo-header hero-slider _padding-top">
+        <section class="promo-header hero-slider-listing" data-no-post-found-img="img/photo/not-found-img.jpg">
 
-            <div class="hero-slider__bg swiper-container">
+            <div class="hero-slider__slider swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide ibg">
-                        @@include('_img.html',{
-                        "desk": "img/photo/promo-header-bg.jpg",
-                        "tablet": "img/photo/promo-header-bg-tablet.jpg",
-                        "mob": "img/photo/promo-header-bg-mob.jpg"
-                        })
+                    <div class="swiper-slide">
+                        <div class="hero-slider__bg ibg">
+                            <picture>
+                                <source class="swiper-lazy" data-srcset="img/photo/promo-header-bg.jpg"
+                                    media="(min-width: 992px)">
+                                <source class="swiper-lazy" data-srcset="img/photo/promo-header-bg-tablet.jpg"
+                                    media="(min-width: 576px)">
+                                <img class="swiper-lazy" data-src="img/photo/promo-header-bg-mob.jpg" alt="img">
+                            </picture>
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                        </div>
+                        <div class="promo-header__body container">
+                            <h1 class="promo-header__title" data-title-anim>
+                                <strong>
+                                    Real time deal visibility at your
+                                </strong>
+                                <strong>
+                                    fingertips.
+                                </strong>
+                            </h1>
+                            <a href="#" class="btn-arrow" data-fade-in-anim>View Listings</a>
+                        </div>
                     </div>
-                    <div class="swiper-slide ibg">
-                        @@include('_img.html',{
-                        "desk": "img/photo/hero-bg-1.jpg",
-                        "tablet": "img/photo/hero-bg-1-tablet.jpg",
-                        "mob": "img/photo/hero-bg-1-mob.jpg"
-                        })
+                    <div class="swiper-slide">
+                        <div class="hero-slider__bg ibg">
+                            <picture>
+                                <source class="swiper-lazy" data-srcset="img/photo/hero-bg-1.jpg"
+                                    media="(min-width: 992px)">
+                                <source class="swiper-lazy" data-srcset="img/photo/hero-bg-1-tablet.jpg"
+                                    media="(min-width: 576px)">
+                                <img class="swiper-lazy" data-src="img/photo/hero-bg-1-mob.jpg" alt="img">
+                            </picture>
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                        </div>
+                        <div class="promo-header__body container">
+                            <h1 class="promo-header__title" data-title-anim>
+                                <strong>
+                                    Real time deal
+                                </strong>
+                                <strong>
+                                    fingertips.
+                                </strong>
+                            </h1>
+                            <a href="#" class="btn-arrow" data-fade-in-anim>View Listings</a>
+                        </div>
                     </div>
-                    <div class="swiper-slide ibg">
-                        @@include('_img.html',{
-                        "desk": "img/photo/hero-bg-2.jpg",
-                        "tablet": "img/photo/hero-bg-2-tablet.jpg",
-                        "mob": "img/photo/hero-bg-2-mob.jpg"
-                        })
+                    <div class="swiper-slide">
+                        <div class="hero-slider__bg ibg">
+                            <picture>
+                                <source class="swiper-lazy" data-srcset="img/photo/hero-bg-2.jpg"
+                                    media="(min-width: 992px)">
+                                <source class="swiper-lazy" data-srcset="img/photo/hero-bg-2-tablet.jpg"
+                                    media="(min-width: 576px)">
+                                <img class="swiper-lazy" data-src="img/photo/hero-bg-2-mob.jpg" alt="img">
+                            </picture>
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                        </div>
+                        <div class="promo-header__body container">
+                            <h1 class="promo-header__title" data-title-anim>
+                                <strong>
+                                    Real
+                                </strong>
+                                <strong>
+                                    fingertips.
+                                </strong>
+                            </h1>
+                            <a href="#" class="btn-arrow" data-fade-in-anim>View Listings</a>
+                        </div>
                     </div>
-                    <div class="swiper-slide ibg">
-                        @@include('_img.html',{
-                        "desk": "img/photo/hero-bg-3.jpg",
-                        "tablet": "img/photo/hero-bg-3-tablet.jpg",
-                        "mob": "img/photo/hero-bg-3-mob.jpg"
-                        })
+                    <div class="swiper-slide">
+                        <div class="hero-slider__bg ibg">
+                            <picture>
+                                <source class="swiper-lazy" data-srcset="img/photo/hero-bg-3.jpg"
+                                    media="(min-width: 992px)">
+                                <source class="swiper-lazy" data-srcset="img/photo/hero-bg-3-tablet.jpg"
+                                    media="(min-width: 576px)">
+                                <img class="swiper-lazy" data-src="img/photo/hero-bg-3-mob.jpg" alt="img">
+                            </picture>
+                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                        </div>
+                        <div class="promo-header__body container">
+                            <h1 class="promo-header__title" data-title-anim>
+                                <strong>
+                                    Real time deal visibility at
+                                </strong>
+                                <strong>
+                                    fingertips.
+                                </strong>
+                            </h1>
+                            <a href="#" class="btn-arrow" data-fade-in-anim>View Listings</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="promo-header__body container">
-                <h1 class="promo-header__title" data-title-anim>
-                    <strong>
-                        Real time deal visibility at your
-                    </strong>
-                    <strong>
-                        fingertips.
-                    </strong>
-                </h1>
-                <a href="#" class="btn-arrow" data-fade-in-anim>View Listings</a>
             </div>
 
             <div class="hero-slider__controll-box">
@@ -88,13 +140,44 @@
                         <div class="swiper-pagination"></div>
                     </div>
                     <div class="hero-slider__controll-box-col-3">
-                        <div class="local">
-                            <div class="local__icon">
-                                <img src="img/icons/local-icon-white.svg" alt="">
-                            </div>
-                            <div class="local__text">
-                                2910 Stonecrest Circle
-                                Lithonia, GA 30038
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide local">
+                                    <div class="local__icon">
+                                        <img src="img/icons/local-icon-white.svg" alt="">
+                                    </div>
+                                    <div class="local__text">
+                                        2910 Stonecrest Circle
+                                        Lithonia, GA 30038
+                                    </div>
+                                </div>
+                                <div class="swiper-slide local">
+                                    <div class="local__icon">
+                                        <img src="img/icons/local-icon-white.svg" alt="">
+                                    </div>
+                                    <div class="local__text">
+                                        2911 Stonecrest Circle
+                                        Lithonia, GA 30038
+                                    </div>
+                                </div>
+                                <div class="swiper-slide local">
+                                    <div class="local__icon">
+                                        <img src="img/icons/local-icon-white.svg" alt="">
+                                    </div>
+                                    <div class="local__text">
+                                        2910 Stonecrest Circle
+                                        Lithonia,
+                                    </div>
+                                </div>
+                                <div class="swiper-slide local">
+                                    <div class="local__icon">
+                                        <img src="img/icons/local-icon-white.svg" alt="">
+                                    </div>
+                                    <div class="local__text">
+                                        Stonecrest Circle
+                                        Lithonia, GA 30038
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -240,16 +323,13 @@
                 </div>
             </form>
             <div class="container">
-                <ul class="listing__list">
+                <ul class="listing__list" id="listing">
                     <li>
-                        <div class="card" 
-                            data-img="img/photo/img.jpg" 
-                            data-tablet-img="img/photo/img-tablet.jpg" 
-                            data-desk-img="img/photo/img-mob.jpg" 
-                            data-title="REAL TIME DEAL VISIBILITY AT YOUR FINGERTIPS."
+                        <div class="card" data-img="img/photo/promo-header-bg.jpg"
+                            data-tablet-img="img/photo/promo-header-bg.jpg"
+                            data-desk-img="img/photo/promo-header-bg.jpg" data-title="Austin Retail Center"
                             data-url="https://vitaliiradaiev.github.io/SAB/dist/listing-details.html"
-                            data-address="2910 Stonecrest CircleLithonia, GA 30038"
-                            >
+                            data-address="2910 Stonecrest CircleLithonia, GA 30038">
                             <div class="card__img ibg">
                                 <img src="img/photo/card-img-1.jpg" alt="">
                             </div>
@@ -270,17 +350,13 @@
                                     <h5 class="card__bottom-item-value">Available</h5>
                                 </div>
                             </div>
-                        </вшм>
+                        </div>
                     </li>
                     <li>
-                        <div class="card" 
-                            data-img="img/photo/img.jpg" 
-                            data-tablet-img="" 
-                            data-desk-img="" 
-                            data-title=""
-                            data-url=""
-                            data-address=""
-                            >
+                        <div class="card" data-img="img/photo/hero-bg-1.jpg" data-tablet-img="img/photo/hero-bg-1.jpg"
+                            data-desk-img="img/photo/hero-bg-1.jpg" data-title="Dollar General"
+                            data-url="https://vitaliiradaiev.github.io/SAB/dist/listing-details.html"
+                            data-address="Stonecrest CircleLithonia, GA 30038">
                             <div class="card__img ibg">
                                 <img src="img/photo/card-img-2.jpg" alt="">
                             </div>
@@ -301,17 +377,13 @@
                                     <h5 class="card__bottom-item-value">Available</h5>
                                 </div>
                             </div>
-                        </вшм>
+                        </div>
                     </li>
                     <li>
-                        <div class="card" 
-                            data-img="img/photo/img.jpg" 
-                            data-tablet-img="" 
-                            data-desk-img="" 
-                            data-title=""
-                            data-url=""
-                            data-address=""
-                            >
+                        <div class="card" data-img="img/photo/hero-bg-2.jpg" data-tablet-img="img/photo/hero-bg-2.jpg"
+                            data-desk-img="img/photo/hero-bg-2.jpg" data-title="Dollar General 2"
+                            data-url="https://vitaliiradaiev.github.io/SAB/dist/listing-details.html"
+                            data-address=" 2Stonecrest CircleLithonia, GA 30038">
                             <div class="card__img ibg">
                                 <img src="img/photo/card-img-3.jpg" alt="">
                             </div>
@@ -332,17 +404,13 @@
                                     <h5 class="card__bottom-item-value">Available</h5>
                                 </div>
                             </div>
-                        </вшм>
+                        </div>
                     </li>
                     <li>
-                        <div class="card" 
-                            data-img="img/photo/img.jpg" 
-                            data-tablet-img="" 
-                            data-desk-img="" 
-                            data-title=""
-                            data-url=""
-                            data-address=""
-                            >
+                        <div class="card" data-img="img/photo/hero-bg-3.jpg" data-tablet-img="img/photo/hero-bg-3.jpg"
+                            data-desk-img="img/photo/hero-bg-3.jpg" data-title="3 Dollar General"
+                            data-url="https://vitaliiradaiev.github.io/SAB/dist/listing-details.html"
+                            data-address="3Stonecrest CircleLithonia, GA 30038">
                             <div class="card__img ibg">
                                 <img src="img/photo/card-img-4.jpg" alt="">
                             </div>
@@ -364,209 +432,47 @@
                                     <h5 class="card__bottom-item-value">Available</h5>
                                 </div>
                             </div>
-                        </вшм>
+                        </div>
                     </li>
                     <li>
-                        <div class="card" 
-                            data-img="img/photo/img.jpg" 
-                            data-tablet-img="" 
-                            data-desk-img="" 
-                            data-title=""
-                            data-url=""
-                            data-address=""
-                            >
+                        <div class="card" data-img="img/photo/promo-header-bg.jpg"
+                            data-tablet-img="img/photo/promo-header-bg.jpg"
+                            data-desk-img="img/photo/promo-header-bg.jpg" data-title="Austin Retail Center"
+                            data-url="https://vitaliiradaiev.github.io/SAB/dist/listing-details.html"
+                            data-address="2910 Stonecrest CircleLithonia, GA 30038">
                             <div class="card__img ibg">
-                                <img src="img/photo/card-img-5.jpg" alt="">
+                                <img src="img/photo/card-img-1.jpg" alt="">
                             </div>
-                            <h4 class="card__title">Walgreens</h4>
-                            <div class="card__place">Goose Creek, SC</div>
-                            <div class="card__price">$4,938,173</div>
+                            <h4 class="card__title">Austin Retail Center</h4>
+                            <div class="card__place">Austin, MN</div>
+                            <div class="card__price">$3,100,000</div>
                             <div class="card__bottom">
                                 <div class="card__bottom-item">
                                     <div class="card__bottom-item-label">CAP</div>
-                                    <h5 class="card__bottom-item-value">7.25%</h5>
+                                    <h5 class="card__bottom-item-value">6.79%</h5>
                                 </div>
                                 <div class="card__bottom-item">
                                     <div class="card__bottom-item-label">Square Feet</div>
-                                    <h5 class="card__bottom-item-value">13,813</h5>
+                                    <h5 class="card__bottom-item-value">13,155</h5>
                                 </div>
                                 <div class="card__bottom-item">
                                     <div class="card__bottom-item-label">Status</div>
                                     <h5 class="card__bottom-item-value">Available</h5>
                                 </div>
                             </div>
-                        </вшм>
+                        </div>
                     </li>
                     <li>
-                        <div class="card" 
-                            data-img="img/photo/img.jpg" 
-                            data-tablet-img="" 
-                            data-desk-img="" 
-                            data-title=""
-                            data-url=""
-                            data-address=""
-                            >
+                        <div class="card" data-img="img/photo/hero-bg-1.jpg" data-tablet-img="img/photo/hero-bg-1.jpg"
+                            data-desk-img="img/photo/hero-bg-1.jpg" data-title="Dollar General"
+                            data-url="https://vitaliiradaiev.github.io/SAB/dist/listing-details.html"
+                            data-address="Stonecrest CircleLithonia, GA 30038">
                             <div class="card__img ibg">
-                                <img src="img/photo/card-img-6.jpg" alt="">
+                                <img src="img/photo/card-img-2.jpg" alt="">
                             </div>
-                            <h4 class="card__title">Walgreens</h4>
-                            <div class="card__place">Morganton, NC</div>
-                            <div class="card__price">$4,161,934</div>
-                            <div class="card__bottom">
-                                <div class="card__bottom-item">
-                                    <div class="card__bottom-item-label">CAP</div>
-                                    <h5 class="card__bottom-item-value">6.15%</h5>
-                                </div>
-                                <div class="card__bottom-item">
-                                    <div class="card__bottom-item-label">Square Feet</div>
-                                    <h5 class="card__bottom-item-value">10,908</h5>
-                                </div>
-                                <div class="card__bottom-item">
-                                    <div class="card__bottom-item-label">Status</div>
-                                    <h5 class="card__bottom-item-value">Available</h5>
-                                </div>
-                            </div>
-                        </вшм>
-                    </li>
-                    <li>
-                        <div class="card" 
-                            data-img="img/photo/img.jpg" 
-                            data-tablet-img="" 
-                            data-desk-img="" 
-                            data-title=""
-                            data-url=""
-                            data-address=""
-                            >
-                            <div class="card__img ibg">
-                                <img src="img/photo/card-img-7.jpg" alt="">
-                            </div>
-                            <h4 class="card__title">Walgreens</h4>
-                            <div class="card__place">Morgantown, KY</div>
-                            <div class="card__price">$2,635,878</div>
-                            <div class="card__bottom">
-                                <div class="card__bottom-item">
-                                    <div class="card__bottom-item-label">CAP</div>
-                                    <h5 class="card__bottom-item-value">5.75%</h5>
-                                </div>
-                                <div class="card__bottom-item">
-                                    <div class="card__bottom-item-label">Square Feet</div>
-                                    <h5 class="card__bottom-item-value">10,752</h5>
-                                </div>
-                                <div class="card__bottom-item">
-                                    <div class="card__bottom-item-label">Status</div>
-                                    <h5 class="card__bottom-item-value">Available</h5>
-                                </div>
-                            </div>
-                        </вшм>
-                    </li>
-                    <li>
-                        <div class="card" 
-                            data-img="img/photo/img.jpg" 
-                            data-tablet-img="" 
-                            data-desk-img="" 
-                            data-title=""
-                            data-url=""
-                            data-address=""
-                            >
-                            <div class="card__img ibg">
-                                <img src="img/photo/card-img-8.jpg" alt="">
-                            </div>
-                            <h4 class="card__title">Applebee's</h4>
-                            <div class="card__place">Seneca, SC</div>
-                            <div class="card__price">$3,446,489</div>
-                            <div class="card__bottom">
-                                <div class="card__bottom-item">
-                                    <div class="card__bottom-item-label">CAP</div>
-                                    <h5 class="card__bottom-item-value">7.00%</h5>
-                                </div>
-                                <div class="card__bottom-item">
-                                    <div class="card__bottom-item-label">Square Feet</div>
-                                    <h5 class="card__bottom-item-value">4,933</h5>
-                                </div>
-                                <div class="card__bottom-item">
-                                    <div class="card__bottom-item-label">Status</div>
-                                    <h5 class="card__bottom-item-value">Available</h5>
-                                </div>
-                            </div>
-                        </вшм>
-                    </li>
-                    <li>
-                        <div class="card" 
-                            data-img="img/photo/img.jpg" 
-                            data-tablet-img="" 
-                            data-desk-img="" 
-                            data-title=""
-                            data-url=""
-                            data-address=""
-                            >
-                            <div class="card__img ibg">
-                                <img src="img/photo/card-img-9.jpg" alt="">
-                            </div>
-                            <h4 class="card__title">Applebee's</h4>
-                            <div class="card__place">Killeen, TX</div>
-                            <div class="card__price">$4,760,800</div>
-                            <div class="card__bottom">
-                                <div class="card__bottom-item">
-                                    <div class="card__bottom-item-label">CAP</div>
-                                    <h5 class="card__bottom-item-value">6.25%</h5>
-                                </div>
-                                <div class="card__bottom-item">
-                                    <div class="card__bottom-item-label">Square Feet</div>
-                                    <h5 class="card__bottom-item-value">5,027</h5>
-                                </div>
-                                <div class="card__bottom-item">
-                                    <div class="card__bottom-item-label">Status</div>
-                                    <h5 class="card__bottom-item-value">Available</h5>
-                                </div>
-                            </div>
-                        </вшм>
-                    </li>
-                    <li>
-                        <div class="card" 
-                            data-img="img/photo/img.jpg" 
-                            data-tablet-img="" 
-                            data-desk-img="" 
-                            data-title=""
-                            data-url=""
-                            data-address=""
-                            >
-                            <div class="card__img ibg">
-                                <img src="img/photo/card-img-10.jpg" alt="">
-                            </div>
-                            <h4 class="card__title">AT&T</h4>
-                            <div class="card__place">Morrow, GA</div>
-                            <div class="card__price">$1,465,969</div>
-                            <div class="card__bottom">
-                                <div class="card__bottom-item">
-                                    <div class="card__bottom-item-label">CAP</div>
-                                    <h5 class="card__bottom-item-value">6.50%</h5>
-                                </div>
-                                <div class="card__bottom-item">
-                                    <div class="card__bottom-item-label">Square Feet</div>
-                                    <h5 class="card__bottom-item-value">5,775</h5>
-                                </div>
-                                <div class="card__bottom-item">
-                                    <div class="card__bottom-item-label">Status</div>
-                                    <h5 class="card__bottom-item-value">Available</h5>
-                                </div>
-                            </div>
-                        </вшм>
-                    </li>
-                    <li>
-                        <div class="card" 
-                            data-img="img/photo/img.jpg" 
-                            data-tablet-img="" 
-                            data-desk-img="" 
-                            data-title=""
-                            data-url=""
-                            data-address=""
-                            >
-                            <div class="card__img ibg">
-                                <img src="img/photo/card-img-11.jpg" alt="">
-                            </div>
-                            <h4 class="card__title">Five Guys | IHOP</h4>
-                            <div class="card__place">Hinesville, GA</div>
-                            <div class="card__price">$4,600,000</div>
+                            <h4 class="card__title">Dollar General</h4>
+                            <div class="card__place">North Rose, NY</div>
+                            <div class="card__price">$1,816,964</div>
                             <div class="card__bottom">
                                 <div class="card__bottom-item">
                                     <div class="card__bottom-item-label">CAP</div>
@@ -574,45 +480,179 @@
                                 </div>
                                 <div class="card__bottom-item">
                                     <div class="card__bottom-item-label">Square Feet</div>
-                                    <h5 class="card__bottom-item-value">6,900</h5>
+                                    <h5 class="card__bottom-item-value">9,100</h5>
                                 </div>
                                 <div class="card__bottom-item">
                                     <div class="card__bottom-item-label">Status</div>
                                     <h5 class="card__bottom-item-value">Available</h5>
                                 </div>
                             </div>
-                        </вшм>
+                        </div>
                     </li>
                     <li>
-                        <div class="card" 
-                            data-img="img/photo/img.jpg" 
-                            data-tablet-img="" 
-                            data-desk-img="" 
-                            data-title=""
-                            data-url=""
-                            data-address=""
-                            >
+                        <div class="card" data-img="img/photo/hero-bg-2.jpg" data-tablet-img="img/photo/hero-bg-2.jpg"
+                            data-desk-img="img/photo/hero-bg-2.jpg" data-title="Dollar General 2"
+                            data-url="https://vitaliiradaiev.github.io/SAB/dist/listing-details.html"
+                            data-address=" 2Stonecrest CircleLithonia, GA 30038">
                             <div class="card__img ibg">
-                                <img src="img/photo/card-img-12.jpg" alt="">
+                                <img src="img/photo/card-img-3.jpg" alt="">
                             </div>
-                            <h4 class="card__title">The Shops at Trussville</h4>
-                            <div class="card__place">Birmingham, AL</div>
-                            <div class="card__price">$5,400,000</div>
+                            <h4 class="card__title">IHOP</h4>
+                            <div class="card__place">Milledgeville, GA</div>
+                            <div class="card__price">$3,439,857</div>
                             <div class="card__bottom">
                                 <div class="card__bottom-item">
                                     <div class="card__bottom-item-label">CAP</div>
-                                    <h5 class="card__bottom-item-value">6.14%</h5>
+                                    <h5 class="card__bottom-item-value">7.00%</h5>
                                 </div>
                                 <div class="card__bottom-item">
                                     <div class="card__bottom-item-label">Square Feet</div>
-                                    <h5 class="card__bottom-item-value">9,000</h5>
+                                    <h5 class="card__bottom-item-value">4,870</h5>
                                 </div>
                                 <div class="card__bottom-item">
                                     <div class="card__bottom-item-label">Status</div>
                                     <h5 class="card__bottom-item-value">Available</h5>
                                 </div>
                             </div>
-                        </вшм>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card" data-img="img/photo/hero-bg-3.jpg" data-tablet-img="img/photo/hero-bg-3.jpg"
+                            data-desk-img="img/photo/hero-bg-3.jpg" data-title="3 Dollar General"
+                            data-url="https://vitaliiradaiev.github.io/SAB/dist/listing-details.html"
+                            data-address="3Stonecrest CircleLithonia, GA 30038">
+                            <div class="card__img ibg">
+                                <img src="img/photo/card-img-4.jpg" alt="">
+                            </div>
+                            <h4 class="card__title">IHOP</h4>
+                            <div class="card__place">Lithonia, GA</div>
+                            <div class="card__price">$3,563,448</div>
+                            <div class="card__bottom">
+
+                                <div class="card__bottom-item">
+                                    <div class="card__bottom-item-label">CAP</div>
+                                    <h5 class="card__bottom-item-value">7.25%</h5>
+                                </div>
+                                <div class="card__bottom-item">
+                                    <div class="card__bottom-item-label">Square Feet</div>
+                                    <h5 class="card__bottom-item-value">4,972</h5>
+                                </div>
+                                <div class="card__bottom-item">
+                                    <div class="card__bottom-item-label">Status</div>
+                                    <h5 class="card__bottom-item-value">Available</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card" data-img="img/photo/promo-header-bg.jpg"
+                            data-tablet-img="img/photo/promo-header-bg.jpg"
+                            data-desk-img="img/photo/promo-header-bg.jpg" data-title="Austin Retail Center"
+                            data-url="https://vitaliiradaiev.github.io/SAB/dist/listing-details.html"
+                            data-address="2910 Stonecrest CircleLithonia, GA 30038">
+                            <div class="card__img ibg">
+                                <img src="img/photo/card-img-1.jpg" alt="">
+                            </div>
+                            <h4 class="card__title">Austin Retail Center</h4>
+                            <div class="card__place">Austin, MN</div>
+                            <div class="card__price">$3,100,000</div>
+                            <div class="card__bottom">
+                                <div class="card__bottom-item">
+                                    <div class="card__bottom-item-label">CAP</div>
+                                    <h5 class="card__bottom-item-value">6.79%</h5>
+                                </div>
+                                <div class="card__bottom-item">
+                                    <div class="card__bottom-item-label">Square Feet</div>
+                                    <h5 class="card__bottom-item-value">13,155</h5>
+                                </div>
+                                <div class="card__bottom-item">
+                                    <div class="card__bottom-item-label">Status</div>
+                                    <h5 class="card__bottom-item-value">Available</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card" data-img="img/photo/hero-bg-1.jpg" data-tablet-img="img/photo/hero-bg-1.jpg"
+                            data-desk-img="img/photo/hero-bg-1.jpg" data-title="Dollar General"
+                            data-url="https://vitaliiradaiev.github.io/SAB/dist/listing-details.html"
+                            data-address="Stonecrest CircleLithonia, GA 30038">
+                            <div class="card__img ibg">
+                                <img src="img/photo/card-img-2.jpg" alt="">
+                            </div>
+                            <h4 class="card__title">Dollar General</h4>
+                            <div class="card__place">North Rose, NY</div>
+                            <div class="card__price">$1,816,964</div>
+                            <div class="card__bottom">
+                                <div class="card__bottom-item">
+                                    <div class="card__bottom-item-label">CAP</div>
+                                    <h5 class="card__bottom-item-value">5.50%</h5>
+                                </div>
+                                <div class="card__bottom-item">
+                                    <div class="card__bottom-item-label">Square Feet</div>
+                                    <h5 class="card__bottom-item-value">9,100</h5>
+                                </div>
+                                <div class="card__bottom-item">
+                                    <div class="card__bottom-item-label">Status</div>
+                                    <h5 class="card__bottom-item-value">Available</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card" data-img="img/photo/hero-bg-2.jpg" data-tablet-img="img/photo/hero-bg-2.jpg"
+                            data-desk-img="img/photo/hero-bg-2.jpg" data-title="Dollar General 2"
+                            data-url="https://vitaliiradaiev.github.io/SAB/dist/listing-details.html"
+                            data-address=" 2Stonecrest CircleLithonia, GA 30038">
+                            <div class="card__img ibg">
+                                <img src="img/photo/card-img-3.jpg" alt="">
+                            </div>
+                            <h4 class="card__title">IHOP</h4>
+                            <div class="card__place">Milledgeville, GA</div>
+                            <div class="card__price">$3,439,857</div>
+                            <div class="card__bottom">
+                                <div class="card__bottom-item">
+                                    <div class="card__bottom-item-label">CAP</div>
+                                    <h5 class="card__bottom-item-value">7.00%</h5>
+                                </div>
+                                <div class="card__bottom-item">
+                                    <div class="card__bottom-item-label">Square Feet</div>
+                                    <h5 class="card__bottom-item-value">4,870</h5>
+                                </div>
+                                <div class="card__bottom-item">
+                                    <div class="card__bottom-item-label">Status</div>
+                                    <h5 class="card__bottom-item-value">Available</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card" data-img="img/photo/hero-bg-3.jpg" data-tablet-img="img/photo/hero-bg-3.jpg"
+                            data-desk-img="img/photo/hero-bg-3.jpg" data-title="3 Dollar General"
+                            data-url="https://vitaliiradaiev.github.io/SAB/dist/listing-details.html"
+                            data-address="3Stonecrest CircleLithonia, GA 30038">
+                            <div class="card__img ibg">
+                                <img src="img/photo/card-img-4.jpg" alt="">
+                            </div>
+                            <h4 class="card__title">IHOP</h4>
+                            <div class="card__place">Lithonia, GA</div>
+                            <div class="card__price">$3,563,448</div>
+                            <div class="card__bottom">
+
+                                <div class="card__bottom-item">
+                                    <div class="card__bottom-item-label">CAP</div>
+                                    <h5 class="card__bottom-item-value">7.25%</h5>
+                                </div>
+                                <div class="card__bottom-item">
+                                    <div class="card__bottom-item-label">Square Feet</div>
+                                    <h5 class="card__bottom-item-value">4,972</h5>
+                                </div>
+                                <div class="card__bottom-item">
+                                    <div class="card__bottom-item-label">Status</div>
+                                    <h5 class="card__bottom-item-value">Available</h5>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>

@@ -2934,6 +2934,10 @@ table td {
   padding-bottom: 120px;
 }
 
+.promo-header.hero-slider-listing .promo-header__body {
+  min-height: 505px;
+}
+
 .promo-header__bg {
   position: absolute;
   top: 0;
@@ -3040,6 +3044,10 @@ table td {
   height: 100%;
 }
 
+.hero-slider__slider .swiper-slide {
+  padding-top: 69px;
+}
+
 .hero-slider__controll-box {
   position: absolute;
   z-index: 3;
@@ -3077,6 +3085,10 @@ table td {
   background-color: #fff;
 }
 
+.hero-slider__controll-box .swiper-pagination.swiper-pagination-lock {
+  display: none;
+}
+
 .hero-slider__controll-box .slider-button {
   color: #fff;
 }
@@ -3089,6 +3101,7 @@ table td {
       -ms-flex-align: center;
           align-items: center;
   min-height: 99px;
+  min-width: 0;
 }
 
 .hero-slider__controll-box-col-1 {
@@ -3113,10 +3126,24 @@ table td {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  min-width: 0;
+}
+
+.hero-slider__controll-box-col-3 .swiper-container {
+  width: 146px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.hero-slider__controll-box-col-3 .swiper-container .swiper-slide {
+  opacity: 0 !important;
+}
+
+.hero-slider__controll-box-col-3 .swiper-container .swiper-slide.swiper-slide-active {
+  opacity: 1 !important;
 }
 
 .local {
-  width: 146px;
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3903,7 +3930,6 @@ table td {
 }
 
 .box__bg img {
-  opacity: 0.5;
   mix-blend-mode: multiply;
 }
 
@@ -5190,6 +5216,10 @@ table td {
   padding: 12px;
   color: #51555B;
   min-height: 420px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .card__img {
@@ -5444,6 +5474,10 @@ table td {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 calc(50% - 12px);
             flex: 0 1 calc(50% - 12px);
+  }
+
+  .listings-page .hero-slider .promo-header__body {
+    min-height: 473px;
   }
 
   .listing__search .search-wrap {
@@ -5806,6 +5840,10 @@ table td {
     color: #446FA0;
   }
 
+  .listings-page .hero-slider .promo-header__body {
+    min-height: 573px;
+  }
+
   .listing__filter {
     border-top: 1px solid #dee3e6;
     border-bottom: 1px solid #dee3e6;
@@ -5815,6 +5853,11 @@ table td {
 
   .listing-filter__col:not(:last-child) {
     border-right: 1px solid #dee3e6;
+  }
+
+  .card:hover {
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   }
 
   .card:hover .card__title {
@@ -6493,6 +6536,10 @@ table td {
             backdrop-filter: blur(16px);
     margin-left: -40px;
     margin-right: -40px;
+  }
+
+  .hero-slider__controll-box-col-3 .swiper-container {
+    width: 100%;
   }
 
   .hero-slider__controll-box-col-3 .local {
