@@ -5,9 +5,14 @@
         & .promo-header__body {
             padding-top: 85px;
             padding-bottom: 120px;
+            pointer-events: none;
 
             @media (max-width: $md3+px) {
                 padding-top: 75px;
+            }
+
+            & a {
+                pointer-events: auto;
             }
         }
     }

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "New Project"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    @@include('common/header/_header.html',{})
+    <!-- == // TOP LINE ================== -->
+
+
+    <main class="_page news-detail-page">
+        <section class="hero hero-news-deail _padding-top">
+            <!-- PICTURE -->
+            <div class="hero-bg ibg">
+                @@include('_img.html',{
+                "desk": "img/photo/hero-bg-11.jpg",
+                "tablet": "img/photo/hero-bg-10-tablet.jpg",
+                "mob": "img/photo/hero-bg-7-mob.jpg"
+                })
+            </div>
+
+            <!-- VIDEO -->
+            <!-- <div class="hero-bg ibg">
+				<video poster="img/photo/promo-header-bg.jpg" data-media-mobile="img/test-video-mob.mp4" autoplay muted loop
+					playsinline controlslist="nodownload" crossorigin="anonymous">
+					<source src="img/test-video-desk.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+				</video> 
+			</div> -->
+
+            <!-- VIMEO VIDEO -->
+            <!-- <div class="hero-bg ibg" data-vimeo-poster="img/photo/promo-header-bg.jpg" data-vimeo-id="589884423" data-vimeo-mobile-id="589884750"></div> -->
+
+            <div class="hero__body container">
+                <div class="hero__suptitle" data-text-anim="" data-delay="700">NOVEMBER 7, 2018</div>
+                <h1 class="hero__title" data-title-anim>
+                    <strong>
+                        SAB Group Arranges $6.27M Sale
+                    </strong>
+                    <strong>
+                        of Hobby Lobby
+                    </strong>
+                </h1>
+            </div>
+        </section>
+
+        <section class="article">
+            <div class="container">
+                <div class="article__text text-content">
+                    <h4>
+                        New York, NY
+                    </h4>
+
+                    <p>
+                        CoStar Group Inc., a leading provider of CRE analytics and online marketplaces, recently announced the Power Broker Quarterly Deal winners for the third quarter of 2021.
+                    </p>
+                    <p>
+                        SAB Capital is pleased to announce that Managing Partner Zach Weiss, and Senior Investment Sales Associate Jordan Koeppel emerged as winners in the Greater Albany and Cleveland markets, respectively. Weiss closed a 14,550 SF Walgreens in Amsterdam, NY at a selling price of $6,052,000. Koeppel closed a 111,152 SF grocery-anchored shopping center in the heart of downtown Euclid, OH, at a selling price of $13,250,000.
+                    </p>
+                    <p>
+                        Please help us congratulate Zach and Jordan on their CoStar Power Broker Quarterly Deals win.
+                    </p>
+                    <p>
+                        For more information, visit: <a href="#">https://www.costarpowerbrokers.com/quarterly-deals/</a>
+                    </p>
+                    <p>
+                        SAB Capital is a national Real Estate Investment Sales firm dedicated to assisting clients in the acquisition and disposition of net-leased, industrial, and sale-leasebackproperties, as well as 1031 exchange advisory services. We provide brokerage expertise with the highest commitment and attention to detail, ensuring maximum yield and a faster turnaround time. Each client is advised on exit and entrance strategies aimed at achieving their investment goals.
+                    </p>
+                    <p>
+                        CoStar Group, Inc. (NASDAQ: CSGP) is the leading provider of commercial real estate information, analytics and online marketplaces. Founded in 1987, CoStar conducts expansive, ongoing research to produce and maintain the largest and most comprehensive database of commercial real estate information. Our suite of online services enables clients to analyze, interpret and gain unmatched insight on commercial property values, market conditions and current availabilities. Through LoopNet, the Company operates the most heavily trafficked commercial real estate marketplace online with more than 9 million registered members. Apartments.com is a premier online apartment resource for renters that matches apartment seekers with great apartment homes and provides property managers and owners a proven platform for marketing their properties. CoStar operates websites that have over 19 million unique monthly visitors in aggregate during January 2015. Headquartered in Washington, DC, CoStar maintains offices throughout the U.S., in Europe and in Toronto, Canada with a staff of over 2,400 worldwide, including the industry’s largest professional research organization. For more information, visit www.costargroup.com.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="other-news pt-0">
+            <div class="container">
+                <div class="other-news__head">
+                    <h2 class="other-news__title" data-title-anim="">Other NEWS</h2>
+                    <div class="slider-buttons" data-fade-in-anim="">
+                        <div class="slider-button prev">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="19.25" stroke="currentColor" stroke-width="1.5" />
+                                <path
+                                    d="M20.3492 15.415L15.8858 19.2407C15.4202 19.6398 15.4202 20.3602 15.8858 20.7593L20.3492 24.585C20.9979 25.141 22 24.6801 22 23.8258V16.1742C22 15.3199 20.9979 14.859 20.3492 15.415Z"
+                                    stroke="currentColor" />
+                            </svg>
+
+                        </div>
+                        <div class="slider-button next">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="19.25" stroke="currentColor" stroke-width="1.5" />
+                                <path
+                                    d="M19.6508 15.415L24.1142 19.2407C24.5798 19.6398 24.5798 20.3602 24.1142 20.7593L19.6508 24.585C19.0021 25.141 18 24.6801 18 23.8258V16.1742C18 15.3199 19.0021 14.859 19.6508 15.415Z"
+                                    stroke="currentColor" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="other-news__slider swiper-container" data-mobile="false">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#" class="post-card fadeIn">
+                                <div class="post-card__img ibg">
+                                    <img src="img/photo/post-card-img-4.jpg" alt="">
+                                </div>
+                                <div class="post-card__date">OCTOBER 18, 2018</div>
+                                <h4 class="post-card__title">
+                                    SAB Group Brokers Sale of $6.49M Hannaford Anchored Shopping Center
+                                </h4>
+                                <div class="post-card__read-more">Read more</div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="post-card fadeIn">
+                                <div class="post-card__img ibg">
+                                    <img src="img/photo/post-card-img-4.jpg" alt="">
+                                </div>
+                                <div class="post-card__date">OCTOBER 18, 2018</div>
+                                <h4 class="post-card__title">
+                                    SAB Group Brokers Sale of $6.49M Hannaford Anchored Shopping Center
+                                </h4>
+                                <div class="post-card__read-more">Read more</div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="post-card fadeIn">
+                                <div class="post-card__img ibg">
+                                    <img src="img/photo/post-card-img-5.jpg" alt="">
+                                </div>
+                                <div class="post-card__date">JULY 12, 2018</div>
+                                <h4 class="post-card__title">
+                                    Marcus & Millichap Sells a Service Station in Wayne, NJ
+                                </h4>
+                                <div class="post-card__read-more">Read more</div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="post-card fadeIn">
+                                <div class="post-card__img ibg">
+                                    <img src="img/photo/post-card-img-6.jpg" alt="">
+                                </div>
+                                <div class="post-card__date">MARCH 30, 2018</div>
+                                <h4 class="post-card__title">
+                                    First Ever Chick Fil A in Rochester, NY Sold!
+                                </h4>
+                                <div class="post-card__read-more">Read more</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container cta__body">
+                <h2 class="cta__title" data-title-anim="">Be the First to Know</h2>
+                <h2 class="cta__title-mob" data-title-anim="">let’s connect</h2>
+                <a href="#" class="btn" data-fade-in-anim="">Subscribe</a>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

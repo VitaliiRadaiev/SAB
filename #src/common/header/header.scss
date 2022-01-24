@@ -176,7 +176,9 @@
         position: relative;
         z-index: 2;
         padding: 10px 8px;
-        max-width: 400px;
+        max-width: fit-content;
+        flex: 1 1 auto;
+        white-space: nowrap;
 
         &:not(:last-child) {
             padding-right: min(20px, 5%);

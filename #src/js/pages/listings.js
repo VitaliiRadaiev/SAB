@@ -7,14 +7,17 @@ if (heroSliderListngs) {
     let notFoundImgUrl = heroSliderListngs.dataset.noPostFoundImg;
     let dataSlider = new Swiper(heroSliderListngs.querySelector('.swiper-container'), {
         effect: 'fade',
+        autoplay: {
+            delay: 6000,
+            disableOnInteraction: false, 
+        },
         observer: true,
-        observeParents: true,
+        observeParents: true, 
         slidesPerView: 1,
         spaceBetween: 0,
         speed: 800,
         preloadImages: false,
         watchOverflow: true,
-        touchRatio: 0,
         watchSlidesVisibility: true,
         lazy: {
             loadPrevNext: true,
@@ -211,7 +214,7 @@ if (heroSliderListngs) {
 
 //         items.forEach((item, index) => {
 //             let title = item.querySelector('.card__title');
-            
+
 //             if(regExp.test(title.innerText)) {
 //                 item.style.display = 'block';
 //                 title.innerHTML = allTitlesText[index].replace(regExp, '<span class="letters">$&</span>');
@@ -245,3 +248,34 @@ if (heroSliderListngs) {
 //         applyFilter(Array.from(listing.children), e.target.value);
 //     })
 // }
+
+
+
+// search result formated price ====
+// new Promise((res, rej) => {
+//     let id = setInterval(() => {
+//         let resultContainer = document.querySelector('#ajaxsearchliteres1');
+//         if (resultContainer) {
+//             res(resultContainer);
+//             clearInterval(id);
+//         }
+//     }, 100)
+// }).then(resultContainer => {
+
+//     let observer = new MutationObserver(mutationRecords => {
+//         let allPrices =  resultContainer.querySelectorAll('.asl_desc');
+//         if(allPrices.length) {
+//             let numFormat = wNumb({ decimals: 0, prefix: '$', thousand: ',' });
+//             allPrices.forEach(item => {
+//                 console.log(item);
+//                 //item.innerText = numFormat.to(item);
+//             })
+//         }
+//     });
+
+//     observer.observe(resultContainer, {
+//         childList: true, 
+//         subtree: true,
+//         characterData: false, 
+//     });
+// })

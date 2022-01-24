@@ -880,7 +880,6 @@ if(heroSlider) {
         spaceBetween: 0,
         speed: 800,
         watchOverflow: true,
-        touchRatio: 0,
         pagination: {
         	el: heroSlider.querySelector('.swiper-pagination'),
         	clickable: true,
@@ -1577,6 +1576,75 @@ document.addEventListener('keydown', function(e) {
 		}
 	})();
 // === AND Polyfill ===;
+	let otherNews = document.querySelector('.other-news');
+if (otherNews) {
+    const slider = otherNews.querySelector('.other-news__slider');
+    if (slider) {
+        let wrapper = slider.querySelector('.swiper-wrapper');
+        let cards = slider.querySelectorAll('.post-card');
+        if(cards.length && document.documentElement.clientWidth > 991.98) {
+            let delay = 0;
+            cards.forEach(card => {
+                card.setAttribute('data-delay', delay+=100);
+            })
+        }
+
+        let options = {
+            speed: 800,
+            navigation: {
+                nextEl: otherNews.querySelector('.slider-button.next'),
+                prevEl: otherNews.querySelector('.slider-button.prev'),
+            },
+            watchSlidesVisibility: true,
+            watchOverflow: true,
+            breakpoints: {
+                320: {
+                    slidesPerView: 3,
+                    spaceBetween:30,
+                },
+
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                }
+            },
+        }
+
+        if(wrapper.children.length <= 3) {
+            otherNews.classList.add('slider-is-empty');
+            options = { ...options, touchRatio: 0,};
+        }
+
+        let mySwiper;
+
+
+        function mobileSlider() {
+            if (document.documentElement.clientWidth > 991.98 && slider.dataset.mobile == 'false') {
+                mySwiper = new Swiper(slider, options);
+
+                slider.dataset.mobile = 'true';
+
+                //mySwiper.slideNext(0);
+            }
+
+            if (document.documentElement.clientWidth <= 992) {
+                slider.dataset.mobile = 'false';
+
+                if (slider.classList.contains('swiper-container-initialized')) {
+                    mySwiper.destroy();
+                }
+            }
+        }
+
+        mobileSlider();
+
+        window.addEventListener('resize', () => {
+            mobileSlider();
+        })
+    }
+
+}
+;
 
 	{
 	let vimeoVideos = document.querySelectorAll('[data-vimeo-id]');
@@ -1732,14 +1800,17 @@ if (heroSliderListngs) {
     let notFoundImgUrl = heroSliderListngs.dataset.noPostFoundImg;
     let dataSlider = new Swiper(heroSliderListngs.querySelector('.swiper-container'), {
         effect: 'fade',
+        autoplay: {
+            delay: 6000,
+            disableOnInteraction: false, 
+        },
         observer: true,
-        observeParents: true,
+        observeParents: true, 
         slidesPerView: 1,
         spaceBetween: 0,
         speed: 800,
         preloadImages: false,
         watchOverflow: true,
-        touchRatio: 0,
         watchSlidesVisibility: true,
         lazy: {
             loadPrevNext: true,
@@ -1936,7 +2007,7 @@ if (heroSliderListngs) {
 
 //         items.forEach((item, index) => {
 //             let title = item.querySelector('.card__title');
-            
+
 //             if(regExp.test(title.innerText)) {
 //                 item.style.display = 'block';
 //                 title.innerHTML = allTitlesText[index].replace(regExp, '<span class="letters">$&</span>');
@@ -1969,7 +2040,38 @@ if (heroSliderListngs) {
 //     listingSearch.addEventListener('input', (e) => {
 //         applyFilter(Array.from(listing.children), e.target.value);
 //     })
-// };
+// }
+
+
+
+// search result formated price ====
+// new Promise((res, rej) => {
+//     let id = setInterval(() => {
+//         let resultContainer = document.querySelector('#ajaxsearchliteres1');
+//         if (resultContainer) {
+//             res(resultContainer);
+//             clearInterval(id);
+//         }
+//     }, 100)
+// }).then(resultContainer => {
+
+//     let observer = new MutationObserver(mutationRecords => {
+//         let allPrices =  resultContainer.querySelectorAll('.asl_desc');
+//         if(allPrices.length) {
+//             let numFormat = wNumb({ decimals: 0, prefix: '$', thousand: ',' });
+//             allPrices.forEach(item => {
+//                 console.log(item);
+//                 //item.innerText = numFormat.to(item);
+//             })
+//         }
+//     });
+
+//     observer.observe(resultContainer, {
+//         childList: true, 
+//         subtree: true,
+//         characterData: false, 
+//     });
+// });
 
 
 

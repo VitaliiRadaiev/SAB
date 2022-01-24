@@ -603,8 +603,8 @@ div.vertical.wpdreams_asl_results.asl_r {
                     width: 125px;
 
                     @media (max-width: $md3+px) {
-                        height: 75px;
-                        width: 75px;
+                        height: 95px;
+                        width: 95px;
                         margin-right: 15px;
                     }
                 }
@@ -612,19 +612,36 @@ div.vertical.wpdreams_asl_results.asl_r {
                 & h3 {
                     display: inline-block;
                     margin-top: 12px;
+                    margin-bottom: 14px;
+
+                    @media (max-width: $md3+px) {
+                        margin-bottom: 5px;
+                    }
                 }
 
                 & h3,
                 & h3 a {
-                    font-family: $titleFontFamily;
-                    font-weight: 700;
-                    font-size: 28px;
-                    line-height: 1em;
-                    color: #223c60;
-                    margin-bottom: 5px;
+                    & .title {
+                        font-family: $titleFontFamily;
+                        font-weight: 700;
+                        font-size: 28px;
+                        line-height: 1em;
+                        color: #223c60;
+                        margin-bottom: 5px;
 
-                    @media (max-width: $md3+px) {
-                        font-size: 26px;
+                        @media (max-width: $md3+px) {
+                            font-size: 20px;
+                        }
+                    }
+
+                    & .place {
+                        color: #51555b;
+                        font-size: 16px;
+                        line-height: 1.2em;
+
+                        @media (max-width: $md3+px) {
+                            font-size: 14px;
+                        }
                     }
                 }
 
@@ -634,7 +651,16 @@ div.vertical.wpdreams_asl_results.asl_r {
                     font-size: 16px;
                     line-height: 21px;
                     font-family: $mainFontFamily;
-                    color: #51555B;
+                    color: #51555b;
+
+                    &.asl_desc {
+                        font-size: 26px;
+                        line-height: 1em;
+
+                        @media (max-width: $md3+px) {
+                            font-size: 20px;
+                        }
+                    }
                 }
             }
         }
@@ -644,7 +670,7 @@ div.vertical.wpdreams_asl_results.asl_r {
         margin-top: 21px !important;
         margin-bottom: 21px !important;
         width: 5px;
-        background: #C4C4C4;
+        background: #c4c4c4;
         right: 9px;
 
         & .asl_simplebar-scrollbar {
@@ -652,7 +678,7 @@ div.vertical.wpdreams_asl_results.asl_r {
             right: 0;
             &:before {
                 opacity: 1;
-                background: #446FA0;
+                background: #446fa0;
                 border-radius: 0;
             }
         }

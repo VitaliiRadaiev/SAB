@@ -181,4 +181,9 @@
     @media (max-width: $md2+px) {
         height: 450px;
     }
+
+    & .acf-map {
+        margin: 0;
+        height: 100%;
+    }
 }

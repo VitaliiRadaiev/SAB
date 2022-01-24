@@ -266,7 +266,9 @@
 }
 
 .team-card {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     color: $textColor;
 
     @media (min-width: 992px) {
@@ -313,6 +315,7 @@
     &__info {
         font-size: 18px;
         line-height: 23px;
+        margin-top: auto;
 
         & > li {
             display: flex;
