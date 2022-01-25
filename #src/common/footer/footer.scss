@@ -164,6 +164,16 @@
             font-size: 18px;
             line-height: 23px;
             color: #ffffff;
+
+            & a {
+                color: #fff;
+
+                @media (min-width: 992px) {
+                    &:hover {
+                        color: $mainColor;
+                    }
+                }
+            }
         }
     }
 

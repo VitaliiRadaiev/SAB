@@ -45,6 +45,7 @@ window.addEventListener('load', function () {
 	@@include('../common/other-news/other-news.js');
 
 	@@include('../common/video/video.js');
+	@@include('../common/input-file/input-file.js');
 	
 	@@include('./pages/listings.js');
 
