@@ -88,6 +88,17 @@
                 justify-content: center;
             }
         }
+
+        &--3 {
+            & .footer__text  {
+                max-width: 14em; 
+
+                @media (max-width: $md3+px) {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
     }
 
     @media (min-width: 992px) {

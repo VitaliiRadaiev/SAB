@@ -84,5 +84,13 @@
             }
 
         }
+
+        & .card {
+            opacity: 0;
+
+            &._active {
+                opacity: 1;
+            }
+        }
     }
 }

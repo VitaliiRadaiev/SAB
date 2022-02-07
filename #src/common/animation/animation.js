@@ -36,6 +36,7 @@ function scrollTrigger(el, value, callback) {
 })();
 
 function wrapWords(el) {
+    //el.innerHTML = el.innerHTML.replace( /[^<|>]\s?\w+[\s|,|\.$]?[^<|>]/g, '<span class="word">$&</span><span class="white-space"></span>');
     el.innerHTML = el.innerText.split(' ').map(word => `<span class="word">${word}</span><span class="white-space"></span>`).join('');
 }
 
@@ -135,19 +136,6 @@ function wrapWords(el) {
             window.addEventListener('load', () => {
                 scrollTrigger(item, 15, () => {
                     setTimeout(() => { animation.play(); }, item.dataset.delay ? item.dataset.delay : 0);
-                })
-            })
-        })
-    }
-
-    let counterItems2 = document.querySelectorAll('.fadeIn');
-    if (counterItems2) {
-
-
-        counterItems2.forEach(item => {
-            window.addEventListener('load', () => {
-                scrollTrigger(item, 15, () => {
-                    setTimeout(() => { item.classList.add('_active') }, item.dataset.delay ? item.dataset.delay : 0);
                 })
             })
         })

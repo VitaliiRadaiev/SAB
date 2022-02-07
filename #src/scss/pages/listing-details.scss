@@ -55,6 +55,8 @@
     border-top: 4px solid $mainColor;
     padding-top: 19px;
     text-align: center;
+    display: block;
+    color: $textColor; 
 
     @media (max-width: $md2+px) {
         padding-top: 32px;
@@ -66,6 +68,17 @@
         padding-top: 22px;
         display: block;
         text-align: center;
+    }
+
+    & a {
+        color: $textColor;
+        transition: all .3s ease;
+
+        @media (min-width: 992px) {
+            &:hover {
+                color: $mainColor;
+            }
+        }
     }
 
     &__photo {
@@ -95,7 +108,13 @@
 
     &__name {
         margin-bottom: 7px;
+        transition: all .3s ease;
 
+        @media (min-width: 992px) {
+            &:hover {
+                color: $mainColor;
+            }
+        }
     }
 
     &__position {
@@ -103,6 +122,17 @@
         line-height: 21px;
         text-transform: uppercase;
         margin-bottom: 24px;
+
+        & > a {
+            color: $textColor;
+            transition: all .3s ease;
+
+            @media (min-width: 992px) {
+                &:hover {
+                    color: $mainColor;
+                }
+            }
+        }
     }
 
     &__info {
@@ -117,6 +147,18 @@
         & > li {
             display: flex;
             align-items: center;
+
+            & > a {
+                display: flex;
+                align-items: center;
+                transition: all .3s ease;
+                color: $textColor;
+                @media (min-width: 992px) {
+                    &:hover {
+                        color: $mainColor;
+                    }
+                }
+            }
 
             &:not(:last-child) {
                 margin-bottom: 21px;

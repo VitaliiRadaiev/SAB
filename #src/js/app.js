@@ -44,13 +44,38 @@ window.addEventListener('load', function () {
 	@@include('../common/popup/popup.js');
 	@@include('../common/other-news/other-news.js');
 
-	@@include('../common/video/video.js');
 	@@include('../common/input-file/input-file.js');
-	
+
 	@@include('./pages/listings.js');
 
 
 
+	function scrollTrigger(el, value, callback) {
+		let triggerPoint = document.documentElement.clientHeight / 100 * (100 - value);
+		const trigger = () => {
+			if (el.getBoundingClientRect().top <= triggerPoint && !el.classList.contains('is-show')) {
+				if (typeof callback === 'function') {
+					callback();
+					el.classList.add('is-show')
+				}
+			}
+		}
+
+		trigger();
+
+		window.addEventListener('scroll', trigger);
+	}
+
+
+	let counterItems2 = document.querySelectorAll('.fadeIn');
+	if (counterItems2) {
+
+		counterItems2.forEach(item => {
+			scrollTrigger(item, 15, () => {
+				setTimeout(() => { item.classList.add('_active') }, item.dataset.delay ? item.dataset.delay : 0);
+			})
+		})
+	}
 
 	let transactionsCardTitles = document.querySelectorAll('.transactions-card__title');
 	if (transactionsCardTitles.length) {
@@ -59,6 +84,18 @@ window.addEventListener('load', function () {
 	let transactionsCardPlace = document.querySelectorAll('.transactions-card__place');
 	if (transactionsCardPlace.length) {
 		setSameHeight(transactionsCardPlace);
+	}
+
+
+
+	let scrollBtn = document.querySelector('[data-scroll]');
+	if(scrollBtn) {
+		scrollBtn.addEventListener('click', () => {
+			window.scrollTo({
+				top: document.documentElement.clientHeight - 69,
+				behavior: 'smooth',
+			})
+		})
 	}
 });
 
@@ -73,6 +110,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	@@include('files/dynamic_adapt.js');
 	@@include('../common/animation/animation.js');
+	@@include('../common/video/video.js');
 
 
 	function testWebP(callback) {

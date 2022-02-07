@@ -84,7 +84,7 @@
         }
 
         @media (min-width: 768px) {
-            &.is-scroll {
+            &.is-scroll:not(.scroll-ended) {
                 &:before {
                     position: absolute;
                     content: "";

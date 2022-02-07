@@ -89,7 +89,7 @@
             margin-top: -33px;
 
             @media (max-width: $md3+px) {
-                margin-bottom: -30px;
+                margin-top: -30px;
             }
         }
     }
@@ -176,6 +176,14 @@
                 flex: 0 1 277px;
                 width: 277px;
                 max-width: 100%;
+            }
+        }
+
+        & .team-card {
+            opacity: 0;
+
+            &._active {
+                opacity: 1;
             }
         }
     }
@@ -279,6 +287,17 @@
         }
     }
 
+    & a {
+        color: $textColor;
+        transition: all .3s ease;
+
+        @media (min-width: 992px) {
+            &:hover {
+                color: $mainColor;
+            }
+        }
+    }
+
     & > *:last-child {
         margin-bottom: 0;
     }
@@ -303,6 +322,16 @@
         font-family: $titleFontFamily;
         margin-bottom: 11px;
         transition: all 0.3s ease;
+
+        & a {
+            color: $textColorDark;
+
+            @media (min-width: 992px) {
+                &:hover {
+                    color: $mainColor;
+                }
+            }
+        }
     }
 
     &__position {

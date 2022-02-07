@@ -910,6 +910,7 @@ if(heroSlider) {
     if(coreValues) {
         let dataSlider = new Swiper(coreValues.querySelector('.swiper-container'), {
             speed: 800,
+            loop: true,
             navigation: {
                 nextEl: coreValues.querySelector('.slider-button.next'),
                 prevEl: coreValues.querySelector('.slider-button.prev'),
@@ -982,13 +983,6 @@ if (team) {
     const slider = team.querySelector('.team__slider');
     if (slider) {
         let wrapper = slider.querySelector('.swiper-wrapper');
-        let cards = slider.querySelectorAll('.team-card');
-        if(cards.length && document.documentElement.clientWidth > 991.98) {
-            let delay = 0;
-            cards.forEach(card => {
-                card.setAttribute('data-delay', delay+=100);
-            })
-        }
 
         let options = {
             speed: 800,
@@ -998,6 +992,7 @@ if (team) {
             },
             watchSlidesVisibility: true,
             watchOverflow: true,
+            loop: true,
             breakpoints: {
                 320: {
                     slidesPerView: 3,
@@ -1013,7 +1008,7 @@ if (team) {
 
         if(wrapper.children.length <= 4) {
             team.classList.add('slider-is-empty');
-            options = { ...options, touchRatio: 0,};
+            options = { ...options, touchRatio: 0, loop: false};
         }
 
         let mySwiper;
@@ -1028,6 +1023,7 @@ if (team) {
                 //mySwiper.slideNext(0);
             }
 
+
             if (document.documentElement.clientWidth <= 992) {
                 slider.dataset.mobile = 'false';
 
@@ -1038,6 +1034,21 @@ if (team) {
         }
 
         mobileSlider();
+
+
+        let cards = slider.querySelectorAll('.team-card');
+        if(cards.length && document.documentElement.clientWidth > 991.98) {
+            let delay = 0;
+            cards.forEach(card => {
+                card.setAttribute('data-delay', delay+=100);
+            })
+        }
+        if(cards.length) {
+            cards.forEach(card => {
+                card.classList.add('fadeIn');
+            })
+        }
+ 
 
         window.addEventListener('resize', () => {
             mobileSlider();
@@ -1195,70 +1206,6 @@ if (news) {
 
 };
 	{
-    // let priceSlider = document.querySelector('.price-filter__slider');
-    // if (priceSlider) {
-    //     let inputNumFrom = document.querySelector('.price-filter__input-start');
-    //     let inputNumTo = document.querySelector('.price-filter__input-end');
-    //     let value = document.querySelector('.values-price-filter');
-
-    //     let min = value.dataset.min;
-    //     let max = value.dataset.max;
-    //     let numStart = value.dataset.start;
-    //     let numEnd = value.dataset.end;
-
-    //     noUiSlider.create(priceSlider, {
-    //         start: [+numStart, +numEnd],
-    //         connect: true,
-    //         tooltips: [wNumb({ decimals: 0, thousand: ',' }), wNumb({ decimals: 0, thousand: ',' })],
-    //         range: {
-    //             'min': [+min],
-    //             '1%': [100, 100],
-    //             'max': [+max],
-    //         }
-    //     });
-
-    //     priceSlider.noUiSlider.on('update', function (values, handle) {
-    //         var value = values[handle];
-
-    //         if (handle) {
-    //             inputNumTo.value = Math.round(value);
-    //         } else {
-    //             inputNumFrom.value = Math.round(value);
-    //         }
-    //     });
-
-    //     priceSlider.noUiSlider.on('change', () => {
-    //         let event = new Event("change", {bubbles: true}); 
-    //         inputNumFrom.dispatchEvent(event);
-    //         inputNumTo.dispatchEvent(event);
-    //     })
-
-    //     inputNumTo.addEventListener('change', (e) => {
-    //         console.log(e.target);
-    //         setPriceValues()
-    //     })
-
-    //     inputNumFrom.addEventListener('change',(e) => {
-    //         console.log(e.target);
-    //         setPriceValues()
-    //     })
-
-    //     function setPriceValues() {
-    //         let priceStartValue;
-    //         let priceEndValue;
-    //         if (inputNumFrom.value != '') {
-    //             priceStartValue = inputNumFrom.value;
-    //         }
-
-    //         if (inputNumTo.value != '') {
-    //             priceEndValue = inputNumTo.value;
-    //         }
-
-    //         priceSlider.noUiSlider.set([priceStartValue, priceEndValue])
-    //     }
-
-    // }
-
     let rangeAll = document.querySelectorAll('.range');
     if (rangeAll.length) {
         rangeAll.forEach(range => {
@@ -1287,7 +1234,6 @@ if (news) {
 
             slider.noUiSlider.on('update', function (values, handle) {
                 let value = values[handle];
-
                 if (handle) {
                     inputEnd.value = Math.round(value);
                     fielpEnd.innerText = numFormat.to(Math.round(value));
@@ -1299,7 +1245,6 @@ if (news) {
 
             slider.noUiSlider.on('change', (values, handle) => {
                 let value = values[handle];
-
                 if (handle) {
                     let event = new Event("change", { bubbles: true });
                     inputEnd.dispatchEvent(event);
@@ -1307,32 +1252,21 @@ if (news) {
                     let event = new Event("change", { bubbles: true });
                     inputStart.dispatchEvent(event);
                 }
-              
+
             })
         })
     }
 
 }
 
-
-// let formFilter = document.querySelector('#filter');
-// if (formFilter) {
-//     formFilter.addEventListener('submit', () => {
-//         console.log('is submit');
-//     })
-
-
-//     let checkboxInputs = formFilter.querySelectorAll('input[type="checkbox"]');
-//     if (checkboxInputs.length) {
-//         checkboxInputs.forEach(input => {
-//             input.addEventListener('change', (e) => {
-//                 console.log(e.target);
-//                 let event = new Event("submit", { bubbles: true });
-//                 input.dispatchEvent(event);
-//             })
-//         })
+// {
+//     let formFilter = document.querySelector('#filter');
+//     if (formFilter) {
+//         formFilter.addEventListener('submit', (e) => {
+//             e.preventDefault();
+//             console.dir(e.target);
+//         });
 //     }
-
 // };
 	let otherListings = document.querySelector('.other-listings');
 if(otherListings) {
@@ -1340,12 +1274,6 @@ if(otherListings) {
     if (slider) {
         let wrapper = slider.querySelector('.swiper-wrapper');
         let cards = slider.querySelectorAll('.card');
-        if(cards.length && document.documentElement.clientWidth > 991.98) {
-            let delay = 0;
-            cards.forEach(card => {
-                card.setAttribute('data-delay', delay+=100);
-            })
-        }
 
         let options = {
             speed: 800,
@@ -1355,6 +1283,7 @@ if(otherListings) {
             },
             watchSlidesVisibility: true,
             watchOverflow: true,
+            loop: true,
             breakpoints: {
                 320: {
                     slidesPerView: 2,
@@ -1370,7 +1299,7 @@ if(otherListings) {
 
         if(wrapper.children.length <= 3) {
             otherListings.classList.add('slider-is-empty');
-            options = { ...options, touchRatio: 0,};
+            options = { ...options, touchRatio: 0, loop: false};
         }
 
         let mySwiper;
@@ -1395,6 +1324,19 @@ if(otherListings) {
         }
 
         mobileSlider();
+
+        if(cards.length && document.documentElement.clientWidth > 991.98) {
+            let delay = 0;
+            cards.forEach(card => {
+                card.setAttribute('data-delay', delay+=100);
+            })
+        }
+
+        if(cards.length) {
+            cards.forEach(card => {
+                card.classList.add('fadeIn');
+            })
+        }
 
         window.addEventListener('resize', () => {
             mobileSlider();
@@ -1424,12 +1366,16 @@ if (formFilter) {
     }
 };
 	let boxAll = document.querySelectorAll('.box');
-if(boxAll.length) {
+if (boxAll.length) {
     boxAll.forEach(box => {
         let list = box.querySelector('.box__list');
         let textWrap = box.querySelector('.box__text-wrap');
-        if(list.scrollHeight > 580) {
+        if (list.scrollHeight > 580) {
             textWrap.classList.add('is-scroll');
+
+            list.addEventListener('scroll', () => {
+                textWrap.classList.toggle('scroll-ended', (list.scrollTop + list.clientHeight) >= (list.scrollHeight - 15));
+            })
         }
     })
 };
@@ -1646,150 +1592,6 @@ if (otherNews) {
 }
 ;
 
-	{
-	let vimeoVideos = document.querySelectorAll('[data-vimeo-id]');
-	if(vimeoVideos.length) {
-		vimeoVideos.forEach(async video => {
-			let id = video.dataset.vimeoId;
-			let img = video.querySelector('img');
-			
-			if(document.documentElement.clientWidth < 992) {
-				if(video.dataset.vimeoMobileId.trim()) {
-					id = video.dataset.vimeoMobileId;
-				}
-			}
-
-			if(!/[a-z]/gi.test(id)) {
-				video.insertAdjacentHTML('beforeend', `<iframe src="https://player.vimeo.com/video/${id}?muted=1&amp;autoplay=1&amp;controls=0&amp;loop=1&amp;background=1&amp"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay;" ></iframe>`);
-				let iframe = video.querySelector('iframe')
-				iframe.onload = () => {
-					if(img) {
-						img.style.opacity = 0;
-					}
-				}
-	
-				 setCoverVideoIframe(iframe, video, {desk: {w: 16.56, h: 9.31}, mob: {w:5.55, h: 7}});
-			} else {
-				video.insertAdjacentHTML('beforeend', `<iframe src="https://iframe.videodelivery.net/${id}?autoplay=true&muted=true&controls=false" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ></iframe>`);
-				let iframe = video.querySelector('iframe');
-				iframe.onload = () => {
-					if(img) {
-						img.style.opacity = 0;
-					}
-				}
-				setCoverVideoIframe(iframe, video, {desk: {w: 16, h: 9}, mob: {w:555, h: 700}});
-
-			}
-
-		})
-	}
-
-	function setCoverVideoIframe(iframe, parent, size) {
-		
-		const setSize = (widthVideo = 16.56, heightVideo = 9.31) => {
-			let percentHeight =  heightVideo / widthVideo * 100;
-			let percentWidth =  widthVideo / heightVideo * 100;
-
-			if((parent.clientHeight / parent.clientWidth * 100) < percentHeight ) {
-				iframe.style.width = '100%';
-				iframe.style.height = (parent.clientWidth / 100 * percentHeight) + 'px';
-			} else {
-				iframe.style.width = (parent.clientHeight / 100 * percentWidth) + 'px';
-				iframe.style.height = '100%';
-			}
-		}
-
-		if(document.documentElement.clientWidth >= 768) {
-			setSize(size.desk.w, size.desk.h);
-		} else {
-			setSize(size.mob.w, size.mob.h);
-		}
-
-		window.addEventListener('resize', () => {
-			if(document.documentElement.clientWidth >= 768) {
-				setSize(size.desk.w, size.desk.h);
-			} else {
-				setSize(size.mob.w, size.mob.h);
-			}
-		});
-	}
-
-	
-	let youtubeVideos = document.querySelectorAll('[data-youtube-id]');
-	if (youtubeVideos.length) {
-		youtubeVideos.forEach(video => {
-			let videoContainer = document.createElement('div');
-			video.append(videoContainer);
-			let videoId = video.dataset.youtubeId;
-			let img = video.querySelector('img');
-
-			if(document.documentElement.clientWidth < 992) {
-				if(video.dataset.youtubeMobileId.trim()) {
-					videoId = video.dataset.youtubeMobileId;
-				}
-			}
-			let player = new YT.Player(videoContainer, {
-				height: 'auto',
-				width: 'auto',
-				videoId: videoId,
-				playerVars: {
-					autoplay: 1,
-					loop: 1,
-					playlist: videoId,
-					controls: 0,
-					enablejsapi: 1,
-				},
-				events: {
-					onReady: (e) => {
-						e.target.mute();
-						e.target.playVideo();
-
-						if(img) {
-							img.style.opacity = 0;
-						}
-					}
-				}
-			});
-		})
-	}
-
-
-	function setMobileVideoForBanner() {
-		let videos = document.querySelectorAll('[data-media-mobile]');
-		if(videos.length) {
-			videos.forEach(video => {
-				let url = video.dataset.mediaMobile;
-				Array.from(video.children).forEach(item => {
-					item.setAttribute('src', url);
-				})
-	
-				video.load();
-			})
-		}
-	}
-
-	if(document.documentElement.clientWidth < 768) {
-		setMobileVideoForBanner()
-	}
-
-	let fancyboxYoutubeLinks = document.querySelectorAll('[data-fancybox-youtube]');
-	if(fancyboxYoutubeLinks.length) {
-		fancyboxYoutubeLinks.forEach(link => {
-			let id = link.getAttribute('href');
-			if(/https:\/\/www\.youtube\.com/i.test(id)) return;
-			link.setAttribute('href', `https://www.youtube.com/watch?v=${id}`)
-		})
-	}
-
-	let fancyboxVimeoLinks = document.querySelectorAll('[data-fancybox-vimeo]');
-	if(fancyboxVimeoLinks.length) {
-		fancyboxVimeoLinks.forEach(link => {
-			let id = link.getAttribute('href');
-			if(/https:\/\/vimeo\.com\//i.test(id)) return;
-			link.setAttribute('href', `https://vimeo.com/${id}`)
-		})
-	}
-};
 	(function uploadFileHandler() {
     let files = []
     let inputWrapItems = document.querySelectorAll('.file-input');
@@ -1814,12 +1616,12 @@ if (otherNews) {
 
             ;['dragenter', 'dragover'].forEach(eventName => {
                 input.addEventListener(eventName, (e) => {
-                    text.classList.add('highlight');
+                    inputWrap.classList.add('highlight');
                 });
             })
             ;['dragleave', 'drop'].forEach(eventName => {
                 input.addEventListener(eventName, (e) => {
-                    text.classList.remove('highlight');
+                    inputWrap.classList.remove('highlight');
                 });
             })
 
@@ -1827,15 +1629,8 @@ if (otherNews) {
     }
 })()
 
+;
 
-let testForm = document.querySelector('#testForm');
-if (testForm) {
-    testForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        console.dir(e.target);
-    })
-};
-	
 	let heroSliderListngs = document.querySelector('.hero-slider-listing');
 let listing = document.querySelector('#response');
 let listingSearch = document.querySelector('#listingSearch');
@@ -2120,6 +1915,32 @@ if (heroSliderListngs) {
 
 
 
+	function scrollTrigger(el, value, callback) {
+		let triggerPoint = document.documentElement.clientHeight / 100 * (100 - value);
+		const trigger = () => {
+			if (el.getBoundingClientRect().top <= triggerPoint && !el.classList.contains('is-show')) {
+				if (typeof callback === 'function') {
+					callback();
+					el.classList.add('is-show')
+				}
+			}
+		}
+
+		trigger();
+
+		window.addEventListener('scroll', trigger);
+	}
+
+
+	let counterItems2 = document.querySelectorAll('.fadeIn');
+	if (counterItems2) {
+
+		counterItems2.forEach(item => {
+			scrollTrigger(item, 15, () => {
+				setTimeout(() => { item.classList.add('_active') }, item.dataset.delay ? item.dataset.delay : 0);
+			})
+		})
+	}
 
 	let transactionsCardTitles = document.querySelectorAll('.transactions-card__title');
 	if (transactionsCardTitles.length) {
@@ -2128,6 +1949,18 @@ if (heroSliderListngs) {
 	let transactionsCardPlace = document.querySelectorAll('.transactions-card__place');
 	if (transactionsCardPlace.length) {
 		setSameHeight(transactionsCardPlace);
+	}
+
+
+
+	let scrollBtn = document.querySelector('[data-scroll]');
+	if(scrollBtn) {
+		scrollBtn.addEventListener('click', () => {
+			window.scrollTo({
+				top: document.documentElement.clientHeight - 69,
+				behavior: 'smooth',
+			})
+		})
 	}
 });
 
@@ -2315,6 +2148,7 @@ window.addEventListener('DOMContentLoaded', function () {
 })();
 
 function wrapWords(el) {
+    //el.innerHTML = el.innerHTML.replace( /[^<|>]\s?\w+[\s|,|\.$]?[^<|>]/g, '<span class="word">$&</span><span class="white-space"></span>');
     el.innerHTML = el.innerText.split(' ').map(word => `<span class="word">${word}</span><span class="white-space"></span>`).join('');
 }
 
@@ -2418,19 +2252,6 @@ function wrapWords(el) {
             })
         })
     }
-
-    let counterItems2 = document.querySelectorAll('.fadeIn');
-    if (counterItems2) {
-
-
-        counterItems2.forEach(item => {
-            window.addEventListener('load', () => {
-                scrollTrigger(item, 15, () => {
-                    setTimeout(() => { item.classList.add('_active') }, item.dataset.delay ? item.dataset.delay : 0);
-                })
-            })
-        })
-    }
 })();
 
 (function imageAnim() {
@@ -2457,6 +2278,150 @@ function wrapWords(el) {
         })
     }
 })();;
+	{
+	let vimeoVideos = document.querySelectorAll('[data-vimeo-id]');
+	if(vimeoVideos.length) {
+		vimeoVideos.forEach(async video => {
+			let id = video.dataset.vimeoId;
+			let img = video.querySelector('img');
+			
+			if(document.documentElement.clientWidth < 992) {
+				if(video.dataset.vimeoMobileId.trim()) {
+					id = video.dataset.vimeoMobileId;
+				}
+			}
+
+			if(!/[a-z]/gi.test(id)) {
+				video.insertAdjacentHTML('beforeend', `<iframe src="https://player.vimeo.com/video/${id}?muted=1&amp;autoplay=1&amp;controls=0&amp;loop=1&amp;background=1&amp"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay;" ></iframe>`);
+				let iframe = video.querySelector('iframe')
+				iframe.onload = () => {
+					if(img) {
+						img.style.opacity = 0;
+					}
+				}
+	
+				 setCoverVideoIframe(iframe, video, {desk: {w: 16.56, h: 9.31}, mob: {w:5.55, h: 7}});
+			} else {
+				video.insertAdjacentHTML('beforeend', `<iframe src="https://iframe.videodelivery.net/${id}?autoplay=true&muted=true&controls=false" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen ></iframe>`);
+				let iframe = video.querySelector('iframe');
+				iframe.onload = () => {
+					if(img) {
+						img.style.opacity = 0;
+					}
+				}
+				setCoverVideoIframe(iframe, video, {desk: {w: 16, h: 9}, mob: {w:555, h: 700}});
+
+			}
+
+		})
+	}
+
+	function setCoverVideoIframe(iframe, parent, size) {
+		
+		const setSize = (widthVideo = 16.56, heightVideo = 9.31) => {
+			let percentHeight =  heightVideo / widthVideo * 100;
+			let percentWidth =  widthVideo / heightVideo * 100;
+
+			if((parent.clientHeight / parent.clientWidth * 100) < percentHeight ) {
+				iframe.style.width = '100%';
+				iframe.style.height = (parent.clientWidth / 100 * percentHeight) + 'px';
+			} else {
+				iframe.style.width = (parent.clientHeight / 100 * percentWidth) + 'px';
+				iframe.style.height = '100%';
+			}
+		}
+
+		if(document.documentElement.clientWidth >= 768) {
+			setSize(size.desk.w, size.desk.h);
+		} else {
+			setSize(size.mob.w, size.mob.h);
+		}
+
+		window.addEventListener('resize', () => {
+			if(document.documentElement.clientWidth >= 768) {
+				setSize(size.desk.w, size.desk.h);
+			} else {
+				setSize(size.mob.w, size.mob.h);
+			}
+		});
+	}
+
+	
+	let youtubeVideos = document.querySelectorAll('[data-youtube-id]');
+	if (youtubeVideos.length) {
+		youtubeVideos.forEach(video => {
+			let videoContainer = document.createElement('div');
+			video.append(videoContainer);
+			let videoId = video.dataset.youtubeId;
+			let img = video.querySelector('img');
+
+			if(document.documentElement.clientWidth < 992) {
+				if(video.dataset.youtubeMobileId.trim()) {
+					videoId = video.dataset.youtubeMobileId;
+				}
+			}
+			let player = new YT.Player(videoContainer, {
+				height: 'auto',
+				width: 'auto',
+				videoId: videoId,
+				playerVars: {
+					autoplay: 1,
+					loop: 1,
+					playlist: videoId,
+					controls: 0,
+					enablejsapi: 1,
+				},
+				events: {
+					onReady: (e) => {
+						e.target.mute();
+						e.target.playVideo();
+
+						if(img) {
+							img.style.opacity = 0;
+						}
+					}
+				}
+			});
+		})
+	}
+
+
+	function setMobileVideoForBanner() {
+		let videos = document.querySelectorAll('[data-media-mobile]');
+		if(videos.length) {
+			videos.forEach(video => {
+				let url = video.dataset.mediaMobile;
+				Array.from(video.children).forEach(item => {
+					item.setAttribute('src', url);
+				})
+	
+				video.load();
+			})
+		}
+	}
+
+	if(document.documentElement.clientWidth < 768) {
+		setMobileVideoForBanner()
+	}
+
+	let fancyboxYoutubeLinks = document.querySelectorAll('[data-fancybox-youtube]');
+	if(fancyboxYoutubeLinks.length) {
+		fancyboxYoutubeLinks.forEach(link => {
+			let id = link.getAttribute('href');
+			if(/https:\/\/www\.youtube\.com/i.test(id)) return;
+			link.setAttribute('href', `https://www.youtube.com/watch?v=${id}`)
+		})
+	}
+
+	let fancyboxVimeoLinks = document.querySelectorAll('[data-fancybox-vimeo]');
+	if(fancyboxVimeoLinks.length) {
+		fancyboxVimeoLinks.forEach(link => {
+			let id = link.getAttribute('href');
+			if(/https:\/\/vimeo\.com\//i.test(id)) return;
+			link.setAttribute('href', `https://vimeo.com/${id}`)
+		})
+	}
+};
 
 
 	function testWebP(callback) {

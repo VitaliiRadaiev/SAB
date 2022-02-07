@@ -246,6 +246,30 @@ p {
 	}
 }
 
+[data-fade-in-anim] {
+	transition: all 0s;
+	opacity: 0;
+}
+
+[data-title-anim] {
+	transition: all 0s;
+	opacity: 0;
+
+	&.is-show {
+		opacity: 1;
+	}
+}
+
+
+[data-text-anim] {
+	transition: all 0s;
+	opacity: 0;
+
+	&.is-show {
+		opacity: 1;
+	}
+}
+
 button,
 .btn {
 	display: inline-flex;

@@ -22,12 +22,12 @@
 
             ;['dragenter', 'dragover'].forEach(eventName => {
                 input.addEventListener(eventName, (e) => {
-                    text.classList.add('highlight');
+                    inputWrap.classList.add('highlight');
                 });
             })
             ;['dragleave', 'drop'].forEach(eventName => {
                 input.addEventListener(eventName, (e) => {
-                    text.classList.remove('highlight');
+                    inputWrap.classList.remove('highlight');
                 });
             })
 
@@ -35,11 +35,3 @@
     }
 })()
 
-
-let testForm = document.querySelector('#testForm');
-if (testForm) {
-    testForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        console.dir(e.target);
-    })
-}

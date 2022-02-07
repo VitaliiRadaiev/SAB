@@ -4,12 +4,6 @@ if(otherListings) {
     if (slider) {
         let wrapper = slider.querySelector('.swiper-wrapper');
         let cards = slider.querySelectorAll('.card');
-        if(cards.length && document.documentElement.clientWidth > 991.98) {
-            let delay = 0;
-            cards.forEach(card => {
-                card.setAttribute('data-delay', delay+=100);
-            })
-        }
 
         let options = {
             speed: 800,
@@ -19,6 +13,7 @@ if(otherListings) {
             },
             watchSlidesVisibility: true,
             watchOverflow: true,
+            loop: true,
             breakpoints: {
                 320: {
                     slidesPerView: 2,
@@ -34,7 +29,7 @@ if(otherListings) {
 
         if(wrapper.children.length <= 3) {
             otherListings.classList.add('slider-is-empty');
-            options = { ...options, touchRatio: 0,};
+            options = { ...options, touchRatio: 0, loop: false};
         }
 
         let mySwiper;
@@ -59,6 +54,19 @@ if(otherListings) {
         }
 
         mobileSlider();
+
+        if(cards.length && document.documentElement.clientWidth > 991.98) {
+            let delay = 0;
+            cards.forEach(card => {
+                card.setAttribute('data-delay', delay+=100);
+            })
+        }
+
+        if(cards.length) {
+            cards.forEach(card => {
+                card.classList.add('fadeIn');
+            })
+        }
 
         window.addEventListener('resize', () => {
             mobileSlider();

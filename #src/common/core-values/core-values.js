@@ -3,6 +3,7 @@
     if(coreValues) {
         let dataSlider = new Swiper(coreValues.querySelector('.swiper-container'), {
             speed: 800,
+            loop: true,
             navigation: {
                 nextEl: coreValues.querySelector('.slider-button.next'),
                 prevEl: coreValues.querySelector('.slider-button.prev'),
