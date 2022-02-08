@@ -3894,7 +3894,7 @@ table td {
 
 .team.team--decor {
   position: relative;
-  padding: 42px 0 61px;
+  padding: 0px 0 61px;
 }
 
 .team.team--decor:before {
@@ -3918,6 +3918,10 @@ table td {
 
 .team.team--decor .team-card .team-card__name {
   margin-bottom: 3px;
+}
+
+.team__filter-wrap {
+  background-color: #fff;
 }
 
 .team__head {
@@ -5657,6 +5661,7 @@ table td {
 .listing-filter__title {
   margin-bottom: 11px;
   margin-top: 5px;
+  min-height: 1em;
 }
 
 .listing-filter__list {
@@ -6736,11 +6741,15 @@ div.vertical.wpdreams_asl_results.asl_r .asl_simplebar-track.asl_simplebar-verti
     border-top: 1px solid #dee3e6;
     border-bottom: 1px solid #dee3e6;
     padding-top: 29px;
-    padding-bottom: 44px;
+    padding-bottom: 29px;
   }
 
   .listing-filter__col:not(:last-child) {
     border-right: 1px solid #dee3e6;
+  }
+
+  .listing-filter__col {
+    min-height: 135px;
   }
 
   .card:hover {
@@ -6996,7 +7005,7 @@ div.vertical.wpdreams_asl_results.asl_r .asl_simplebar-track.asl_simplebar-verti
   }
 
   .team.team--decor {
-    padding: 33px 72px 36px;
+    padding: 0px 72px 36px;
   }
 
   .team__head .slider-buttons {
@@ -7650,7 +7659,7 @@ div.vertical.wpdreams_asl_results.asl_r .asl_simplebar-track.asl_simplebar-verti
   }
 
   .team.team--decor {
-    padding: 25px 0px 40px;
+    padding: 0px 0px 40px;
   }
 
   .team__head {
@@ -8169,6 +8178,10 @@ div.vertical.wpdreams_asl_results.asl_r .asl_simplebar-track.asl_simplebar-verti
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
+  }
+
+  .listing-filter__title:empty {
+    display: none;
   }
 
   #ajaxsearchlite1.wpdreams_asl_container.asl_w .probox {

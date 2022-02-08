@@ -31,14 +31,14 @@
 
     &.team--decor {
         position: relative;
-        padding: 42px 0 61px;
+        padding: 0px 0 61px;
 
         @media (max-width: $md2+px) {
-            padding: 33px 72px 36px;
+            padding: 0px 72px 36px;
         }
     
         @media (max-width: $md3+px) {
-            padding: 25px 0px 40px;
+            padding: 0px 0px 40px;
         }
 
         &:before {
@@ -65,6 +65,10 @@
                 margin-bottom: 3px;
             }
         }
+    }
+
+    &__filter-wrap {
+        background-color: #fff;
     }
 
     &__head {

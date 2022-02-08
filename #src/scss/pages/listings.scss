@@ -84,7 +84,7 @@
             border-top: 1px solid #dee3e6;
             border-bottom: 1px solid #dee3e6;
             padding-top: 29px;
-            padding-bottom: 44px;
+            padding-bottom: 29px;
         }
 
         @media (max-width: $md3+px) {
@@ -173,6 +173,10 @@
             }
         }
 
+        @media (min-width: 992px) {
+            min-height: 135px;
+        }   
+
         @media (max-width: $md2+px) and (min-width: 768px) {
             flex: 0 1 50%;
             min-height: 175px;
@@ -238,6 +242,13 @@
     &__title {
         margin-bottom: 11px;
         margin-top: 5px;
+        min-height: 1em;
+
+        @media (max-width: $md3+px) {
+            &:empty {
+                display: none;
+            }
+        }
     }
 
     &__list {
