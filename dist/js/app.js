@@ -1255,6 +1255,10 @@ if (news) {
             select.addEventListener('change', (e) => {
                 let tabId = e.target.value;
 
+                if(heroTitle) {
+                    heroTitle.innerText = e.target.selectedOptions[0].dataset.titleName;
+                }
+
                 contentAll.forEach(box => {
                     if (box.dataset.tab === tabId) {
                         box.classList.add('active');
