@@ -50,32 +50,37 @@ window.addEventListener('load', function () {
 
 
 
-	function scrollTrigger(el, value, callback) {
-		let triggerPoint = document.documentElement.clientHeight / 100 * (100 - value);
-		const trigger = () => {
-			if (el.getBoundingClientRect().top <= triggerPoint && !el.classList.contains('is-show')) {
-				if (typeof callback === 'function') {
-					callback();
-					el.classList.add('is-show')
+	window.localAnimationfadeIn = () => {
+		function scrollTrigger(el, value, callback) {
+			let triggerPoint = document.documentElement.clientHeight / 100 * (100 - value);
+			const trigger = () => {
+				if (el.getBoundingClientRect().top <= triggerPoint && !el.classList.contains('is-show')) {
+					if (typeof callback === 'function') {
+						callback();
+						el.classList.add('is-show')
+					}
 				}
 			}
+	
+			trigger();
+	
+			window.addEventListener('scroll', trigger);
 		}
-
-		trigger();
-
-		window.addEventListener('scroll', trigger);
-	}
-
-
-	let counterItems2 = document.querySelectorAll('.fadeIn');
-	if (counterItems2) {
-
-		counterItems2.forEach(item => {
-			scrollTrigger(item, 15, () => {
-				setTimeout(() => { item.classList.add('_active') }, item.dataset.delay ? item.dataset.delay : 0);
+	
+	
+		let counterItems2 = document.querySelectorAll('.fadeIn');
+		if (counterItems2) {
+	
+			counterItems2.forEach(item => {
+				scrollTrigger(item, 15, () => {
+					setTimeout(() => { item.classList.add('_active') }, item.dataset.delay ? item.dataset.delay : 0);
+				})
 			})
-		})
+		}
 	}
+
+	localAnimationfadeIn();
+
 
 	let transactionsCardTitles = document.querySelectorAll('.transactions-card__title');
 	if (transactionsCardTitles.length) {

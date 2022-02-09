@@ -39,11 +39,20 @@ if (news) {
 
         scrollTrigger(news, 15, () => { startAnimation(news.querySelector('.news__list.active'))});
 
+
+
+        let heroTitle = document.querySelector('.hero__title');
+
         triggers.forEach(item => {
             let tabId = item.dataset.tab;
 
             item.addEventListener('click', () => {
                 item.classList.add('active');
+
+                if(heroTitle) {
+                    heroTitle.innerText = item.dataset.titleName;
+                }
+
                 triggers.forEach(i => {
                     if (i === item) return;
 

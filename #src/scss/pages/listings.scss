@@ -163,6 +163,18 @@
         display: flex;
     }
 
+    &.team-list-filter {
+        @media (max-width: $md2+px) and (min-width: 768px) {
+            & .listing-filter__col--6 {
+                padding-left: 26px;
+            }
+
+            & .listing-filter__col--4 {
+                padding-left: 13px;
+            }
+        }
+    }
+
     &__col {
         flex: 0 1 25%;
         padding: 0 23px;
@@ -303,6 +315,10 @@
     &__text {
         flex: 1 1 auto;
     }
+}
+
+.card--under-contract {
+    opacity: 0.3;
 }
 
 .card {

@@ -41,16 +41,11 @@
             width: 100%;
             height: auto;
         }
-
-        @media (min-width: 1370px) {
-            margin-left: -61px;
-        }
     }
 
     &__menu {
-        @media (min-width: 1300px) {
-            padding-right: 82px;
-            //   margin-bottom: -4px;
+        @media (min-width: 992px) {
+            padding-right: 8px;
         }
 
         @media (max-width: $md2+px) {

@@ -69,6 +69,13 @@
 
     &__filter-wrap {
         background-color: #fff;
+
+        @media (max-width: $md2+px) {
+            margin: 0 -72px;
+        }
+        @media (max-width: $md3+px) {
+            margin: 0 0px;
+        }
     }
 
     &__head {
