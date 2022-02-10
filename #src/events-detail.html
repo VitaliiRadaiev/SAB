@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "New Project"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    @@include('common/header/_header.html',{})
+    <!-- == // TOP LINE ================== -->
+
+
+    <main class="_page news-detail-page">
+        <section class="hero hero-news-deail _padding-top">
+            <!-- PICTURE -->
+            <div class="hero-bg ibg">
+                @@include('_img.html',{
+                "desk": "img/photo/hero-bg-11.jpg",
+                "tablet": "img/photo/hero-bg-10-tablet.jpg",
+                "mob": "img/photo/hero-bg-7-mob.jpg"
+                })
+            </div>
+
+            <!-- VIDEO -->
+            <!-- <div class="hero-bg ibg">
+				<video poster="img/photo/promo-header-bg.jpg" data-media-mobile="img/test-video-mob.mp4" autoplay muted loop
+					playsinline controlslist="nodownload" crossorigin="anonymous">
+					<source src="img/test-video-desk.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+				</video> 
+			</div> -->
+
+            <!-- VIMEO VIDEO -->
+            <!-- <div class="hero-bg ibg" data-vimeo-poster="img/photo/promo-header-bg.jpg" data-vimeo-id="589884423" data-vimeo-mobile-id="589884750"></div> -->
+
+            <div class="hero__body container">
+                <div class="hero__suptitle" data-text-anim="" data-delay="700">NOVEMBER 7, 2018</div>
+                <h1 class="hero__title" data-title-anim>
+                    Interface
+                </h1>
+            </div>
+        </section>
+
+        <section class="article">
+            <div class="container">
+                <div class="article__columns">
+                    <div class="article__col-1">
+                        <div class="article__head">
+                            <div class="label">industry news</div>
+                            <ul class="social">
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-email"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-linkedin-in"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-Instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-twitter"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="article__text text-content">
+                            <h4>
+                                Omni Los Angeles, CA
+                            </h4>
+                            <p>
+                                SAB Capital’s Director of Capital Markets, Miguel Jauregui, will be a panelist discussing the State of the Industry at InterFace Net Lease West on Febraury 2, at the Omni in Los Angeles.
+                            </p>
+
+                            <a class="btn" href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="article__col-2">
+                        <div class="article__side-images">
+                            <img src="img/photo/event-logo.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="other-news pt-0">
+            <div class="container">
+                <div class="other-news__head">
+                    <h2 class="other-news__title" data-title-anim="">Other NEWS</h2>
+                    <div class="slider-buttons" data-fade-in-anim="">
+                        <div class="slider-button prev">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="19.25" stroke="currentColor" stroke-width="1.5" />
+                                <path
+                                    d="M20.3492 15.415L15.8858 19.2407C15.4202 19.6398 15.4202 20.3602 15.8858 20.7593L20.3492 24.585C20.9979 25.141 22 24.6801 22 23.8258V16.1742C22 15.3199 20.9979 14.859 20.3492 15.415Z"
+                                    stroke="currentColor" />
+                            </svg>
+
+                        </div>
+                        <div class="slider-button next">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="19.25" stroke="currentColor" stroke-width="1.5" />
+                                <path
+                                    d="M19.6508 15.415L24.1142 19.2407C24.5798 19.6398 24.5798 20.3602 24.1142 20.7593L19.6508 24.585C19.0021 25.141 18 24.6801 18 23.8258V16.1742C18 15.3199 19.0021 14.859 19.6508 15.415Z"
+                                    stroke="currentColor" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="other-news__slider swiper-container" data-mobile="false">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#" class="event-card fadeIn">
+                                <div class="event-card__img">
+                                    <img src="img/photo/event-card-img-2.png" alt="">
+                                </div>
+                                <div class="event-card__text-wrap">
+    
+                                    <div class="event-card__label">
+                                        industry news
+                                    </div>
+                                    <h4 class="event-card__title">
+                                        Globe St.
+                                    </h4>
+                                    <div class="event-card__address">
+                                        New York, NY 
+                                    </div>
+                                    <div class="event-card__date">Apr. 5</div>
+                                    <div class="event-card__learn-more">learn more</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="event-card fadeIn">
+                                <div class="event-card__img">
+                                    <img src="img/photo/event-card-img-3.png" alt="">
+                                </div>
+                                <div class="event-card__text-wrap">
+    
+                                    <div class="event-card__label">
+                                        industry news
+                                    </div>
+                                    <h4 class="event-card__title">
+                                        ICSC
+                                    </h4>
+                                    <div class="event-card__address">
+                                        Las Vegas, NV
+                                    </div>
+                                    <div class="event-card__date">May 24 - 27</div>
+                                    <div class="event-card__learn-more">learn more</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container cta__body">
+                <h2 class="cta__title" data-title-anim="">Be the First to Know</h2>
+                <h2 class="cta__title-mob" data-title-anim="">let’s connect</h2>
+                <a href="#" class="btn" data-fade-in-anim="">Subscribe</a>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- == FOOTER ================== -->
+    @@include('common/footer/_footer.html',{})
+    <!-- == // FOOTER ================== -->
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

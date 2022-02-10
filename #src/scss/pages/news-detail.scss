@@ -13,10 +13,87 @@
         padding-left: 0;
     }
 
-    &__text {
-        @media (min-width: 1268px) {
-            padding-right: 30px;
+    &__columns {
+        padding-bottom: 40px;
+        border-bottom: 1px solid #E7EAEC;
+
+        @media (min-width: 992px) {
+            display: flex;
         }
+    }
+
+    &__col-1 {
+        flex: 1 1 auto;
+        margin-bottom: 40px;
+
+        @media (min-width: 992px) {
+            margin-right: 70px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__col-2 {
+        flex: 0 0 30%;
+    }   
+
+    &__side-images {
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+        & img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-bottom: 40px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__head {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        & .label {
+            margin-bottom: 15px;
+        }
+
+        & .social {
+            margin-bottom: 15px;
+            align-items: center;
+
+            & > li {
+                margin-bottom: 0;
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
+
+                &:first-child {
+                    & a {
+                        font-size: 20px;
+                    }
+                }
+                & a {
+                    color: $textColor;
+                    font-size: 23px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+
+                    & i {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+
+    &__text {
+
         & > *:last-child {
             margin-bottom: 0;
         }

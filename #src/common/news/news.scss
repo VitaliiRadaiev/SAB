@@ -332,3 +332,17 @@
         text-transform: uppercase;
     }
 }
+
+.label {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 6px 3px;
+    background-color: $mainColor;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1em;
+    min-height: 20px;
+    align-self: flex-start;
+}
