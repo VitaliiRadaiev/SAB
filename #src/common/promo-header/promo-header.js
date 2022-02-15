@@ -10,6 +10,7 @@ if(heroSlider) {
         spaceBetween: 0,
         speed: 800,
         watchOverflow: true,
+        loop: true,
         pagination: {
         	el: heroSlider.querySelector('.swiper-pagination'),
         	clickable: true,

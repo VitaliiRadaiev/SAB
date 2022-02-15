@@ -14,11 +14,12 @@
     }
 
     &__columns {
+        display: flex;
         padding-bottom: 40px;
         border-bottom: 1px solid #E7EAEC;
 
-        @media (min-width: 992px) {
-            display: flex;
+        @media (max-width: $md3+px) {
+            flex-direction: column-reverse;
         }
     }
 
@@ -28,12 +29,20 @@
 
         @media (min-width: 992px) {
             margin-right: 70px;
+        }
+
+        @media (min-width: 768px) {
+            margin-right: 30px;
             margin-bottom: 0;
         }
     }
 
     &__col-2 {
         flex: 0 0 30%;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 30px;
+        }
     }   
 
     &__side-images {
@@ -52,10 +61,9 @@
     }
 
     &__head {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
+        @media (max-width: $md3+px) {
+            margin-bottom: 20px;
+        }
 
         & .label {
             margin-bottom: 15px;
@@ -64,16 +72,25 @@
         & .social {
             margin-bottom: 15px;
             align-items: center;
+            margin-left: auto;
 
             & > li {
                 margin-bottom: 0;
                 &:not(:last-child) {
                     margin-right: 20px;
+
+                    @media (max-width: $md3+px) {
+                        margin-right: 16px;
+                    }
                 }
 
                 &:first-child {
                     & a {
                         font-size: 20px;
+
+                        @media (max-width: $md3+px) {
+                            font-size: 16px;
+                        }
                     }
                 }
                 & a {
@@ -82,6 +99,10 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+
+                    @media (max-width: $md3+px) {
+                        font-size: 18px;
+                    }
                     
 
                     & i {
@@ -90,6 +111,13 @@
                 }
             }
         }
+    }
+
+    &__head-top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &__text {

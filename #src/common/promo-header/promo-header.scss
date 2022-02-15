@@ -1,6 +1,7 @@
 .promo-header {
     position: relative;
     padding-top: 69px;
+    background-color: #2B4871;
 
     &.hero-slider {
         padding-top: 0;
@@ -112,6 +113,13 @@
         & a {
             color: #fff;
             transition: all .3s ease;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            & span {
+                white-space: nowrap;
+            }
 
             @media (min-width: 992px) {
                 &:hover {
@@ -201,6 +209,19 @@
     &__slider {
         & .swiper-slide  {
             padding-top: 69px;
+
+            &.swiper-slide-duplicate, &.swiper-slide-duplicate-next, &.swiper-slide-duplicate-prev {
+                & [data-title-anim] {
+                    opacity: 1 !important;
+                    & span {
+                        transform: translateY(0%) !important;
+                    }
+                }
+
+                & [data-fade-in-anim] {
+                    opacity: 1 !important;
+                }
+            }
         }
     }
 

@@ -880,6 +880,7 @@ if(heroSlider) {
         spaceBetween: 0,
         speed: 800,
         watchOverflow: true,
+        loop: true,
         pagination: {
         	el: heroSlider.querySelector('.swiper-pagination'),
         	clickable: true,
@@ -1596,12 +1597,7 @@ if (otherNews) {
     if (slider) {
         let wrapper = slider.querySelector('.swiper-wrapper');
         let cards = slider.querySelectorAll('.post-card');
-        if(cards.length && document.documentElement.clientWidth > 991.98) {
-            let delay = 0;
-            cards.forEach(card => {
-                card.setAttribute('data-delay', delay+=100);
-            })
-        }
+
 
         let options = {
             speed: 800,
@@ -1611,6 +1607,7 @@ if (otherNews) {
             },
             watchSlidesVisibility: true,
             watchOverflow: true,
+            loop: true,
             breakpoints: {
                 320: {
                     slidesPerView: 3,
@@ -1651,6 +1648,19 @@ if (otherNews) {
         }
 
         mobileSlider();
+
+        if(cards.length && document.documentElement.clientWidth > 991.98) {
+            let delay = 0;
+            cards.forEach(card => {
+                card.setAttribute('data-delay', delay+=100);
+            })
+        }
+
+        if(cards.length) {
+            cards.forEach(card => {
+                card.classList.add('fadeIn');
+            })
+        }
 
         window.addEventListener('resize', () => {
             mobileSlider();
@@ -1720,6 +1730,7 @@ if (heroSliderListngs) {
         preloadImages: false,
         watchOverflow: true,
         watchSlidesVisibility: true,
+        loop: true,
         lazy: {
             loadPrevNext: true,
         },
@@ -1742,6 +1753,7 @@ if (heroSliderListngs) {
         speed: 800,
         watchOverflow: true,
         touchRatio: 0,
+        loop: true,
         navigation: {
             nextEl: '.about__more .more__item_next',
             prevEl: '.about__more .more__item_prev',

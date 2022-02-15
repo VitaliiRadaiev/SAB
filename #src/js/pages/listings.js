@@ -19,6 +19,7 @@ if (heroSliderListngs) {
         preloadImages: false,
         watchOverflow: true,
         watchSlidesVisibility: true,
+        loop: true,
         lazy: {
             loadPrevNext: true,
         },
@@ -41,6 +42,7 @@ if (heroSliderListngs) {
         speed: 800,
         watchOverflow: true,
         touchRatio: 0,
+        loop: true,
         navigation: {
             nextEl: '.about__more .more__item_next',
             prevEl: '.about__more .more__item_prev',

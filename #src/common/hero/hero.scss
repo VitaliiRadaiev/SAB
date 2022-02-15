@@ -3,8 +3,6 @@
     padding-top: 69px;
     &.hero-news-deail {
         & .hero-bg {
-            background-color: #000;
-
             & img {
                 mix-blend-mode: normal;
                 opacity: 0.8;
@@ -43,7 +41,7 @@
     }
 
     & .hero-bg {
-        background-color: $textColorDark;
+        background-color: #2B4871;
 
         &:before {
             display: none;
