@@ -30,7 +30,7 @@ if (otherNews) {
 
         if(wrapper.children.length <= 3) {
             otherNews.classList.add('slider-is-empty');
-            options = { ...options, touchRatio: 0,};
+            options = { ...options, touchRatio: 0, loop: false};
         }
 
         let mySwiper;
