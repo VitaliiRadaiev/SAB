@@ -211,10 +211,11 @@
                                 <div class="application-form__item-label">Cover letter (<a href="#">optional upload</a>)
                                 </div>
                                 <label class="file-input">
-                                    <input type="file" accept=".jpg, .pdf, .png">
+                                    <input type="file" name="f" accept=".jpg, .pdf, .png">
                                     <div class="file-input__text">
                                         Upload a file or drag and drop here
                                     </div>
+                                    <div class="file-input__delete"><span></span></div>
                                 </label>
                             </div>
                             <div class="application-form__item">
@@ -224,6 +225,7 @@
                                     <div class="file-input__text">
                                         Upload a file or drag and drop here
                                     </div>
+                                    <div class="file-input__delete"><span></span></div>
                                 </label>
                             </div>
                             <div class="application-form__item">
@@ -231,6 +233,16 @@
                             </div>
                         </div>
                     </form>
+
+                    <script>
+                        let form = document.querySelector('#applyForm');
+                        if(form) {
+                            form.addEventListener('submit', (e) => {
+                                e.preventDefault();
+                                console.dir(form.f)
+                            })
+                        }
+                    </script>
                 </div>
             </div>
         </section>

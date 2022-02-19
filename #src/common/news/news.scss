@@ -134,17 +134,20 @@
 
         & > li {
             flex: 0 1 33.3333%;
+            width: 33.3333%;
             padding: 0 15px;
             margin-bottom: 49px;
 
             @media (max-width: $md2+px) {
                 flex: 0 1 50%;
+                width: 50%;
                 padding: 0 12px;
                 margin-bottom: 25px;
             }
 
             @media (max-width: $md4+px) {
                 flex: 0 1 100%;
+                width: 100%;
                 margin-bottom: 29px;
             }
         }
@@ -192,18 +195,8 @@
         }
     }
 
-    &__label {
-        display: inline-flex;
-        align-items: center;
-        padding: 5px 6px 3px;
-        background-color: $mainColor;
-        color: #fff;
-        text-transform: uppercase;
+    & .labels-carousel {
         margin-bottom: 13px;
-        font-size: 13px;
-        line-height: 1em;
-        min-height: 20px;
-        align-self: flex-start;
     }
 
     &__date {
@@ -281,6 +274,10 @@
         }
     }
 
+    & .labels-carousel {
+        margin-bottom: 13px;
+    }
+
     &__text-wrap {
         flex: 1 1 auto;
         display: flex;
@@ -331,18 +328,4 @@
         color: $mainColor;
         text-transform: uppercase;
     }
-}
-
-.label {
-    display: inline-flex;
-    align-items: center;
-    padding: 7px 6px 3px;
-    background-color: $mainColor;
-    color: #fff;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    font-size: 13px;
-    line-height: 1em;
-    min-height: 20px;
-    align-self: flex-start;
 }

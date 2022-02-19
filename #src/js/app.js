@@ -43,8 +43,9 @@ window.addEventListener('load', function () {
 	@@include('../common/box/box.js');
 	@@include('../common/popup/popup.js');
 	@@include('../common/other-news/other-news.js');
+	@@include('../common/labels-carousel/labels-carousel.js');
 
-	@@include('../common/input-file/input-file.js');
+	@@include('../common/input-file/input-file.js'); 
 
 	@@include('./pages/listings.js');
 

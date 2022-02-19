@@ -1669,6 +1669,31 @@ if (otherNews) {
 
 }
 ;
+	let labelsCarousel = document.querySelectorAll('.labels-carousel');
+if(labelsCarousel.length) {
+    labelsCarousel.forEach(labelCarousel => {
+        labelCarousel.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+        })
+
+        let swiperLabelsCarousel = new Swiper(labelCarousel.querySelector('.swiper-container'), {
+            observer: true,
+            observeParents: true,
+            slidesPerView: 'auto',
+            spaceBetween: 7,
+            freeMode: true,
+            speed: 100,
+            grabCursor: true,
+            watchSlidesVisibility: true,
+            navigation: {
+                nextEl: labelCarousel.querySelector('.labels-carousel__btn--next'),
+                prevEl: labelCarousel.querySelector('.labels-carousel__btn--prev'),
+            },
+        });
+        
+    })
+};
 
 	(function uploadFileHandler() {
     let files = []
@@ -1677,6 +1702,7 @@ if (otherNews) {
         inputWrapItems.forEach(inputWrap => {
             let input = inputWrap.querySelector('input[type="file"]');
             let text = inputWrap.querySelector('.file-input__text');
+            let deleteBtn = inputWrap.querySelector('.file-input__delete');
 
 
             const changeHandler = (event) => {
@@ -1688,7 +1714,16 @@ if (otherNews) {
 
                 let result = files.map(item => item.name);
                 text.innerText = result.join(', ');
+                inputWrap.classList.add('_has-files')
             }
+
+            deleteBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                input.value = '';
+                files = [];
+                text.innerText = 'Upload a file or drag and drop here';
+                inputWrap.classList.remove('_has-files')
+            })
 
             input.addEventListener('change', changeHandler);
 
@@ -1703,11 +1738,18 @@ if (otherNews) {
                 });
             })
 
+            input.addEventListener('mouseenter', () => {
+                inputWrap.classList.add('_hover')
+            })
+            input.addEventListener('mouseleave', () => {
+                inputWrap.classList.remove('_hover')
+            })
+
         })
     }
 })()
 
-;
+; 
 
 	let heroSliderListngs = document.querySelector('.hero-slider-listing');
 let listing = document.querySelector('#response');
@@ -1722,14 +1764,10 @@ if (heroSliderListngs) {
             delay: 6000,
             disableOnInteraction: false, 
         },
-        observer: true,
-        observeParents: true, 
         slidesPerView: 1,
         spaceBetween: 0,
         speed: 800,
         preloadImages: false,
-        watchOverflow: true,
-        watchSlidesVisibility: true,
         loop: true,
         lazy: {
             loadPrevNext: true,
